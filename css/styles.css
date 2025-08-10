@@ -1,0 +1,238 @@
+:root {
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --navbar-bg: rgba(255, 255, 255, 0.7);
+  --border-color: rgba(0, 0, 0, 0.1);
+  --link-color: #0077b5;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1e1e1e;
+  --text-color: #f5f5f5;
+  --navbar-bg: rgba(30, 30, 30, 0.7);
+  --border-color: rgba(255, 255, 255, 0.2);
+  --link-color: #66c0ff;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* Navbar wrapper */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 0.5rem;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+/* Navbar container (loaded from navbar.html) */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: var(--navbar-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 0.6rem 1.5rem;
+  pointer-events: auto;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit; /* inherit theme text color */
+}
+
+.nav-left:hover {
+  opacity: 0.85;
+}
+
+.logo {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.title-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.site-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.site-subtitle {
+  font-size: 0.8em;
+  color: rgba(0, 0, 0, 0.6); /* subtle contrast */
+}
+
+.nav-right a {
+  margin-left: 1rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Active page link in navbar */
+.nav-right a.active {
+  color: #007aff;
+  font-weight: 600;
+  border-bottom: 2px solid #007aff;
+  padding-bottom: 2px;
+}
+
+.nav-right a:hover {
+  color: #007aff;
+}
+
+.theme-toggle button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: transform 0.2s;
+}
+
+.theme-toggle button:hover {
+  transform: scale(1.2);
+}
+
+/* Page container */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 6rem 1rem 2rem;
+}
+
+/* Intro section */
+.intro {
+  text-align: center;
+}
+
+.profile-img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  gap: 1rem;               /* Space between icons */
+  margin-top: 1rem;
+}
+
+.social-links a {
+  font-size: 1.8rem; /* icon size */
+  color: rgba(0, 0, 0, 0.8); /* default color */
+  text-decoration: none;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+.social-links a[aria-label="Google Scholar"] {
+  color: rgba(234, 68, 52, 1);
+}
+
+.social-links a[aria-label="GitHub"] {
+  color: #333;
+}
+
+.social-links a[aria-label="Twitter"] {
+  color: #1da1f2;
+}
+
+.social-links a[aria-label="LinkedIn"] {
+  color: #0077b5;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+li {
+  line-height: 1.6;
+}
+
+/* Hamburger button hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Show hamburger on small screens, hide regular menu */
+@media (max-width: 700px) {
+
+  .hamburger {
+    display: block;
+    color: #333;
+  }
+
+  .nav-right {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* below navbar */
+    right: 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 12px 12px 12px 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    z-index: 999;
+
+    /* Start hidden with animation prep */
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  .nav-right a {
+    margin: 0.5rem 0;
+    display: block;
+  }
+
+  /* When active, show with fade+slide */
+  .nav-right.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+}
