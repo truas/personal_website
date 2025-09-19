@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
       navbar.innerHTML = html;
 
       // Highlight the active link
-      console.log(currentPage)
-      console.log(linkPage)
-      const currentPage = window.location.pathname.split("/").pop().replace(/\/index\.html$/, "/").replace(/\.html$/, "/") || "index.html";
+      const currentPage = window.location.pathname.split("/").pop().replace(/\/index\.html$/, "/").replace(/\.html$/, "/").replace("/", "") || "index.html";
       const links = navbar.querySelectorAll(".nav-right a");
       links.forEach(link => {
-        const linkPage = link.getAttribute("href").replace(/\/index\.html$/, "/").replace(/\.html$/, "/");
+        const linkPage = link.getAttribute("href").replace(/\/index\.html$/, "/").replace(/\.html$/, "/").replace("/", "");
+        console.log(currentPage)
+        console.log(linkPage)
         if (linkPage === currentPage) {
           link.classList.add("active");
         }
