@@ -17,12 +17,14 @@ document.addEventListener("DOMContentLoaded", () => {
       navbar.innerHTML = html;
 
       // Highlight the active link
-      const currentPage = window.location.pathname.split("/").pop() || "index.html";
+      const currentPage = window.location.pathname.split("/").pop().replace(/\/index\.html$/, "/").replace(/\.html$/, "/") || "index.html";
       const links = navbar.querySelectorAll(".nav-right a");
       links.forEach(link => {
-        const linkPage = link.getAttribute("href");
+        const linkPage = link.getAttribute("href").replace(/\/index\.html$/, "/").replace(/\.html$/, "/");
         if (linkPage === currentPage) {
           link.classList.add("active");
+          console.log(currentPage)
+          console.log(linkPage)
         }
       });
 
@@ -34,20 +36,20 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       
       // All following code regards the theme switcher
-      const themeToggleBtn = document.getElementById("theme-toggle-btn");
-      const savedTheme = localStorage.getItem("theme");
+      // const themeToggleBtn = document.getElementById("theme-toggle-btn");
+      // const savedTheme = localStorage.getItem("theme");
 
-      // Apply saved theme on load
-      if (savedTheme) {
-        document.documentElement.setAttribute("data-theme", savedTheme);
-      }
+      // // Apply saved theme on load
+      // if (savedTheme) {
+      //   document.documentElement.setAttribute("data-theme", savedTheme);
+      // }
 
-      themeToggleBtn.addEventListener("click", () => {
-        const currentTheme = document.documentElement.getAttribute("data-theme");
-        const newTheme = currentTheme === "dark" ? "light" : "dark";
-        document.documentElement.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
-      });
+      // themeToggleBtn.addEventListener("click", () => {
+      //   const currentTheme = document.documentElement.getAttribute("data-theme");
+      //   const newTheme = currentTheme === "dark" ? "light" : "dark";
+      //   document.documentElement.setAttribute("data-theme", newTheme);
+      //   localStorage.setItem("theme", newTheme);
+      // });
     })
     .catch(err => console.error("Failed to load navbar:", err));
 });
