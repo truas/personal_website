@@ -10,6 +10,14 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.querySelector(".navbar");
+  const footer = document.querySelector(".footer");
+
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(html => {
+      footer.innerHTML = html;
+    })
+    .catch(err => console.error("Failed to load footer:", err));
 
   fetch("navbar.html")
     .then(res => res.text())
@@ -17,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
       navbar.innerHTML = html;
 
       // Highlight the active link
-      const currentPage = window.location.pathname.split("/").pop().replace(/\/index\.html$/, "/").replace(/\.html$/, "/").replace("/", "") || "index.html";
-      const links = navbar.querySelectorAll(".nav-right a");
+      const currentPage = window.location.pathname.split("/").pop().replace(/\/index\.html$/, "/").replace(/\.html$/, "/").replace("/", "") || "index";
+      const links = navbar.querySelectorAll(".nav-right a, .mobile-nav-right a");
       links.forEach(link => {
         const linkPage = link.getAttribute("href").replace(/\/index\.html$/, "/").replace(/\.html$/, "/").replace("/", "");
         console.log(currentPage)
@@ -30,26 +38,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Mobile menu toggle
       const hamburger = navbar.querySelector(".hamburger");
-      const navMenu = navbar.querySelector(".nav-right");
+      const navMenu = navbar.querySelector(".mobile-nav-right");
       hamburger.addEventListener("click", () => {
         navMenu.classList.toggle("show");
       });
       
       // All following code regards the theme switcher
-      // const themeToggleBtn = document.getElementById("theme-toggle-btn");
-      // const savedTheme = localStorage.getItem("theme");
+      const themeToggleBtn = document.getElementById("theme-toggle-btn");
+      const savedTheme = localStorage.getItem("theme");
 
       // // Apply saved theme on load
-      // if (savedTheme) {
-      //   document.documentElement.setAttribute("data-theme", savedTheme);
-      // }
+      if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+      }
 
-      // themeToggleBtn.addEventListener("click", () => {
-      //   const currentTheme = document.documentElement.getAttribute("data-theme");
-      //   const newTheme = currentTheme === "dark" ? "light" : "dark";
-      //   document.documentElement.setAttribute("data-theme", newTheme);
-      //   localStorage.setItem("theme", newTheme);
-      // });
+      themeToggleBtn.addEventListener("click", () => {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+        localStorage.setItem("theme", newTheme);
+      });
     })
     .catch(err => console.error("Failed to load navbar:", err));
 });
