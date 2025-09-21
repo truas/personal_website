@@ -7,6 +7,7 @@
   --link-color: #0077b5;
 }
 
+/* Color values for the dark theme */
 [data-theme="dark"] {
   --bg-color: #121212;
   --text-color: #f5f5f5;
@@ -16,6 +17,7 @@
   --link-color: #66c0ff;
 }
 
+/* Style for the footer at the bottom of each page */
 .footer {
   /* position: fixed; */
   /* bottom: 0; */
@@ -28,6 +30,7 @@
   pointer-events: none;
 }
 
+/* Style for the container of the footer */
 .footer-container {
   color: var(--text-color-subtle); /* subtle contrast */
   /* align-items: center;
@@ -41,6 +44,7 @@
   pointer-events: auto; */
 }
 
+/* General body stylings */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -49,7 +53,7 @@ body {
   margin: 0;
 }
 
-/* Navbar wrapper */
+/* Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -78,6 +82,7 @@ body {
   pointer-events: auto;
 }
 
+/* Left part of the navbar (icon and title) */
 .nav-left {
   display: flex;
   align-items: center;
@@ -86,10 +91,12 @@ body {
   color: inherit; /* inherit theme text color */
 }
 
+/* Makes title and icon change opacity on hover */
 .nav-left:hover {
   opacity: 0.85;
 }
 
+/* Logo in the navbar */
 .logo {
   height: 36px;
   width: 36px;
@@ -97,22 +104,26 @@ body {
   object-fit: cover;
 }
 
+/* Title div in the navbar */
 .title-text {
   display: flex;
   flex-direction: column;
   line-height: 1.1;
 }
 
+/* Main title */
 .site-title {
   font-size: 1.2rem;
   font-weight: 600;
 }
 
+/* Subtitle */
 .site-subtitle {
   font-size: 0.8em;
   color: var(--text-color-subtle); /* subtle contrast */
 }
 
+/* Right part of the navbar (links) */
 .nav-right a, .mobile-nav-right a {
   margin-left: 1rem;
   text-decoration: none;
@@ -120,7 +131,7 @@ body {
   font-weight: 500;
 }
 
-/* Active page link in navbar */
+/* Active page link in navbar links*/
 .nav-right a.active, .mobile-nav-right a.active {
   color: var(--link-color);
   font-weight: 600;
@@ -128,10 +139,12 @@ body {
   padding-bottom: 2px;
 }
 
+/* Hovering a navbar link */
 .nav-right a:hover {
   color: var(--link-color);
 }
 
+/* Theme toggle button */
 .theme-toggle button {
   background: none;
   border: none;
@@ -141,22 +154,36 @@ body {
   transition: transform 0.2s;
 }
 
+/* Hovering the theme toggle button */
 .theme-toggle button:hover {
   transform: scale(1.2);
 }
 
-/* Page container */
+/* Page container for all main content*/
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 6rem 1rem 2rem;
 }
 
-/* Intro section */
+/* Container for flex items (for example, half width) */
+.flex-row {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+}
+
+/* Half width container */
+.flex-column-50 {
+  flex: 50%;
+}
+
+/* Intro section on the main page*/
 .intro {
   text-align: center;
 }
 
+/* Big profile picture on the main page */
 .profile-img {
   width: 160px;
   height: 160px;
@@ -167,6 +194,7 @@ body {
   margin-bottom: 1rem;
 }
 
+/* Social links on the main page */
 .social-links {
   display: flex;
   justify-content: center; /* Center horizontally */
@@ -174,6 +202,7 @@ body {
   margin-top: 1rem;
 }
 
+/* Link customizations for the social links */
 .social-links a {
   font-size: 1.8rem; /* icon size */
   color: rgba(0, 0, 0, 0.8); /* default color */
@@ -181,41 +210,49 @@ body {
   transition: transform 0.2s ease, color 0.3s ease;
 }
 
+/* Hovering the social links */
 .social-links a:hover {
   transform: scale(1.2);
 }
 
+/* Custom behavior vor Google Scholar social link */
 .social-links a[aria-label="Google Scholar"] {
   color: rgba(234, 68, 52, 1);
 }
 
+/* Custom behavior vor Github social link */
 .social-links a[aria-label="GitHub"] {
   color: #333;
 }
 
+/* Custom behavior vor Twitter social link */
 .social-links a[aria-label="Twitter"] {
   color: #1da1f2;
 }
 
+/* Custom behavior vor LinkedIn social link */
 .social-links a[aria-label="LinkedIn"] {
   color: #0077b5;
 }
 
+/* Paragraphs */
 p {
   font-size: 1.1rem;
   line-height: 1.6;
 }
 
+/* Links */
 a {
   text-decoration: none;
   color: var(--link-color);
 }
 
+/* List elements */
 li {
   line-height: 1.6;
 }
 
-/* Hamburger button hidden on desktop */
+/* Hamburger button (hidden on desktop) */
 .hamburger {
   display: none;
   font-size: 1.5rem;
@@ -224,22 +261,26 @@ li {
   cursor: pointer;
 }
 
+/* Navbar mobile menu (hidden on desktop) */
 .mobile-nav-right {
     display: none;
   }
 
-/* Show hamburger on small screens, hide regular menu */
-@media (max-width: 700px) {
+/* Style for the mobile version */
+@media (max-width: 750px) {
 
+  /* Show hamburger menu in mobile view */
   .hamburger {
     display: block;
     color: var(--text-color);
   }
 
+  /* Hide big navbar links in mobile view */
   .nav-right {
     display: none;
   }
 
+  /* Show mobile navbar panel */
   .mobile-nav-right {
     display: flex;
     flex-direction: column;
@@ -262,15 +303,21 @@ li {
     transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
+  /* Links in the mobile navbar menu */
   .mobile-nav-right a {
     margin: 0.5rem 0;
     display: block;
   }
 
-  /* When active, show with fade+slide */
+  /* When mobile menu is active, show with fade+slide */
   .mobile-nav-right.show {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+  }
+
+  /* Display flex items beneath each other instead of next to each other */
+  .flex-row {
+    flex-direction: column;
   }
 }
