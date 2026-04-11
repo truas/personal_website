@@ -4,7 +4,7 @@
     if (savedTheme) {
         document.documentElement.setAttribute("data-theme", savedTheme);
     } else {
-        document.documentElement.setAttribute("data-theme", "light"); // default is light, maybe change to match user preference?
+        document.documentElement.setAttribute("data-theme", "dark"); // default is light, maybe change to match user preference?
     }
 })();
 
