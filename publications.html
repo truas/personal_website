@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Students - PD Dr. Terry Ruas</title>
+  <title>Publications - PD Dr. Terry Ruas</title>
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
@@ -13,14 +14,33 @@
 
   <main class="container">
     <h1>Publications</h1>
-    <p>For more details about my publications please reach out to me or check out my <a href="https://scholar.google.com/citations?user=mCDF4XMAAAAJ&amp;hl=en" target="_blank" rel="noreferrer noopener">Google Scholar Profile</a> or <a href="https://www.semanticscholar.org/author/Terry-Ruas/8837621" target="_blank" rel="noreferrer noopener">Semantic Scholar</a>.</p>
-    <div class="publications-container">
-      <script src="https://bibbase.org/show?bib=https%3A%2F%2Fbibbase.org%2Fzotero-group%2Fruasterry%2F2503580&jsonp=1"></script>
-    </div>
+    <p>
+      A live list of my publications. For more, see my
+      <a href="https://scholar.google.com/citations?user=mCDF4XMAAAAJ&amp;hl=en" target="_blank" rel="noreferrer noopener">Google Scholar</a>
+      or
+      <a href="https://www.semanticscholar.org/author/Terry-Ruas/8837621" target="_blank" rel="noreferrer noopener">Semantic Scholar</a>.
+    </p>
+
+    <section class="publications-container" aria-label="Publications">
+      <div class="pubs-toolbar">
+        <label class="pubs-search" for="pubs-search-input">
+          <span class="pubs-search-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass"></i></span>
+          <input id="pubs-search-input" type="search" placeholder="Search by title, author, or venue…" autocomplete="off" aria-label="Search publications" />
+          <button id="pubs-search-clear" class="pubs-clear" type="button" aria-label="Clear search">✕</button>
+        </label>
+        <div id="pubs-year-chips" class="pubs-filter-group" role="group" aria-label="Filter by year"></div>
+        <div id="pubs-type-chips" class="pubs-filter-group" role="group" aria-label="Filter by type"></div>
+      </div>
+
+      <p id="pubs-stats" class="pubs-stats" aria-live="polite"></p>
+
+      <div id="publications-list"></div>
+    </section>
   </main>
 
   <footer class="footer"></footer>
 
   <script src="js/load-dynamic-content.js"></script>
+  <script src="js/publications.js" defer></script>
 </body>
 </html>
