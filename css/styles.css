@@ -549,6 +549,81 @@ li { line-height: 1.65; }
   text-align: center;
 }
 
+/* ---------- Teaching ---------- */
+.teach-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.teach-card {
+  position: relative;
+  background: var(--bg-elev);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--s-4);
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+.teach-card:hover {
+  border-color: var(--border-color-strong);
+  box-shadow: var(--shadow-md);
+}
+
+.teach-title {
+  margin: 0 0 var(--s-2);
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+  padding-right: 7rem;
+}
+
+.teach-meta {
+  font-size: 0.9rem;
+  color: var(--text-color-subtle);
+  margin: 0;
+}
+.teach-institution { font-style: italic; }
+.teach-term { white-space: nowrap; }
+
+.teach-role {
+  position: absolute;
+  top: var(--s-3);
+  right: var(--s-3);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-color);
+  color: var(--text-color-subtle);
+  white-space: nowrap;
+}
+.teach-role.role-lecturer {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: transparent;
+}
+.teach-role.role-graduate-student-instructor,
+.teach-role.role-teaching-assistant {
+  color: var(--text-color-subtle);
+}
+
+@media (max-width: 480px) {
+  .teach-card { padding: var(--s-3); }
+  .teach-title { padding-right: 0; font-size: 1rem; }
+  .teach-role {
+    position: static;
+    display: inline-block;
+    margin-top: var(--s-2);
+  }
+}
+
 /* ---------- Footer ---------- */
 .footer {
   width: 100%;

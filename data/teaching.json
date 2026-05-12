@@ -1,0 +1,364 @@
+[
+  {
+    "id": "ugoe-dlnlp-2026",
+    "year": 2026,
+    "course": "Deep Learning for Natural Language Processing",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Summer 2026",
+    "role": "Lecturer"
+  },
+  {
+    "id": "ugoe-pds-2026",
+    "year": 2026,
+    "course": "Programming for Data Scientists (Python)",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Winter 2026",
+    "role": "Lecturer"
+  },
+  {
+    "id": "ugoe-stds-2026",
+    "year": 2026,
+    "course": "Selected Topics in Data Science",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Summer/Winter 2026",
+    "role": "Lecturer"
+  },
+
+  {
+    "id": "ugoe-dlnlp-2025",
+    "year": 2025,
+    "course": "Deep Learning for Natural Language Processing",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Summer 2025",
+    "role": "Lecturer"
+  },
+  {
+    "id": "ugoe-pds-2025",
+    "year": 2025,
+    "course": "Programming for Data Scientists (Python)",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Winter 2025",
+    "role": "Lecturer"
+  },
+  {
+    "id": "ugoe-stds-2025",
+    "year": 2025,
+    "course": "Selected Topics in Data Science",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Summer/Winter 2025",
+    "role": "Lecturer"
+  },
+  {
+    "id": "ugoe-dhis-2025",
+    "year": 2025,
+    "course": "Digital Humanities and Information Science",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Summer/Winter 2025",
+    "role": "Lecturer"
+  },
+
+  {
+    "id": "ugoe-dlnlp-2024",
+    "year": 2024,
+    "course": "Deep Learning for Natural Language Processing",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Summer 2024",
+    "role": "Lecturer"
+  },
+  {
+    "id": "ugoe-pds-2024",
+    "year": 2024,
+    "course": "Programming for Data Scientists (Python)",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Winter 2024",
+    "role": "Lecturer"
+  },
+  {
+    "id": "ugoe-stds-2024",
+    "year": 2024,
+    "course": "Selected Topics in Data Science",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Summer/Winter 2024",
+    "role": "Lecturer"
+  },
+  {
+    "id": "ugoe-dhis-2024",
+    "year": 2024,
+    "course": "Digital Humanities and Information Science",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Summer/Winter 2024",
+    "role": "Lecturer"
+  },
+
+  {
+    "id": "ugoe-dlnlp-2023",
+    "year": 2023,
+    "course": "Deep Learning for Natural Language Processing",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Summer 2023",
+    "role": "Lecturer"
+  },
+  {
+    "id": "ugoe-pds-2023",
+    "year": 2023,
+    "course": "Programming for Data Scientists (Python)",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Winter 2023",
+    "role": "Lecturer"
+  },
+  {
+    "id": "ugoe-stds-2023",
+    "year": 2023,
+    "course": "Selected Topics in Data Science",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Summer/Winter 2023",
+    "role": "Lecturer"
+  },
+  {
+    "id": "ugoe-dhis-2023",
+    "year": 2023,
+    "course": "Digital Humanities and Information Science",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Summer/Winter 2023",
+    "role": "Lecturer"
+  },
+
+  {
+    "id": "ugoe-pds-2022",
+    "year": 2022,
+    "course": "Programming for Data Scientists (Python)",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Winter 2022",
+    "role": "Lecturer"
+  },
+  {
+    "id": "ugoe-stds-2022",
+    "year": 2022,
+    "course": "Selected Topics in Data Science",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Winter 2022",
+    "role": "Lecturer"
+  },
+  {
+    "id": "ugoe-dhis-2022",
+    "year": 2022,
+    "course": "Digital Humanities and Information Science",
+    "code": null,
+    "institution": "Georg-August-Universität Göttingen",
+    "institution_short": "U Göttingen",
+    "term": "Winter 2022",
+    "role": "Lecturer"
+  },
+
+  {
+    "id": "buw-kc-2021",
+    "year": 2021,
+    "course": "Key Competencies in Computer Science",
+    "code": null,
+    "institution": "Bergische Universität Wuppertal",
+    "institution_short": "U Wuppertal",
+    "term": "Summer/Winter 2021",
+    "role": "Lecturer"
+  },
+  {
+    "id": "buw-anlptm-2021",
+    "year": 2021,
+    "course": "Applied Natural Language Processing and Text Mining",
+    "code": null,
+    "institution": "Bergische Universität Wuppertal",
+    "institution_short": "U Wuppertal",
+    "term": "Winter 2021",
+    "role": "Lecturer"
+  },
+  {
+    "id": "buw-stdke-2021",
+    "year": 2021,
+    "course": "Selected Topics in Data and Knowledge Engineering",
+    "code": null,
+    "institution": "Bergische Universität Wuppertal",
+    "institution_short": "U Wuppertal",
+    "term": "Summer/Winter 2021",
+    "role": "Lecturer"
+  },
+
+  {
+    "id": "buw-kc-2020",
+    "year": 2020,
+    "course": "Key Competencies in Computer Science",
+    "code": null,
+    "institution": "Bergische Universität Wuppertal",
+    "institution_short": "U Wuppertal",
+    "term": "Summer/Winter 2020",
+    "role": "Lecturer"
+  },
+  {
+    "id": "buw-anlptm-2020",
+    "year": 2020,
+    "course": "Applied Natural Language Processing and Text Mining",
+    "code": null,
+    "institution": "Bergische Universität Wuppertal",
+    "institution_short": "U Wuppertal",
+    "term": "Winter 2020",
+    "role": "Lecturer"
+  },
+  {
+    "id": "buw-stdke-2020",
+    "year": 2020,
+    "course": "Selected Topics in Data and Knowledge Engineering",
+    "code": null,
+    "institution": "Bergische Universität Wuppertal",
+    "institution_short": "U Wuppertal",
+    "term": "Summer/Winter 2020",
+    "role": "Lecturer"
+  },
+
+  {
+    "id": "buw-anlptm-2019",
+    "year": 2019,
+    "course": "Applied Natural Language Processing and Text Mining",
+    "code": null,
+    "institution": "Bergische Universität Wuppertal",
+    "institution_short": "U Wuppertal",
+    "term": "Winter 2019",
+    "role": "Lecturer"
+  },
+  {
+    "id": "buw-stdke-2019",
+    "year": 2019,
+    "course": "Selected Topics in Data and Knowledge Engineering",
+    "code": null,
+    "institution": "Bergische Universität Wuppertal",
+    "institution_short": "U Wuppertal",
+    "term": "Summer/Winter 2019",
+    "role": "Lecturer"
+  },
+  {
+    "id": "umd-cis150-2019s",
+    "year": 2019,
+    "course": "Computer Science I",
+    "code": "CIS 150",
+    "institution": "University of Michigan – Dearborn",
+    "institution_short": "U Michigan – Dearborn",
+    "term": "Summer 2019",
+    "role": "Graduate Student Instructor"
+  },
+  {
+    "id": "umd-cis5700-2019w",
+    "year": 2019,
+    "course": "Advanced Data Mining",
+    "code": "CIS 5700",
+    "institution": "University of Michigan – Dearborn",
+    "institution_short": "U Michigan – Dearborn",
+    "term": "Winter 2019",
+    "role": "Graduate Student Instructor"
+  },
+
+  {
+    "id": "umd-cis150-2018",
+    "year": 2018,
+    "course": "Computer Science I",
+    "code": "CIS 150",
+    "institution": "University of Michigan – Dearborn",
+    "institution_short": "U Michigan – Dearborn",
+    "term": "Fall 2018",
+    "role": "Graduate Student Instructor"
+  },
+
+  {
+    "id": "umd-cis150-2017",
+    "year": 2017,
+    "course": "Computer Science I",
+    "code": "CIS 150",
+    "institution": "University of Michigan – Dearborn",
+    "institution_short": "U Michigan – Dearborn",
+    "term": "Winter/Summer/Fall 2017",
+    "role": "Graduate Student Instructor"
+  },
+  {
+    "id": "veltech-irtm-2017",
+    "year": 2017,
+    "course": "Information Retrieval and Text Mining",
+    "code": null,
+    "institution": "Veltech Dr.RR & Dr.SR University, Chennai (India)",
+    "institution_short": "Veltech University",
+    "term": "Summer 2017",
+    "role": "Teaching Assistant"
+  },
+
+  {
+    "id": "umd-cis150-2016",
+    "year": 2016,
+    "course": "Computer Science I (C++)",
+    "code": "CIS 150",
+    "institution": "University of Michigan – Dearborn",
+    "institution_short": "U Michigan – Dearborn",
+    "term": "Winter/Summer/Fall 2016",
+    "role": "Graduate Student Instructor"
+  },
+
+  {
+    "id": "umd-cis275-2015",
+    "year": 2015,
+    "course": "Discrete Structures I",
+    "code": "CIS 275",
+    "institution": "University of Michigan – Dearborn",
+    "institution_short": "U Michigan – Dearborn",
+    "term": "Fall 2015",
+    "role": "Teaching Assistant"
+  },
+  {
+    "id": "umd-cis375-2015",
+    "year": 2015,
+    "course": "Software Engineering I",
+    "code": "CIS 375",
+    "institution": "University of Michigan – Dearborn",
+    "institution_short": "U Michigan – Dearborn",
+    "term": "Fall 2015",
+    "role": "Teaching Assistant"
+  },
+
+  {
+    "id": "ufabc-bc1511-2009",
+    "year": 2009,
+    "course": "Artificial Life in Computing",
+    "code": "BC 1511",
+    "institution": "Universidade Federal do ABC (UFABC)",
+    "institution_short": "UFABC",
+    "term": "Winter 2009",
+    "role": "Teaching Assistant"
+  }
+]
