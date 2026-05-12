@@ -61,17 +61,22 @@ function roleSlug(role) {
 function renderCard(e) {
   const article = el("article", { class: "teach-card", "data-id": e.id });
 
-  article.appendChild(el("div", { class: "teach-term-mono" }, e.term || ""));
-
-  const mid = el("div", { class: "teach-mid" });
   const titleText = e.code ? `${e.code} — ${e.course}` : e.course;
-  mid.appendChild(el("h3", { class: "teach-title" }, titleText));
-  mid.appendChild(el("div", { class: "teach-meta" },
-    el("span", { class: "teach-institution" }, e.institution),
-  ));
-  article.appendChild(mid);
+  article.appendChild(el("h3", { class: "teach-title" }, titleText));
 
-  article.appendChild(el("div", { class: `teach-role role-${roleSlug(e.role)}` }, e.role));
+  const meta = el("div", { class: "teach-meta" });
+  if (e.institution) {
+    meta.appendChild(el("span", { class: "teach-institution" }, e.institution));
+  }
+  if (e.term) {
+    if (meta.children.length) meta.appendChild(el("span", { class: "teach-sep" }, "·"));
+    meta.appendChild(el("span", { class: "teach-term" }, e.term));
+  }
+  article.appendChild(meta);
+
+  if (e.role) {
+    article.appendChild(el("span", { class: `teach-role role-${roleSlug(e.role)}` }, e.role));
+  }
 
   return article;
 }
