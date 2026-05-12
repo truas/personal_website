@@ -27,7 +27,7 @@ html {
   --body:      var(--sans);
 
   --pad-x:     clamp(20px, 5vw, 88px);
-  --pad-section: 120px;
+  --pad-section: 80px;
   --row-gap:   28px;
 
   --t-display: clamp(64px, 11vw, 168px);
@@ -91,9 +91,9 @@ html[data-type="modern"]     { --display: var(--sans);  --body: var(--sans); }
 html[data-type="instrument"] { --display: "Instrument Serif", "Newsreader", Georgia, serif; --body: var(--sans); }
 
 /* ── density ──────────────────────────────────────────────────────────── */
-html[data-density="compact"] { --pad-section: 72px;  --row-gap: 18px; --t-body:15px; }
-html[data-density="regular"] { --pad-section: 120px; --row-gap: 28px; --t-body:16px; }
-html[data-density="airy"]    { --pad-section: 180px; --row-gap: 42px; --t-body:17px; }
+html[data-density="compact"] { --pad-section: 56px;  --row-gap: 18px; --t-body:15px; }
+html[data-density="regular"] { --pad-section: 80px;  --row-gap: 28px; --t-body:16px; }
+html[data-density="airy"]    { --pad-section: 140px; --row-gap: 42px; --t-body:17px; }
 
 /* ── base ─────────────────────────────────────────────────────────────── */
 body {
@@ -194,11 +194,11 @@ img { max-width: 100%; display: block; }
 .rail-button:hover .idx { opacity: 1; }
 
 /* ── main column ──────────────────────────────────────────────────────── */
-.main { min-width: 0; padding-left: 48px; padding-right: 0; padding-bottom: 120px; }
+.main { min-width: 0; padding-left: 48px; padding-right: 0; padding-bottom: 64px; }
 @media (max-width: 900px) { .main { padding-left: 0; } }
 
 section { padding-top: var(--pad-section); scroll-margin-top: 24px; }
-section:first-child { padding-top: 56px; }
+section:first-child { padding-top: 40px; }
 
 /* ── section header ───────────────────────────────────────────────────── */
 .sec-head {
@@ -243,7 +243,7 @@ html[data-type="instrument"] .sec-title { font-style: italic; }
 }
 
 /* ── hero — editorial layout ──────────────────────────────────────────── */
-.hero { padding-top: 56px; }
+.hero { padding-top: 40px; }
 
 .hero-eyebrow {
   font-family: var(--mono);
@@ -509,9 +509,9 @@ html[data-type="modern"] .contact-statement em { font-style: normal; color: var(
    ───────────────────────────────────────────────────────────────────────── */
 
 .page-head {
-  margin-top: 8px;
-  margin-bottom: 44px;
-  padding-bottom: 22px;
+  margin-top: 4px;
+  margin-bottom: 28px;
+  padding-bottom: 18px;
   border-bottom: 1px solid var(--rule);
 }
 .page-head .sec-num {
@@ -537,6 +537,11 @@ html[data-type="instrument"] .page-title { font-style: italic; }
   max-width: 60ch;
   margin: 0;
 }
+.page-lead a.inline-link {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.page-lead a.inline-link:hover { opacity: 0.85; }
 html[data-type="editorial"] .page-lead em,
 html[data-type="instrument"] .page-lead em { font-style: italic; color: var(--accent); }
 html[data-type="modern"] .page-lead em { font-style: normal; color: var(--accent); }
