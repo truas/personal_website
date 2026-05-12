@@ -1,45 +1,270 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      data-palette="ink"
+      data-theme="dark"
+      data-type="modern"
+      data-density="regular"
+      data-hero="editorial">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PD Dr. Terry Ruas</title>
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PD Dr. Terry Ruas — NLP &amp; AI Research</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="/images/favicon.ico">
+
+  <script>
+    // Apply theme before paint to avoid a flash.
+    document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/redesign.css" />
 </head>
 <body>
 
-  <header class="navbar"></header>
+  <div class="shell">
 
-  <main class="container">
-    <section class="intro">
-      <img src="images/portrait.png" alt="Portrait of Terry Ruas" class="profile-img" width="170" height="170" loading="eager" decoding="async">
-      <section class="social-links" aria-label="Social links">
-        <a href="https://scholar.google.com/citations?user=mCDF4XMAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
-            <i class="fa-brands fa-google" aria-hidden="true"></i>
-        </a>
-        <a href="https://github.com/truas" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://twitter.com/ruasterry" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-            <i class="fa-brands fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/terryruas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-        </a>
+    <nav class="rail" aria-label="Primary">
+      <a class="rail-brand" href="index.html">
+        <span class="dot" aria-hidden="true"></span>
+        <span>PD Dr. Terry <span class="name">Ruas</span></span>
+      </a>
+
+      <div class="rail-section">Sections</div>
+      <a href="#index"        class="rail-link"><span>Index</span><span class="idx">00</span></a>
+      <a href="#about"        class="rail-link"><span>About</span><span class="idx">01</span></a>
+      <a href="#research"     class="rail-link"><span>Research</span><span class="idx">02</span></a>
+      <a href="#publications" class="rail-link"><span>Publications</span><span class="idx">03</span></a>
+      <a href="#teaching"     class="rail-link"><span>Teaching</span><span class="idx">04</span></a>
+      <a href="#contact"      class="rail-link"><span>Contact</span><span class="idx">05</span></a>
+
+      <div class="rail-section">More</div>
+      <a class="rail-link" href="about.html"><span>Full bio</span><span class="idx">↗</span></a>
+      <a class="rail-link" href="publications.html"><span>All publications</span><span class="idx">↗</span></a>
+      <a class="rail-link" href="teaching.html"><span>All courses</span><span class="idx">↗</span></a>
+
+      <div class="rail-section" style="margin-top: auto;">Connect</div>
+      <a class="rail-link" href="https://scholar.google.com/citations?user=mCDF4XMAAAAJ" target="_blank" rel="noopener noreferrer"><span>Scholar</span><span class="idx">↗</span></a>
+      <a class="rail-link" href="https://github.com/truas" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span class="idx">↗</span></a>
+      <a class="rail-link" href="https://www.linkedin.com/in/terryruas/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span class="idx">↗</span></a>
+      <a class="rail-link" href="https://twitter.com/ruasterry" target="_blank" rel="noopener noreferrer"><span>Twitter / X</span><span class="idx">↗</span></a>
+
+      <button id="theme-toggle" class="rail-link rail-button" type="button" aria-label="Toggle theme">
+        <span>Theme</span><span class="idx" aria-hidden="true">🌓</span>
+      </button>
+    </nav>
+
+    <main class="main">
+
+      <!-- 00 INDEX / HERO ──────────────────────────────────────────────── -->
+      <section id="index" class="hero">
+        <div class="hero-eyebrow">
+          <span class="pulse" aria-hidden="true"></span>
+          <span>Senior researcher · NLP &amp; AI</span>
+          <span style="opacity:.4">·</span>
+          <span>Göttingen, DE</span>
+        </div>
+        <h1 class="hero-name">
+          <span class="first">Terry </span><span class="last">Ruas</span>
+        </h1>
+        <div class="hero-lead">
+          <p class="hero-statement">
+            Research Group Leader in <em>Natural Language Processing</em> and the impact of <em>Artificial Intelligence</em> on writing and reading in human communication.
+          </p>
+          <dl class="hero-meta">
+            <dt>Affiliations</dt>
+            <dd>University of Göttingen</dd>
+            <dd>SUB · State &amp; University Library</dd>
+            <dt>Interests</dt>
+            <dd>NLP · AI use &amp; impact · data science</dd>
+          </dl>
+        </div>
       </section>
-      <p>
-        Hi, my name is Terry Ruas. I work as a group leader in natural language processing (NLP) and artificial intelligence (AI) topics at the University of Göttingen and the Göttingen State and University Library in Germany. More specifically, I am interested on the impacts of AI language and understanding through communication, writing, diversity, creativity, problem solving, and other dimensions.  I’m always searching for exciting topics, collaborators, good food, places to visit, and coffee (not necessarily in that order).
-      </p>
-      <p>
-        If you have any interesting ideas and suggestions for any of these things, please send me a message at ruas{at}uni{dash}goettingen{dot}de
-      </p>
-    </section>
-  </main>
 
-  <footer class="footer"></footer>
+      <!-- 01 ABOUT ─────────────────────────────────────────────────────── -->
+      <section id="about">
+        <header class="sec-head">
+          <div class="sec-num">01 / About</div>
+          <div>
+            <div class="sec-kicker">Who</div>
+            <h2 class="sec-title">The short version, and why it matters.</h2>
+          </div>
+        </header>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I am a Computer Science researcher at the University of Göttingen — Computer Science Department and Göttingen State and University Library — working in the <a href="https://www.gipplab.org" class="inline-link" target="_blank" rel="noopener noreferrer">GippLab</a>. My research is focused on natural language processing and artificial intelligence.
+            </p>
+            <p>
+              I obtained my Habilitation at the University of Göttingen, a Ph.D. in Computer Science at the University of Michigan, a master's in Information Engineering at the Federal University of ABC, and a Bachelor's in Computer Science and Science &amp; Technology at the same institution. I also worked as a Ph.D. intern at the National Institute of Informatics (Japan) at the <a href="http://www-al.nii.ac.jp" class="inline-link" target="_blank" rel="noopener noreferrer">Aizawa Laboratory</a>, and spent six years at IBM Brazil in software product, team-lead, and IT specialist roles.
+            </p>
+            <p>
+              My interests lie in the overlap of NLP, AI, and machine learning — particularly research that requires extracting and applying semantic features from textual data to solve significant problems.
+            </p>
+            <p>
+              <a href="about.html" class="inline-link">Read the long version →</a>
+            </p>
+          </div>
+          <aside class="about-aside">
+            <h4>Service</h4>
+            <ul>
+              <li><span>Reviewer (ACM, IEEE, …)</span><span>25+ venues</span></li>
+              <li><span>Talks &amp; invited lectures</span><span>worldwide</span></li>
+            </ul>
+            <h4>Education</h4>
+            <ul>
+              <li><span>Habilitation</span><span>Göttingen</span></li>
+              <li><span>Ph.D., Computer Science</span><span>U Michigan</span></li>
+              <li><span>M.Sc., Information Eng.</span><span>UFABC</span></li>
+              <li><span>B.Sc., Computer Science</span><span>UFABC</span></li>
+            </ul>
+          </aside>
+        </div>
+      </section>
 
-  <script src="js/load-dynamic-content.js"></script>
+      <!-- 02 RESEARCH ─────────────────────────────────────────────────── -->
+      <section id="research">
+        <header class="sec-head">
+          <div class="sec-num">02 / Research</div>
+          <div>
+            <div class="sec-kicker">What we study</div>
+            <h2 class="sec-title">Three threads, one question:<br/>what changes when machines write?</h2>
+          </div>
+        </header>
+        <div class="themes">
+
+          <article class="theme">
+            <div class="theme-num">01</div>
+            <div>
+              <h3 class="theme-title">Natural Language <em>Processing</em></h3>
+              <div class="theme-tags">
+                <span class="theme-tag">language models</span>
+                <span class="theme-tag">scholarly text</span>
+                <span class="theme-tag">representation</span>
+                <span class="theme-tag">retrieval</span>
+                <span class="theme-tag">evaluation</span>
+              </div>
+            </div>
+            <p class="theme-desc">
+              Models, methods, and evaluation for written language at scale — with a focus on scholarly text: representation, paraphrase, summarisation, retrieval, and the seams where these connect to the act of writing itself.
+            </p>
+          </article>
+
+          <article class="theme">
+            <div class="theme-num">02</div>
+            <div>
+              <h3 class="theme-title">AI — Usage &amp; <em>Impact</em></h3>
+              <div class="theme-tags">
+                <span class="theme-tag">generative AI</span>
+                <span class="theme-tag">academic integrity</span>
+                <span class="theme-tag">detection</span>
+                <span class="theme-tag">human–AI collab</span>
+                <span class="theme-tag">bias</span>
+              </div>
+            </div>
+            <p class="theme-desc">
+              How generative systems are reshaping communication, knowledge work, and academic integrity. Studies, instruments, and detection methods for understanding what changes when humans write with machines.
+            </p>
+          </article>
+
+          <article class="theme">
+            <div class="theme-num">03</div>
+            <div>
+              <h3 class="theme-title">Data <em>Science</em></h3>
+              <div class="theme-tags">
+                <span class="theme-tag">bibliometrics</span>
+                <span class="theme-tag">knowledge graphs</span>
+                <span class="theme-tag">corpora</span>
+                <span class="theme-tag">open science</span>
+              </div>
+            </div>
+            <p class="theme-desc">
+              Scholarly knowledge graphs, bibliometrics, and large-scale corpora — the infrastructure that makes empirical NLP research on the literature itself possible.
+            </p>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 03 PUBLICATIONS ─────────────────────────────────────────────── -->
+      <section id="publications">
+        <header class="sec-head">
+          <div class="sec-num">03 / Publications</div>
+          <div>
+            <div class="sec-kicker">Selected work</div>
+            <h2 class="sec-title">Recent papers.</h2>
+            <p class="sec-lead">
+              A curated subset of the most recent work. The complete list lives on <a href="publications.html" class="inline-link">the publications page</a>.
+            </p>
+          </div>
+        </header>
+        <div class="pubs" id="index-pubs">
+          <div class="pub-loading">Loading publications…</div>
+        </div>
+        <div class="pubs-foot">
+          <span id="pubs-count"></span>
+          <a href="publications.html">All publications →</a>
+        </div>
+      </section>
+
+      <!-- 04 TEACHING ─────────────────────────────────────────────────── -->
+      <section id="teaching">
+        <header class="sec-head">
+          <div class="sec-num">04 / Teaching</div>
+          <div>
+            <div class="sec-kicker">Courses</div>
+            <h2 class="sec-title">What we teach.</h2>
+            <p class="sec-lead">
+              A snapshot of recent and upcoming offerings. The full archive lives on <a href="teaching.html" class="inline-link">the teaching page</a>.
+            </p>
+          </div>
+        </header>
+        <div class="teach" id="index-teach">
+          <div class="course"><div class="course-blurb">Loading courses…</div></div>
+        </div>
+        <div class="teach-foot">
+          <a href="teaching.html">All courses →</a>
+        </div>
+      </section>
+
+      <!-- 05 CONTACT ──────────────────────────────────────────────────── -->
+      <section id="contact">
+        <header class="sec-head">
+          <div class="sec-num">05 / Contact</div>
+          <div>
+            <div class="sec-kicker">Get in touch</div>
+            <h2 class="sec-title">Working together.</h2>
+          </div>
+        </header>
+        <div class="contact-block">
+          <p class="contact-statement">
+            If you have an interesting <em>idea</em>, a paper to discuss, or a <em>good place</em> in Göttingen for coffee — send me a note.
+          </p>
+          <dl class="contact-list">
+            <dt>Email</dt>
+            <dd>ruas{at}uni{dash}goettingen{dot}de</dd>
+            <dt>Affiliation</dt>
+            <dd>SUB Göttingen · State &amp; University Library</dd>
+            <dt>Scholar / GitHub</dt>
+            <dd><a href="https://scholar.google.com/citations?user=mCDF4XMAAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a> · <a href="https://github.com/truas" target="_blank" rel="noopener noreferrer">GitHub</a></dd>
+            <dt>For prospective students</dt>
+            <dd>Send a short note about your interests and a CV.</dd>
+          </dl>
+        </div>
+      </section>
+
+      <footer>
+        <span>© 2026 · Terry Ruas</span>
+        <span>terryruas.com · revised May 2026</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="js/redesign-common.js" defer></script>
+  <script src="js/index.js" defer></script>
 </body>
 </html>

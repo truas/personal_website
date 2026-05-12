@@ -1,8 +1,8 @@
-// Renders data/teaching.json into the teaching page with search
-// (course + code + institution + term), year/institution/role
-// filter chips, and year-grouped cards.
+// Renders data/teaching.json into the teaching page using the redesign's
+// row layout (term | course + institution | role). Keeps the existing
+// search + year/institution/role chip toolbar with year-grouped collapsibles.
 //
-// Mirrors js/publications.js conventions; no external deps.
+// No external dependencies; vanilla DOM APIs only.
 
 const ROLE_ORDER = ["Lecturer", "Graduate Student Instructor", "Teaching Assistant"];
 
@@ -52,36 +52,28 @@ function entryMatches(e) {
   return true;
 }
 
+function roleSlug(role) {
+  return role.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+}
+
 // --- render building blocks --------------------------------------------------
 
 function renderCard(e) {
-  const card = el("article", { class: "teach-card", "data-id": e.id });
+  const article = el("article", { class: "teach-card", "data-id": e.id });
 
+  article.appendChild(el("div", { class: "teach-term-mono" }, e.term || ""));
+
+  const mid = el("div", { class: "teach-mid" });
   const titleText = e.code ? `${e.code} — ${e.course}` : e.course;
-  card.appendChild(el("h3", { class: "teach-title" }, titleText));
+  mid.appendChild(el("h3", { class: "teach-title" }, titleText));
+  mid.appendChild(el("div", { class: "teach-meta" },
+    el("span", { class: "teach-institution" }, e.institution),
+  ));
+  article.appendChild(mid);
 
-  const metaParts = [];
-  metaParts.push(el("span", { class: "teach-institution" }, e.institution));
-  metaParts.push(el("span", { class: "teach-term" }, e.term));
-  card.appendChild(el("p", { class: "teach-meta" }, ...joinNodes(metaParts, " · ")));
+  article.appendChild(el("div", { class: `teach-role role-${roleSlug(e.role)}` }, e.role));
 
-  if (e.role) {
-    card.appendChild(el("span", { class: `teach-role role-${roleSlug(e.role)}` }, e.role));
-  }
-  return card;
-}
-
-function joinNodes(nodes, sep) {
-  const out = [];
-  nodes.forEach((n, i) => {
-    if (i > 0) out.push(document.createTextNode(sep));
-    out.push(n);
-  });
-  return out;
-}
-
-function roleSlug(role) {
-  return role.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+  return article;
 }
 
 function renderList() {
@@ -147,10 +139,7 @@ function renderChips() {
   const roleCounts = new Map();
   for (const e of state.all) {
     if (e.year) yearCounts.set(e.year, (yearCounts.get(e.year) || 0) + 1);
-    if (e.institution) {
-      const key = e.institution;
-      instCounts.set(key, (instCounts.get(key) || 0) + 1);
-    }
+    if (e.institution) instCounts.set(e.institution, (instCounts.get(e.institution) || 0) + 1);
     if (e.role) roleCounts.set(e.role, (roleCounts.get(e.role) || 0) + 1);
   }
 
@@ -166,7 +155,7 @@ function renderChips() {
     }, yearCounts.get(y)));
   });
 
-  // Institution — use short name for chip label, full name as title/aria.
+  // Institution
   instWrap.appendChild(el("span", { class: "pubs-filter-label" }, "Institution"));
   instWrap.appendChild(makeChip("All", state.institutionFilter === null, () => {
     state.institutionFilter = null; renderChips(); renderList();
@@ -205,7 +194,7 @@ async function init() {
   const root = document.getElementById("teaching-list");
   if (!root) return;
 
-  root.innerHTML = `<div class="pub-loading">Loading courses…</div>`;
+  root.innerHTML = `<div class="pub-empty">Loading courses…</div>`;
   try {
     const res = await fetch("data/teaching.json", { cache: "default" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);

@@ -1,53 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      data-palette="ink"
+      data-theme="dark"
+      data-type="modern"
+      data-density="regular">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - PD Dr. Terry Ruas</title>
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — PD Dr. Terry Ruas</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="/images/favicon.ico">
+
+  <script>
+    // Apply theme before paint to avoid a flash.
+    document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/redesign.css" />
 </head>
 <body>
 
-  <header class="navbar"></header>
+  <div class="shell">
 
-  <main class="container">
-    
-    <section class="intro">
-      <h1>About</h1>
-      <img src="images/portrait.png" alt="Portrait of Terry Ruas" class="profile-img" width="170" height="170" loading="lazy" decoding="async">
-      <section class="social-links" aria-label="Social links">
-        <a href="https://scholar.google.com/citations?user=mCDF4XMAAAAJ" target="_blank" rel="noopener noreferrer" aria-label="Google Scholar">
-            <i class="fa-brands fa-google" aria-hidden="true"></i>
-        </a>
-        <a href="https://github.com/truas" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-            <i class="fa-brands fa-github" aria-hidden="true"></i>
-        </a>
-        <a href="https://twitter.com/ruasterry" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-            <i class="fa-brands fa-twitter" aria-hidden="true"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/terryruas/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
-        </a>
+    <nav class="rail" aria-label="Primary">
+      <a class="rail-brand" href="index.html">
+        <span class="dot" aria-hidden="true"></span>
+        <span>PD Dr. Terry <span class="name">Ruas</span></span>
+      </a>
+
+      <div class="rail-section">Sections</div>
+      <a class="rail-link"        href="index.html"><span>Index</span><span class="idx">00</span></a>
+      <a class="rail-link active" href="about.html" aria-current="page"><span>About</span><span class="idx">01</span></a>
+      <a class="rail-link"        href="index.html#research"><span>Research</span><span class="idx">02</span></a>
+      <a class="rail-link"        href="publications.html"><span>Publications</span><span class="idx">03</span></a>
+      <a class="rail-link"        href="teaching.html"><span>Teaching</span><span class="idx">04</span></a>
+      <a class="rail-link"        href="index.html#contact"><span>Contact</span><span class="idx">05</span></a>
+
+      <div class="rail-section" style="margin-top: auto;">Connect</div>
+      <a class="rail-link" href="https://scholar.google.com/citations?user=mCDF4XMAAAAJ" target="_blank" rel="noopener noreferrer"><span>Scholar</span><span class="idx">↗</span></a>
+      <a class="rail-link" href="https://github.com/truas" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span class="idx">↗</span></a>
+      <a class="rail-link" href="https://www.linkedin.com/in/terryruas/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span class="idx">↗</span></a>
+      <a class="rail-link" href="https://twitter.com/ruasterry" target="_blank" rel="noopener noreferrer"><span>Twitter / X</span><span class="idx">↗</span></a>
+
+      <button id="theme-toggle" class="rail-link rail-button" type="button" aria-label="Toggle theme">
+        <span>Theme</span><span class="idx" aria-hidden="true">🌓</span>
+      </button>
+    </nav>
+
+    <main class="main">
+
+      <header class="page-head">
+        <div class="sec-num">01 / About</div>
+        <h1 class="page-title">About.</h1>
+        <p class="page-lead">
+          The longer version — background, places, and the questions that keep me <em>busy</em>.
+        </p>
+      </header>
+
+      <section class="about-grid">
+        <div class="about-text">
+          <p>
+            Terry Ruas is a Computer Science researcher at the University of Göttingen — Computer Science Department and Göttingen State and University Library, Germany — working in the <a href="https://www.gipplab.org" class="inline-link" target="_blank" rel="noopener noreferrer">GippLab</a>. His research is focused on natural language processing (NLP) and artificial intelligence (AI).
+          </p>
+          <p>
+            Terry obtained his Habilitation at the University of Göttingen, a Ph.D. in Computer Science at the University of Michigan (USA), a master's in Information Engineering at the Federal University of ABC (Brazil), and a Bachelor's in Computer Science and Science &amp; Technology at the Federal University of ABC. He also worked as a Ph.D. intern at the National Institute of Informatics (Japan) at the <a href="http://www-al.nii.ac.jp" class="inline-link" target="_blank" rel="noopener noreferrer">Aizawa Laboratory</a>. In industry, he worked at IBM Brazil for six years in several roles — software product manager, team leader, and IT specialist. His research interests sit at the overlap of NLP, AI, and machine learning, with a particular focus on extracting and applying semantic features from text to solve significant problems.
+          </p>
+          <p>
+            Terry has published <a href="publications.html" class="inline-link">numerous papers</a> in top-tier NLP and AI venues and has reviewed for over 25 venues (ACM, IEEE, and others). His collaborators reach across Brazil, Canada, Czech Republic, Germany, India, Japan, and beyond. He is also an enthusiastic speaker and has given talks on NLP and AI worldwide. When not working, Terry is always looking for new places to eat, travel, recipes to try, and good coffee.
+          </p>
+        </div>
+
+        <aside class="about-aside">
+          <h4>Affiliations</h4>
+          <ul>
+            <li><span>University of Göttingen</span><span>2022 –</span></li>
+            <li><span>SUB · State &amp; University Library</span><span>2022 –</span></li>
+            <li><span>GippLab</span><span>2022 –</span></li>
+          </ul>
+          <h4>Service</h4>
+          <ul>
+            <li><span>Reviewer (ACM, IEEE, …)</span><span>25+ venues</span></li>
+            <li><span>Talks &amp; invited lectures</span><span>worldwide</span></li>
+          </ul>
+          <h4>Contact</h4>
+          <ul>
+            <li><span>ruas{at}uni{dash}goettingen{dot}de</span><span>email</span></li>
+          </ul>
+        </aside>
       </section>
-      <p>
-        Terry Ruas is a Computer Science researcher at the University of Göttingen (Computer Science Department and Göttingen State and University Library), Germany, in the <a href="https://www.gipplab.org">GippLab</a>. His research is focused on natural language processing (NLP) and artificial intelligence (AI).
-      </p>
-      <p>
-        Terry obtained his Habilitation at the University of Göttingen, Ph.D. in Computer Science at the University of Michigan (USA), a master’s in Information Engineering at the Federal University of ABC (Brazil), and a Bachelor’s in Computer Science and Science & Technology at the Federal University of ABC (Brazil). He also worked as a Ph.D. intern at the National Institute of Informatics (Japan) at the <a href="http://www-al.nii.ac.jp">Aizawa Laboratory</a>. In the industry, he worked at IBM (Brazil) for six years in different positions (e.g., software product manager, Team Leader, IT Specialist). His research interests mainly lie in the overlap of NLP, AI, and machine learning. More specifically, he is passionate about research challenges that require extracting and applying semantic features from textual data to solve significant problems.
-      </p>
-      <p>
-        Terry has published <a href="publications.html">numerous papers</a> in top-tier NLP and AI venues and has been a reviewer in over 25 venues (e.g., ACM, IEEE, etc.). His collaborators extend through Brazil, Canada, Czech, Germany, India, Japan, etc. He is also an enthusiastic speaker and has given talks on NLP and AI worldwide. When not working, Terry always looks for new places to eat, travel, cool recipes to try, and good coffee.
-      </p>
-      <p>
-        If you want to check Terry's new publications, please click <a href="publications.html">here</a>.
-      </p>
-    </section>
-  </main>
 
-  <footer class="footer"></footer>
+      <section class="about-section" style="margin-top: 72px;">
+        <h3>Education</h3>
+        <ul>
+          <li><span class="when">Göttingen</span><span>Habilitation in Computer Science.</span></li>
+          <li><span class="when">U Michigan</span><span>Ph.D., Computer Science.</span></li>
+          <li><span class="when">UFABC</span><span>M.Sc., Information Engineering.</span></li>
+          <li><span class="when">UFABC</span><span>B.Sc., Computer Science / Science &amp; Technology.</span></li>
+        </ul>
+      </section>
 
-  <script src="js/load-dynamic-content.js"></script>
+      <section class="about-section">
+        <h3>Past experience</h3>
+        <ul>
+          <li><span class="when">2016 – 2017</span><span>Ph.D. intern at the National Institute of Informatics, Aizawa Laboratory (Japan).</span></li>
+          <li><span class="when">~6 years</span><span>IBM Brazil — software product manager, team leader, IT specialist.</span></li>
+        </ul>
+      </section>
+
+      <footer>
+        <span>© 2026 · Terry Ruas</span>
+        <span>terryruas.com · revised May 2026</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="js/redesign-common.js" defer></script>
 </body>
 </html>

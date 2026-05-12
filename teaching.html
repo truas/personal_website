@@ -1,44 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"
+      data-palette="ink"
+      data-theme="dark"
+      data-type="modern"
+      data-density="regular">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teaching - PD Dr. Terry Ruas</title>
-  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teaching — PD Dr. Terry Ruas</title>
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="/images/favicon.ico">
+
+  <script>
+    document.documentElement.setAttribute("data-theme", localStorage.getItem("theme") || "dark");
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/redesign.css" />
 </head>
 <body>
 
-  <header class="navbar"></header>
+  <div class="shell">
 
-  <main class="container">
-    <h1>Teaching</h1>
-    <p>
-      Courses I have taught or assisted with — filter by year, institution, or role.
-    </p>
+    <nav class="rail" aria-label="Primary">
+      <a class="rail-brand" href="index.html">
+        <span class="dot" aria-hidden="true"></span>
+        <span>PD Dr. Terry <span class="name">Ruas</span></span>
+      </a>
 
-    <section class="publications-container" aria-label="Teaching">
-      <div class="pubs-toolbar">
-        <label class="pubs-search" for="teach-search-input">
-          <span class="pubs-search-icon" aria-hidden="true"><i class="fa-solid fa-magnifying-glass"></i></span>
-          <input id="teach-search-input" type="search" placeholder="Search by course, code, institution, or term…" autocomplete="off" aria-label="Search courses" />
-          <button id="teach-search-clear" class="pubs-clear" type="button" aria-label="Clear search">✕</button>
-        </label>
-        <div id="teach-year-chips" class="pubs-filter-group" role="group" aria-label="Filter by year"></div>
-        <div id="teach-institution-chips" class="pubs-filter-group" role="group" aria-label="Filter by institution"></div>
-        <div id="teach-role-chips" class="pubs-filter-group" role="group" aria-label="Filter by role"></div>
-      </div>
+      <div class="rail-section">Sections</div>
+      <a class="rail-link"        href="index.html"><span>Index</span><span class="idx">00</span></a>
+      <a class="rail-link"        href="about.html"><span>About</span><span class="idx">01</span></a>
+      <a class="rail-link"        href="index.html#research"><span>Research</span><span class="idx">02</span></a>
+      <a class="rail-link"        href="publications.html"><span>Publications</span><span class="idx">03</span></a>
+      <a class="rail-link active" href="teaching.html" aria-current="page"><span>Teaching</span><span class="idx">04</span></a>
+      <a class="rail-link"        href="index.html#contact"><span>Contact</span><span class="idx">05</span></a>
 
-      <p id="teach-stats" class="pubs-stats" aria-live="polite"></p>
+      <div class="rail-section" style="margin-top: auto;">Connect</div>
+      <a class="rail-link" href="https://scholar.google.com/citations?user=mCDF4XMAAAAJ" target="_blank" rel="noopener noreferrer"><span>Scholar</span><span class="idx">↗</span></a>
+      <a class="rail-link" href="https://github.com/truas" target="_blank" rel="noopener noreferrer"><span>GitHub</span><span class="idx">↗</span></a>
+      <a class="rail-link" href="https://www.linkedin.com/in/terryruas/" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><span class="idx">↗</span></a>
+      <a class="rail-link" href="https://twitter.com/ruasterry" target="_blank" rel="noopener noreferrer"><span>Twitter / X</span><span class="idx">↗</span></a>
 
-      <div id="teaching-list"></div>
-    </section>
-  </main>
+      <button id="theme-toggle" class="rail-link rail-button" type="button" aria-label="Toggle theme">
+        <span>Theme</span><span class="idx" aria-hidden="true">🌓</span>
+      </button>
+    </nav>
 
-  <footer class="footer"></footer>
+    <main class="main">
 
-  <script src="js/load-dynamic-content.js"></script>
+      <header class="page-head">
+        <div class="sec-num">04 / Teaching</div>
+        <h1 class="page-title">Teaching.</h1>
+        <p class="page-lead">
+          Courses I have taught or assisted with — filter by <em>year</em>, <em>institution</em>, or <em>role</em>.
+        </p>
+      </header>
+
+      <section class="publications-container" aria-label="Teaching">
+
+        <div class="pubs-toolbar">
+          <label class="pubs-search" for="teach-search-input">
+            <span class="pubs-search-icon" aria-hidden="true">⌕</span>
+            <input id="teach-search-input" type="search" placeholder="Search by course, code, institution, or term…" autocomplete="off" aria-label="Search courses" />
+            <button id="teach-search-clear" class="pubs-clear" type="button" aria-label="Clear search">✕</button>
+          </label>
+          <div id="teach-year-chips" class="pubs-filter-group" role="group" aria-label="Filter by year"></div>
+          <div id="teach-institution-chips" class="pubs-filter-group" role="group" aria-label="Filter by institution"></div>
+          <div id="teach-role-chips" class="pubs-filter-group" role="group" aria-label="Filter by role"></div>
+        </div>
+
+        <p id="teach-stats" class="pubs-stats" aria-live="polite"></p>
+
+        <div id="teaching-list"></div>
+
+      </section>
+
+      <footer>
+        <span>© 2026 · Terry Ruas</span>
+        <span>terryruas.com · revised May 2026</span>
+      </footer>
+
+    </main>
+  </div>
+
+  <script src="js/redesign-common.js" defer></script>
   <script src="js/teaching.js" defer></script>
 </body>
 </html>

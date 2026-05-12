@@ -1,17 +1,17 @@
-// Renders data/publications.json into the publications page with
-// search (title + authors), year & type filter chips, and per-entry
-// expandable abstract + BibTeX.
+// Renders data/publications.json into the publications page using the
+// redesign's row layout (year | content | venue). Keeps the existing
+// search + year/type chip toolbar and the abstract / BibTeX toggles.
 //
 // No external dependencies; vanilla DOM APIs only.
 
-const ME = "Ruas"; // last name used to bold "me" in author lists
+const ME = "Ruas";
 const TYPE_ORDER = ["Conference", "Journal", "Preprint", "Workshop", "Book", "Report", "Thesis", "Other"];
 
 const state = {
   all: [],
   query: "",
-  yearFilter: null, // number or null = all
-  typeFilter: null, // string or null = all
+  yearFilter: null,
+  typeFilter: null,
 };
 
 // --- helpers -----------------------------------------------------------------
@@ -69,58 +69,57 @@ function entryMatches(e) {
 // --- render building blocks --------------------------------------------------
 
 function renderCard(e) {
+  const article = el("article", { class: "pub", "data-id": e.id });
+
+  // Year column.
+  article.appendChild(el("div", { class: "pub-year" }, String(e.year || "")));
+
+  // Middle column: title, authors, action links, optional detail panels.
+  const mid = el("div", { class: "pub-mid" });
+
   const titleInner = e.url
     ? el("a", { href: e.url, target: "_blank", rel: "noopener noreferrer" }, e.title)
     : document.createTextNode(e.title);
+  mid.appendChild(el("h3", { class: "pub-title" }, titleInner));
+  mid.appendChild(el("div", { class: "pub-authors" }, ...joinNodes(fmtAuthors(e.authors), ", ")));
 
-  const card = el("article", { class: "pub-card", "data-id": e.id });
-  card.appendChild(el("h3", { class: "pub-title" }, titleInner));
-  card.appendChild(el("p", { class: "pub-authors" }, ...joinNodes(fmtAuthors(e.authors), ", ")));
-
-  const metaParts = [];
-  if (e.venue) metaParts.push(el("span", { class: "pub-venue" }, e.venue));
-  if (e.year) metaParts.push(el("span", {}, String(e.year)));
-  metaParts.push(el("span", {}, e.type));
-  card.appendChild(el("p", { class: "pub-meta" }, ...joinNodes(metaParts, " · ")));
-
-  // Action buttons + collapsible panels.
-  const actions = el("div", { class: "pub-actions" });
+  const links = el("div", { class: "pub-links" });
   const abstractPanel = el("div", { class: "pub-detail", hidden: true });
   const bibtexPanel = el("div", { class: "pub-detail pub-bibtex", hidden: true });
 
   if (e.doi) {
-    actions.appendChild(el("a", {
-      class: "pub-btn",
+    links.appendChild(el("a", {
+      class: "pub-link",
       href: `https://doi.org/${e.doi}`,
       target: "_blank",
       rel: "noopener noreferrer",
       "aria-label": `DOI ${e.doi}`,
-    }, "DOI"));
+    }, "doi"));
   }
-  if (e.url && e.url !== `https://doi.org/${e.doi}`) {
-    actions.appendChild(el("a", {
-      class: "pub-btn",
+  if (e.url && (!e.doi || e.url !== `https://doi.org/${e.doi}`)) {
+    links.appendChild(el("a", {
+      class: "pub-link",
       href: e.url,
       target: "_blank",
       rel: "noopener noreferrer",
-    }, "Link"));
+    }, "link"));
   }
 
   if (e.abstract) {
     abstractPanel.appendChild(el("p", { class: "pub-abstract" }, e.abstract));
     const absBtn = el("button", {
-      class: "pub-btn",
+      class: "pub-link",
       type: "button",
       "aria-pressed": "false",
       "aria-expanded": "false",
-    }, "Abstract");
+    }, "abstract");
     absBtn.addEventListener("click", () => {
       const open = abstractPanel.hasAttribute("hidden");
       if (open) abstractPanel.removeAttribute("hidden"); else abstractPanel.setAttribute("hidden", "");
       absBtn.setAttribute("aria-pressed", String(open));
       absBtn.setAttribute("aria-expanded", String(open));
     });
-    actions.appendChild(absBtn);
+    links.appendChild(absBtn);
   }
 
   if (e.bibtex) {
@@ -138,25 +137,35 @@ function renderCard(e) {
     });
     bibtexPanel.appendChild(copy);
     bibtexPanel.appendChild(pre);
+
     const bibBtn = el("button", {
-      class: "pub-btn",
+      class: "pub-link",
       type: "button",
       "aria-pressed": "false",
       "aria-expanded": "false",
-    }, "BibTeX");
+    }, "bibtex");
     bibBtn.addEventListener("click", () => {
       const open = bibtexPanel.hasAttribute("hidden");
       if (open) bibtexPanel.removeAttribute("hidden"); else bibtexPanel.setAttribute("hidden", "");
       bibBtn.setAttribute("aria-pressed", String(open));
       bibBtn.setAttribute("aria-expanded", String(open));
     });
-    actions.appendChild(bibBtn);
+    links.appendChild(bibBtn);
   }
 
-  card.appendChild(actions);
-  if (abstractPanel.children.length) card.appendChild(abstractPanel);
-  if (bibtexPanel.children.length) card.appendChild(bibtexPanel);
-  return card;
+  if (links.children.length) mid.appendChild(links);
+  if (abstractPanel.children.length) mid.appendChild(abstractPanel);
+  if (bibtexPanel.children.length) mid.appendChild(bibtexPanel);
+
+  article.appendChild(mid);
+
+  // Venue column.
+  const venueParts = [];
+  if (e.venue) venueParts.push(e.venue);
+  if (e.type)  venueParts.push(e.type);
+  article.appendChild(el("div", { class: "pub-venue" }, venueParts.join(" · ")));
+
+  return article;
 }
 
 function renderList() {
@@ -190,7 +199,7 @@ function renderList() {
       el("span", { class: "pubs-year-count" }, `${items.length} ${items.length === 1 ? "publication" : "publications"}`)
     );
     details.appendChild(summary);
-    const list = el("div", { class: "pub-list" });
+    const list = el("div", { class: "pubs" });
     items.forEach((e) => list.appendChild(renderCard(e)));
     details.appendChild(list);
     root.appendChild(details);
@@ -253,7 +262,7 @@ async function init() {
   const root = document.getElementById("publications-list");
   if (!root) return;
 
-  root.innerHTML = `<div class="pub-loading">Loading publications…</div>`;
+  root.innerHTML = `<div class="pub-empty">Loading publications…</div>`;
   try {
     const res = await fetch("data/publications.json", { cache: "default" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -263,7 +272,6 @@ async function init() {
     return;
   }
 
-  // Search input wiring.
   const search = document.getElementById("pubs-search-input");
   const clearBtn = document.getElementById("pubs-search-clear");
   const onChange = debounce(() => {
