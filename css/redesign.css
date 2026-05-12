@@ -510,9 +510,9 @@ html[data-type="modern"] .contact-statement em { font-style: normal; color: var(
    ───────────────────────────────────────────────────────────────────────── */
 
 .page-head {
-  margin-top: 4px;
-  margin-bottom: 28px;
-  padding-bottom: 18px;
+  margin-top: 0;
+  margin-bottom: 14px;
+  padding-bottom: 14px;
   border-bottom: 1px solid var(--rule);
 }
 .page-head .sec-num {
@@ -866,20 +866,20 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
   .about-section li .when { order: -1; font-size: 11px; }
 }
 
-/* ── funding ─────────────────────────────────────────────────────────── */
-.fund-list {
+/* ── projects ────────────────────────────────────────────────────────── */
+.proj-list {
   display: flex;
   flex-direction: column;
 }
-.fund-card {
+.proj-card {
   padding: 18px 0;
   border-top: 1px solid var(--rule);
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-.fund-card:last-child { border-bottom: 1px solid var(--rule); }
-.fund-title {
+.proj-card:last-child { border-bottom: 1px solid var(--rule); }
+.proj-title {
   font-family: var(--display);
   font-weight: 400;
   font-size: 20px;
@@ -887,7 +887,7 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
   letter-spacing: -0.005em;
   margin: 0;
 }
-.fund-meta {
+.proj-meta {
   display: grid;
   grid-template-columns: 140px 1fr;
   gap: 4px 24px;
@@ -895,7 +895,7 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
   font-size: 14px;
   line-height: 1.5;
 }
-.fund-meta dt {
+.proj-meta dt {
   font-family: var(--mono);
   font-size: 10.5px;
   text-transform: uppercase;
@@ -903,13 +903,13 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
   color: var(--fg-mute);
   align-self: baseline;
 }
-.fund-meta dd {
+.proj-meta dd {
   margin: 0;
   color: var(--fg-soft);
 }
 @media (max-width: 560px) {
-  .fund-meta { grid-template-columns: 1fr; gap: 0; }
-  .fund-meta dt { margin-top: 6px; }
+  .proj-meta { grid-template-columns: 1fr; gap: 0; }
+  .proj-meta dt { margin-top: 6px; }
 }
 
 /* Respect reduced motion. */
