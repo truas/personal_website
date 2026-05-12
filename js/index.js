@@ -11,6 +11,7 @@ const ME = "Ruas";
 document.addEventListener("DOMContentLoaded", () => {
   renderSelectedPubs();
   renderSelectedTeaching();
+  renderSelectedProjects();
 });
 
 async function renderSelectedPubs() {
@@ -115,6 +116,51 @@ async function renderSelectedTeaching() {
   } catch (err) {
     root.innerHTML = `<div class="course"><div class="course-blurb">Could not load courses (${err.message}).</div></div>`;
   }
+}
+
+async function renderSelectedProjects() {
+  const root = document.getElementById("index-projects");
+  if (!root) return;
+  try {
+    const res = await fetch("data/projects.json", { cache: "default" });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const all = await res.json();
+    const top = all.slice(0, 3);
+
+    root.innerHTML = "";
+    const list = document.createElement("div");
+    list.className = "proj-list";
+    top.forEach((p) => list.appendChild(buildProjectCard(p)));
+    root.appendChild(list);
+  } catch (err) {
+    root.innerHTML = `<div class="pub-empty">Could not load projects (${err.message}).</div>`;
+  }
+}
+
+function buildProjectCard(p) {
+  const article = document.createElement("article");
+  article.className = "proj-card";
+
+  const title = document.createElement("h3");
+  title.className = "proj-title";
+  title.textContent = p.title || "";
+  article.appendChild(title);
+
+  const dl = document.createElement("dl");
+  dl.className = "proj-meta";
+  if (p.agency) {
+    const dt = document.createElement("dt"); dt.textContent = "Funding Agency";
+    const dd = document.createElement("dd"); dd.textContent = p.agency;
+    dl.appendChild(dt); dl.appendChild(dd);
+  }
+  if (p.period) {
+    const dt = document.createElement("dt"); dt.textContent = "Period";
+    const dd = document.createElement("dd"); dd.textContent = p.period;
+    dl.appendChild(dt); dl.appendChild(dd);
+  }
+  article.appendChild(dl);
+
+  return article;
 }
 
 function buildCourseCard(c) {
