@@ -1,5 +1,4 @@
 // Landing-page logic for index.html:
-//  - Scroll-spy that highlights the active rail link via IntersectionObserver.
 //  - Pull the most recent 5 entries from data/publications.json and 4 from
 //    data/teaching.json so the index always reflects the canonical sources.
 //
@@ -10,38 +9,9 @@
 const ME = "Ruas";
 
 document.addEventListener("DOMContentLoaded", () => {
-  wireScrollSpy();
   renderSelectedPubs();
   renderSelectedTeaching();
 });
-
-function wireScrollSpy() {
-  const anchorLinks = document.querySelectorAll(".rail-link[href^='#']");
-  if (!anchorLinks.length) return;
-  const linkById = new Map();
-  const targets = [];
-  anchorLinks.forEach((a) => {
-    const id = a.getAttribute("href").slice(1);
-    const el = document.getElementById(id);
-    if (el) {
-      linkById.set(id, a);
-      targets.push(el);
-    }
-  });
-  if (!targets.length) return;
-
-  const io = new IntersectionObserver((entries) => {
-    const visible = entries
-      .filter((e) => e.isIntersecting)
-      .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-    if (!visible[0]) return;
-    anchorLinks.forEach((a) => a.classList.remove("active"));
-    const link = linkById.get(visible[0].target.id);
-    if (link) link.classList.add("active");
-  }, { rootMargin: "-30% 0px -55% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] });
-
-  targets.forEach((t) => io.observe(t));
-}
 
 async function renderSelectedPubs() {
   const root = document.getElementById("index-pubs");
