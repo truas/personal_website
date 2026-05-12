@@ -1,0 +1,13 @@
+# Normalize all text files to LF in the repo, regardless of OS.
+# GitHub Pages serves these as-is; LF is the safe default.
+* text=auto eol=lf
+
+# Binary assets — leave untouched.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.woff binary
+*.woff2 binary
