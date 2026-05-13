@@ -18,7 +18,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(__dirname, "..", "data", "publications.json");
 
 async function fetchSource() {
-  const res = await fetch(BIBBASE_URL, { headers: { "User-Agent": "ruas-site-generator" } });
+  // Append a timestamp to bust any HTTP / CDN caches in front of BibBase.
+  const url = `${BIBBASE_URL}&_=${Date.now()}`;
+  const res = await fetch(url, {
+    cache: "no-store",
+    headers: {
+      "User-Agent": "ruas-site-generator",
+      "Cache-Control": "no-cache",
+      "Pragma": "no-cache",
+    },
+  });
   if (!res.ok) throw new Error(`Bibbase fetch ${res.status}`);
   return res.text();
 }
