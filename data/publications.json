@@ -601,12 +601,12 @@
       "Bela Gipp",
       "Timo Spinde"
     ],
-    "venue": "",
+    "venue": "Proceedings of the 2024 Joint International Conference on Computational Linguistics, Language Resources and Evaluation (LREC-COLING 2024)",
     "publisher": "",
     "doi": "10.63317/4vgmw2sffnvp",
     "url": "https://lrec.elra.info/lrec2024-main-0952",
     "abstract": "",
-    "bibtex": "@inproceedings{horych_magpie_2024,\n\taddress = {Turin, Italy},\n\ttitle = {{MAGPIE}: {Multi}-{Task} {Analysis} of {Media}-{Bias} {Generalization} with {Pre}-{Trained} {Identification} of {Expressions}},\n\tshorttitle = {{MAGPIE}},\n\turl = {https://lrec.elra.info/lrec2024-main-0952},\n\tdoi = {10.63317/4vgmw2sffnvp},\n\turldate = {2026-05-13},\n\tauthor = {Horych, Tomáš and Wessel, Martin Paul and Wahle, Jan Philip and Ruas, Terry and Waßmuth, Jerome and Greiner-Petter, André and Aizawa, Akiko and Gipp, Bela and Spinde, Timo},\n\tmonth = may,\n\tyear = {2024},\n\tpages = {10903--10920},\n}"
+    "bibtex": "@inproceedings{horych_magpie_2024,\n\taddress = {Turin, Italy},\n\ttitle = {{MAGPIE}: {Multi}-{Task} {Analysis} of {Media}-{Bias} {Generalization} with {Pre}-{Trained} {Identification} of {Expressions}},\n\tshorttitle = {{MAGPIE}},\n\turl = {https://lrec.elra.info/lrec2024-main-0952},\n\tdoi = {10.63317/4vgmw2sffnvp},\n\turldate = {2026-05-13},\n\tbooktitle = {Proceedings of the 2024 {Joint} {International} {Conference} on {Computational} {Linguistics}, {Language} {Resources} and {Evaluation} ({LREC}-{COLING} 2024)},\n\tauthor = {Horych, Tomáš and Wessel, Martin Paul and Wahle, Jan Philip and Ruas, Terry and Waßmuth, Jerome and Greiner-Petter, André and Aizawa, Akiko and Gipp, Bela and Spinde, Timo},\n\tmonth = may,\n\tyear = {2024},\n\tpages = {10903--10920},\n}"
   },
   {
     "id": "wahle_paraphrase_2024",
@@ -937,12 +937,12 @@
       "Saif Mohammad",
       "Bela Gipp"
     ],
-    "venue": "",
+    "venue": "Proceedings of the Thirteenth Language Resources and Evaluation Conference (LREC 2022)",
     "publisher": "",
     "doi": "10.63317/3hvgsmuea6o7",
     "url": "https://lrec.elra.info/lrec2022-main-283",
     "abstract": "",
-    "bibtex": "@inproceedings{wahle_d3_2022,\n\taddress = {Marseille, France},\n\ttitle = {D3: {A} {Massive} {Dataset} of {Scholarly} {Metadata} for {Analyzing} the {State} of {Computer} {Science} {Research}},\n\tshorttitle = {D3},\n\turl = {https://lrec.elra.info/lrec2022-main-283},\n\tdoi = {10.63317/3hvgsmuea6o7},\n\turldate = {2026-05-13},\n\tauthor = {Wahle, Jan Philip and Ruas, Terry and Mohammad, Saif and Gipp, Bela},\n\tmonth = jun,\n\tyear = {2022},\n\tpages = {2642--2651},\n}"
+    "bibtex": "@inproceedings{wahle_d3_2022,\n\taddress = {Marseille, France},\n\ttitle = {D3: {A} {Massive} {Dataset} of {Scholarly} {Metadata} for {Analyzing} the {State} of {Computer} {Science} {Research}},\n\tshorttitle = {D3},\n\turl = {https://lrec.elra.info/lrec2022-main-283},\n\tdoi = {10.63317/3hvgsmuea6o7},\n\turldate = {2026-05-13},\n\tbooktitle = {Proceedings of the {Thirteenth} {Language} {Resources} and {Evaluation} {Conference} ({LREC} 2022)},\n\tauthor = {Wahle, Jan Philip and Ruas, Terry and Mohammad, Saif and Gipp, Bela},\n\tmonth = jun,\n\tyear = {2022},\n\tpages = {2642--2651},\n}"
   },
   {
     "id": "smits_exploiting_2022",
