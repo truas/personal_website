@@ -599,19 +599,26 @@ html[data-type="modern"] .page-lead em { font-style: normal; color: var(--accent
 .pubs-clear:hover { color: var(--fg); }
 
 .pubs-filter-group {
+  position: relative;
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
   align-items: center;
+  padding-left: 86px; /* room for the absolutely-positioned label */
 }
 .pubs-filter-label {
+  position: absolute;
+  left: 0;
+  top: 7px;
   font-family: var(--mono);
   font-size: 10.5px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--fg-mute);
-  margin-right: 4px;
-  min-width: 70px;
+}
+@media (max-width: 560px) {
+  .pubs-filter-group { padding-left: 0; padding-top: 22px; }
+  .pubs-filter-label { top: 0; }
 }
 
 .chip {
