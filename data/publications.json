@@ -152,6 +152,27 @@
     "bibtex": "@misc{yu_semeval-2026_2026,\n\ttitle = {{SemEval}-2026 {Task} 3: {Dimensional} {Aspect}-{Based} {Sentiment} {Analysis} ({DimABSA})},\n\tshorttitle = {{SemEval}-2026 {Task} 3},\n\turl = {http://arxiv.org/abs/2604.07066},\n\tdoi = {10.48550/arXiv.2604.07066},\n\tabstract = {We present the SemEval-2026 shared task on Dimensional Aspect-Based Sentiment Analysis (DimABSA), which improves traditional ABSA by modeling sentiment along valence-arousal (VA) dimensions rather than using categorical polarity labels. To extend ABSA beyond consumer reviews to public-issue discourse (e.g., political, energy, and climate issues), we introduce an additional task, Dimensional Stance Analysis (DimStance), which treats stance targets as aspects and reformulates stance detection as regression in the VA space. The task consists of two tracks: Track A (DimABSA) and Track B (DimStance). Track A includes three subtasks: (1) dimensional aspect sentiment regression, (2) dimensional aspect sentiment triplet extraction, and (3) dimensional aspect sentiment quadruplet extraction, while Track B includes only the regression subtask for stance targets. We also introduce a continuous F1 (cF1) metric to jointly evaluate structured extraction and VA regression. The task attracted more than 400 participants, resulting in 112 final submissions and 42 system description papers. We report baseline results, discuss top-performing systems, and analyze key design choices to provide insights into dimensional sentiment analysis at the aspect and stance-target levels. All resources are available on our GitHub repository.},\n\turldate = {2026-04-09},\n\tpublisher = {arXiv},\n\tauthor = {Yu, Liang-Chih and Becker, Jonas and Muhammad, Shamsuddeen Hassan and Abdulmumin, Idris and Lee, Lung-Hao and Lin, Ying-Lung and Wang, Jin and Wahle, Jan Philip and Ruas, Terry and Loukachevitch, Natalia and Panchenko, Alexander and Alimova, Ilseyar and Wanzare, Lilian and Odhiambo, Nelson and Gipp, Bela and Chang, Kai-Wei and Mohammad, Saif M.},\n\tmonth = apr,\n\tyear = {2026},\n\tnote = {arXiv:2604.07066 [cs]},\n\tkeywords = {!tr, !tr\\_author, Computer Science - Computation and Language, nlp\\_stance\\_detection, workshop},\n}"
   },
   {
+    "id": "becker_stay_2026",
+    "type": "Conference",
+    "bibtype": "inproceedings",
+    "year": 2026,
+    "title": "Stay Focused: Problem Drift in Multi-Agent Debate",
+    "authors": [
+      "Jonas Becker",
+      "Lars Benedikt Kaesberg",
+      "Andreas Stephan",
+      "Jan Philip Wahle",
+      "Terry Ruas",
+      "Bela Gipp"
+    ],
+    "venue": "Findings of the Association for Computational Linguistics: EACL 2026",
+    "publisher": "Association for Computational Linguistics",
+    "doi": "10.18653/v1/2026.findings-eacl.268",
+    "url": "https://aclanthology.org/2026.findings-eacl.268",
+    "abstract": "",
+    "bibtex": "@inproceedings{becker_stay_2026,\n\taddress = {Rabat, Morocco},\n\ttitle = {Stay {Focused}: {Problem} {Drift} in {Multi}-{Agent} {Debate}},\n\tshorttitle = {Stay {Focused}},\n\turl = {https://aclanthology.org/2026.findings-eacl.268},\n\tdoi = {10.18653/v1/2026.findings-eacl.268},\n\tlanguage = {en},\n\turldate = {2026-05-14},\n\tbooktitle = {Findings of the {Association} for {Computational} {Linguistics}: {EACL} 2026},\n\tpublisher = {Association for Computational Linguistics},\n\tauthor = {Becker, Jonas and Kaesberg, Lars Benedikt and Stephan, Andreas and Wahle, Jan Philip and Ruas, Terry and Gipp, Bela},\n\tyear = {2026},\n\tpages = {5068--5102},\n}"
+  },
+  {
     "id": "schmidt_who_2026",
     "type": "Preprint",
     "bibtype": "misc",
@@ -446,27 +467,6 @@
     "url": "https://aclanthology.org/2025.emnlp-main.526",
     "abstract": "",
     "bibtex": "@inproceedings{kaesberg_sparc_2025,\n\taddress = {Suzhou, China},\n\ttitle = {{SPaRC}: {A} {Spatial} {Pathfinding} {Reasoning} {Challenge}},\n\tshorttitle = {{SPaRC}},\n\turl = {https://aclanthology.org/2025.emnlp-main.526},\n\tdoi = {10.18653/v1/2025.emnlp-main.526},\n\tlanguage = {en},\n\turldate = {2025-11-11},\n\tbooktitle = {Proceedings of the 2025 {Conference} on {Empirical} {Methods} in {Natural} {Language} {Processing}},\n\tpublisher = {Association for Computational Linguistics},\n\tauthor = {Kaesberg, Lars Benedikt and Wahle, Jan Philip and Ruas, Terry and Gipp, Bela},\n\tyear = {2025},\n\tpages = {10370--10401},\n}"
-  },
-  {
-    "id": "becker_stay_2025",
-    "type": "Preprint",
-    "bibtype": "misc",
-    "year": 2025,
-    "title": "Stay Focused: Problem Drift in Multi-Agent Debate",
-    "authors": [
-      "Jonas Becker",
-      "Lars Benedikt Kaesberg",
-      "Andreas Stephan",
-      "Jan Philip Wahle",
-      "Terry Ruas",
-      "Bela Gipp"
-    ],
-    "venue": "arXiv",
-    "publisher": "arXiv",
-    "doi": "10.48550/arXiv.2502.19559",
-    "url": "http://arxiv.org/abs/2502.19559",
-    "abstract": "Multi-agent debate - multiple instances of large language models discussing problems in turn-based interaction - has shown promise for solving knowledge and reasoning tasks. However, these methods show limitations, particularly when scaling them to longer reasoning chains. In this study, we unveil a new issue of multi-agent debate: discussions drift away from the initial problem over multiple turns. We define this phenomenon as problem drift and quantify its presence across ten tasks (i.e., three generative, three knowledge, three reasoning, and one instruction-following task). To identify the reasons for this issue, we perform a human study with eight experts on discussions suffering from problem drift, who find the most common issues are a lack of progress (35% of cases), low-quality feedback (26% of cases), and a lack of clarity (25% of cases). To systematically address the issue of problem drift, we propose DRIFTJudge, a method based on LLM-as-a-judge, to detect problem drift at test-time. We further propose DRIFTPolicy, a method to mitigate 31% of problem drift cases. Our study can be seen as a first step to understanding a key limitation of multi-agent debate, highlighting pathways for improving their effectiveness in the future.",
-    "bibtex": "@misc{becker_stay_2025,\n\ttitle = {Stay {Focused}: {Problem} {Drift} in {Multi}-{Agent} {Debate}},\n\tshorttitle = {Stay {Focused}},\n\turl = {http://arxiv.org/abs/2502.19559},\n\tdoi = {10.48550/arXiv.2502.19559},\n\tabstract = {Multi-agent debate - multiple instances of large language models discussing problems in turn-based interaction - has shown promise for solving knowledge and reasoning tasks. However, these methods show limitations, particularly when scaling them to longer reasoning chains. In this study, we unveil a new issue of multi-agent debate: discussions drift away from the initial problem over multiple turns. We define this phenomenon as problem drift and quantify its presence across ten tasks (i.e., three generative, three knowledge, three reasoning, and one instruction-following task). To identify the reasons for this issue, we perform a human study with eight experts on discussions suffering from problem drift, who find the most common issues are a lack of progress (35\\% of cases), low-quality feedback (26\\% of cases), and a lack of clarity (25\\% of cases). To systematically address the issue of problem drift, we propose DRIFTJudge, a method based on LLM-as-a-judge, to detect problem drift at test-time. We further propose DRIFTPolicy, a method to mitigate 31\\% of problem drift cases. Our study can be seen as a first step to understanding a key limitation of multi-agent debate, highlighting pathways for improving their effectiveness in the future.},\n\turldate = {2025-02-28},\n\tpublisher = {arXiv},\n\tauthor = {Becker, Jonas and Kaesberg, Lars Benedikt and Stephan, Andreas and Wahle, Jan Philip and Ruas, Terry and Gipp, Bela},\n\tmonth = feb,\n\tyear = {2025},\n\tnote = {arXiv:2502.19559 [cs]},\n\tkeywords = {!tr, Computer Science - Computation and Language, nlp\\_llm, nlp\\_multiagent},\n}"
   },
   {
     "id": "meier-etal-2025-towards",

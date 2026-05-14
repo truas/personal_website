@@ -30,7 +30,7 @@ html {
   --pad-section: 80px;
   --row-gap:   28px;
 
-  --t-display: clamp(64px, 11vw, 168px);
+  --t-display: clamp(48px, 8.5vw, 128px);
   --t-h1:      clamp(40px, 5.6vw, 80px);
   --t-h2:      clamp(28px, 3.2vw, 44px);
   --t-h3:      19px;
