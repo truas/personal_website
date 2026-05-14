@@ -271,10 +271,21 @@ html[data-type="instrument"] .sec-title { font-style: italic; }
   font-size: var(--t-display);
   line-height: 0.92;
   letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+  gap: 0.22em;
+  flex-wrap: wrap;
   margin: 0 0 0 -0.06em;
 }
 html[data-type="editorial"] .hero-name .last,
 html[data-type="instrument"] .hero-name .last { font-style: italic; }
+
+.hero-logo {
+  height: 0.72em;
+  width: 0.72em;
+  border-radius: 14%;
+  flex: 0 0 auto;
+}
 
 .hero-lead {
   margin-top: 36px;
