@@ -415,8 +415,8 @@
   },
   {
     "id": "muhammad_semeval-2025_2025",
-    "type": "Preprint",
-    "bibtype": "misc",
+    "type": "Conference",
+    "bibtype": "inproceedings",
     "year": 2025,
     "title": "SemEval-2025 Task 11: Bridging the Gap in Text-Based Emotion Detection",
     "authors": [
@@ -425,7 +425,7 @@
       "Idris Abdulmumin",
       "Seid Muhie Yimam",
       "Jan Philip Wahle",
-      "Terry Ruas",
+      "Terry Lima Ruas",
       "Meriem Beloucif",
       "Christine De Kock",
       "Tadesse Destaw Belay",
@@ -434,20 +434,20 @@
       "Daniela Teodorescu",
       "David Ifeoluwa Adelani",
       "Alham Fikri Aji",
-      "Felermino Ali",
+      "Felermino Dario Mario Ali",
       "Vladimir Araujo",
       "Abinew Ali Ayele",
       "Oana Ignat",
       "Alexander Panchenko",
       "Yi Zhou",
-      "Saif M. Mohammad"
+      "Saif Mohammad"
     ],
-    "venue": "arXiv",
-    "publisher": "arXiv",
+    "venue": "Proceedings of the 19th International Workshop on Semantic Evaluation (SemEval-2025)",
+    "publisher": "Association for Computational Linguistics",
     "doi": "10.48550/arXiv.2503.07269",
-    "url": "http://arxiv.org/abs/2503.07269",
-    "abstract": "We present our shared task on text-based emotion detection, covering more than 30 languages from seven distinct language families. These languages are predominantly low-resource and spoken across various continents. The data instances are multi-labeled into six emotional classes, with additional datasets in 11 languages annotated for emotion intensity. Participants were asked to predict labels in three tracks: (a) emotion labels in monolingual settings, (b) emotion intensity scores, and (c) emotion labels in cross-lingual settings. The task attracted over 700 participants. We received final submissions from more than 200 teams and 93 system description papers. We report baseline results, as well as findings on the best-performing systems, the most common approaches, and the most effective methods across various tracks and languages. The datasets for this task are publicly available.",
-    "bibtex": "@misc{muhammad_semeval-2025_2025,\n\ttitle = {{SemEval}-2025 {Task} 11: {Bridging} the {Gap} in {Text}-{Based} {Emotion} {Detection}},\n\tshorttitle = {{SemEval}-2025 {Task} 11},\n\turl = {http://arxiv.org/abs/2503.07269},\n\tdoi = {10.48550/arXiv.2503.07269},\n\tabstract = {We present our shared task on text-based emotion detection, covering more than 30 languages from seven distinct language families. These languages are predominantly low-resource and spoken across various continents. The data instances are multi-labeled into six emotional classes, with additional datasets in 11 languages annotated for emotion intensity. Participants were asked to predict labels in three tracks: (a) emotion labels in monolingual settings, (b) emotion intensity scores, and (c) emotion labels in cross-lingual settings. The task attracted over 700 participants. We received final submissions from more than 200 teams and 93 system description papers. We report baseline results, as well as findings on the best-performing systems, the most common approaches, and the most effective methods across various tracks and languages. The datasets for this task are publicly available.},\n\turldate = {2025-03-11},\n\tpublisher = {arXiv},\n\tauthor = {Muhammad, Shamsuddeen Hassan and Ousidhoum, Nedjma and Abdulmumin, Idris and Yimam, Seid Muhie and Wahle, Jan Philip and Ruas, Terry and Beloucif, Meriem and Kock, Christine De and Belay, Tadesse Destaw and Ahmad, Ibrahim Said and Surange, Nirmal and Teodorescu, Daniela and Adelani, David Ifeoluwa and Aji, Alham Fikri and Ali, Felermino and Araujo, Vladimir and Ayele, Abinew Ali and Ignat, Oana and Panchenko, Alexander and Zhou, Yi and Mohammad, Saif M.},\n\tmonth = mar,\n\tyear = {2025},\n\tnote = {arXiv:2503.07269 [cs]},\n\tkeywords = {!tr\\_author, Computer Science - Computation and Language, semeval},\n}"
+    "url": "https://aclanthology.org/2025.semeval-1.327/",
+    "abstract": "We present our shared task on text-based emotion detection, covering more than 30 languages from seven distinct language families. These languages are predominantly low-resource and spoken across various continents. The data instances are multi-labeled into six emotional classes, with additional datasets in 11 languages annotated for emotion intensity. Participants were asked to predict labels in three tracks: (a) emotion labels in monolingual settings, (b) emotion intensity scores, and (c) emotion labels in cross-lingual settings.",
+    "bibtex": "@inproceedings{muhammad_semeval-2025_2025,\n\taddress = {Vienna, Austria},\n\ttitle = {{SemEval}-2025 {Task} 11: {Bridging} the {Gap} in {Text}-{Based} {Emotion} {Detection}},\n\tisbn = {979-8-89176-273-2},\n\turl = {https://aclanthology.org/2025.semeval-1.327/},\n\tdoi = {10.48550/arXiv.2503.07269},\n\tabstract = {We present our shared task on text-based emotion detection, covering more than 30 languages from seven distinct language families. These languages are predominantly low-resource and spoken across various continents. The data instances are multi-labeled into six emotional classes, with additional datasets in 11 languages annotated for emotion intensity. Participants were asked to predict labels in three tracks: (a) emotion labels in monolingual settings, (b) emotion intensity scores, and (c) emotion labels in cross-lingual settings.},\n\tbooktitle = {Proceedings of the 19th {International} {Workshop} on {Semantic} {Evaluation} ({SemEval}-2025)},\n\tpublisher = {Association for Computational Linguistics},\n\tauthor = {Muhammad, Shamsuddeen Hassan and Ousidhoum, Nedjma and Abdulmumin, Idris and Yimam, Seid Muhie and Wahle, Jan Philip and Lima Ruas, Terry and Beloucif, Meriem and De Kock, Christine and Belay, Tadesse Destaw and Ahmad, Ibrahim Said and Surange, Nirmal and Teodorescu, Daniela and Adelani, David Ifeoluwa and Aji, Alham Fikri and Ali, Felermino Dario Mario and Araujo, Vladimir and Ayele, Abinew Ali and Ignat, Oana and Panchenko, Alexander and Zhou, Yi and Mohammad, Saif},\n\teditor = {Rosenthal, Sara and Rosá, Aiala and Ghosh, Debanjan and Zampieri, Marcos},\n\tmonth = jul,\n\tyear = {2025},\n\tpages = {2558--2569},\n}"
   },
   {
     "id": "kaesberg_sparc_2025",
