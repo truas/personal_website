@@ -866,6 +866,46 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
   .about-section li .when { order: -1; font-size: 11px; }
 }
 
+/* ── collaborators ───────────────────────────────────────────────────── */
+.collab-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 32px;
+}
+.collab-grid li {
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+}
+.collab-grid li:nth-last-child(-n+2) {
+  /* last row gets a bottom rule too */
+}
+.collab-grid > li:last-child,
+.collab-grid > li:nth-last-child(2):nth-child(odd) {
+  border-bottom: 1px solid var(--rule);
+}
+.collab-grid a {
+  font-family: var(--display);
+  font-size: 17px;
+  color: var(--fg);
+  border-bottom: 1px solid var(--rule-strong);
+  padding-bottom: 1px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.collab-grid a:hover { color: var(--accent); border-color: var(--accent); }
+.collab-grid del { color: var(--fg-mute); }
+.collab-grid del a {
+  color: var(--fg-mute);
+  border-bottom-color: var(--rule);
+  text-decoration: line-through;
+}
+@media (max-width: 720px) {
+  .collab-grid { grid-template-columns: 1fr; }
+  .collab-grid > li:last-child { border-bottom: 1px solid var(--rule); }
+}
+
 /* ── projects ────────────────────────────────────────────────────────── */
 .proj-list {
   display: flex;
