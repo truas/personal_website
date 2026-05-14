@@ -273,7 +273,7 @@ html[data-type="instrument"] .sec-title { font-style: italic; }
   letter-spacing: -0.04em;
   display: flex;
   align-items: center;
-  gap: 0.22em;
+  gap: 0.45em;
   flex-wrap: wrap;
   margin: 0 0 0 -0.06em;
 }
