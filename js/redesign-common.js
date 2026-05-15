@@ -32,8 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
       else if (bucket === "connect") connect.push(el);
     }
   });
-  const railThemeBtn = rail.querySelector("#theme-toggle");
-
   const mn = document.createElement("nav");
   mn.className = "mobile-nav";
   mn.setAttribute("aria-label", "Mobile primary");
@@ -69,13 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const dCon = document.createElement("div");
   dCon.className = "mn-drawer-list";
   connect.forEach((el) => dCon.appendChild(makeDrawerLink(el)));
-  if (railThemeBtn) {
-    const t = railThemeBtn.cloneNode(true);
-    t.id = "theme-toggle-mobile";
-    t.classList.add("mn-drawer-link");
-    t.addEventListener("click", flipTheme);
-    dCon.appendChild(t);
-  }
   drawer.appendChild(dCon);
   mn.appendChild(drawer);
 
@@ -114,5 +105,11 @@ function makeLabel(text) {
 function makeDrawerLink(el) {
   const a = el.cloneNode(true);
   a.classList.add("mn-drawer-link");
+  // If this is the theme-toggle button being cloned, rewire it to flip
+  // the theme (cloneNode doesn't carry event listeners).
+  if (a.id === "theme-toggle") {
+    a.id = "theme-toggle-mobile";
+    a.addEventListener("click", flipTheme);
+  }
   return a;
 }
