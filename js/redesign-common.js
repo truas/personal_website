@@ -4,9 +4,8 @@
 //    so there's no flash of unstyled colour.
 //  - Build a dedicated <nav class="mobile-nav"> next to the side rail.
 //    On mobile (≤900px) the CSS hides the rail and shows the mobile-nav:
-//    a sticky top bar with brand + hamburger, a horizontally-scrollable
-//    strip of section pills (carousel), and a drawer with all links +
-//    theme toggle.
+//    a sticky top bar with brand + hamburger, and a drawer with all
+//    section / connect links + theme toggle.
 //
 // Vanilla DOM; no dependencies.
 
@@ -56,17 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
   top.appendChild(burger);
   mn.appendChild(top);
 
-  // Section carousel (always visible)
-  const strip = document.createElement("div");
-  strip.className = "mn-strip";
-  strip.setAttribute("role", "list");
-  sections.forEach((el) => {
-    const pill = el.cloneNode(true);
-    pill.classList.add("mn-pill");
-    strip.appendChild(pill);
-  });
-  mn.appendChild(strip);
-
   // Drawer (hidden until burger toggled)
   const drawer = document.createElement("div");
   drawer.className = "mn-drawer";
@@ -106,13 +94,6 @@ document.addEventListener("DOMContentLoaded", () => {
     burger.setAttribute("aria-expanded", "false");
     document.body.classList.remove("mn-open");
   });
-  // Scroll the active pill into view so it's immediately visible
-  const active = strip.querySelector(".mn-pill.active");
-  if (active) {
-    requestAnimationFrame(() => {
-      active.scrollIntoView({ inline: "center", block: "nearest", behavior: "instant" });
-    });
-  }
 
   shell.insertBefore(mn, shell.firstChild);
 });

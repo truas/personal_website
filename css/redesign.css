@@ -209,40 +209,6 @@ img { max-width: 100%; display: block; }
     transition: transform 0.2s ease, opacity 0.2s ease;
   }
 
-  /* Horizontally-scrollable strip of section pills */
-  .mn-strip {
-    display: flex;
-    gap: 8px;
-    overflow-x: auto;
-    overscroll-behavior-x: contain;
-    padding: 0 0 12px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .mn-strip::-webkit-scrollbar { display: none; }
-  .mn-pill {
-    flex: 0 0 auto;
-    scroll-snap-align: start;
-    padding: 7px 14px;
-    border: 1px solid var(--rule);
-    border-radius: 999px;
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--fg-soft);
-    white-space: nowrap;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .mn-pill .idx { opacity: 0.55; font-size: 11px; }
-  .mn-pill.active {
-    color: var(--accent);
-    border-color: var(--accent);
-  }
-  .mn-pill::before { display: none; }
-
   /* Drawer revealed by burger */
   .mn-drawer {
     border-top: 1px solid var(--rule);
