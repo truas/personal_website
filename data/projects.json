@@ -42,6 +42,13 @@
     "agency": "National Council for Scientific and Technological Development (CNPq)"
   },
   {
+    "year": 2025,
+    "role": "kc",
+    "period": "04/2025 - 12/2026",
+    "title": "Fake News Detection: A Manipulated Content Authenticity System",
+    "agency": "Korean National Police Agency (KNPA)"
+  },
+  {
     "year": 2026,
     "role": "kc",
     "period": "01/2026 - 12/2027",
@@ -61,12 +68,5 @@
     "period": "10/2025 - 10/2028",
     "title": "Application of AI in Temporal Data Fusion for Hybrid Recommendation Systems in the Treatment of Renal Lithiasis",
     "agency": "FAPESP (São Paulo Research Foundation)"
-  },
-  {
-    "year": 2025,
-    "role": "kc",
-    "period": "04/2025 - 12/2026",
-    "title": "Fake News Detection: A Manipulated Content Authenticity System",
-    "agency": "Korean National Police Agency (KNPA)"
   }
 ]

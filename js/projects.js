@@ -58,9 +58,8 @@ function renderList() {
   }
 
   ROLE_ORDER.forEach(({ key, label }) => {
-    const items = state.all
-      .filter((e) => (e.role || "pi") === key)
-      .sort((a, b) => (b.year || 0) - (a.year || 0));
+    // Preserve the order from data/projects.json so curated rankings stick.
+    const items = state.all.filter((e) => (e.role || "pi") === key);
     if (!items.length) return;
     const section = el("section", { class: "proj-group" });
     section.appendChild(el("h2", { class: "proj-group-title" }, label));
