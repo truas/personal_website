@@ -469,6 +469,28 @@
     "bibtex": "@inproceedings{kaesberg_sparc_2025,\n\taddress = {Suzhou, China},\n\ttitle = {{SPaRC}: {A} {Spatial} {Pathfinding} {Reasoning} {Challenge}},\n\tshorttitle = {{SPaRC}},\n\turl = {https://aclanthology.org/2025.emnlp-main.526},\n\tdoi = {10.18653/v1/2025.emnlp-main.526},\n\tlanguage = {en},\n\turldate = {2025-11-11},\n\tbooktitle = {Proceedings of the 2025 {Conference} on {Empirical} {Methods} in {Natural} {Language} {Processing}},\n\tpublisher = {Association for Computational Linguistics},\n\tauthor = {Kaesberg, Lars Benedikt and Wahle, Jan Philip and Ruas, Terry and Gipp, Bela},\n\tyear = {2025},\n\tpages = {10370--10401},\n}"
   },
   {
+    "id": "horych_promises_2025",
+    "type": "Conference",
+    "bibtype": "inproceedings",
+    "year": 2025,
+    "title": "The Promises and Pitfalls of LLM Annotations in Dataset Labeling: a Case Study on Media Bias Detection",
+    "authors": [
+      "Tomáš Horych",
+      "Christoph Mandl",
+      "Terry Ruas",
+      "Andre Greiner-Petter",
+      "Bela Gipp",
+      "Akiko Aizawa",
+      "Timo Spinde"
+    ],
+    "venue": "Findings of the Association for Computational Linguistics: NAACL 2025",
+    "publisher": "Association for Computational Linguistics",
+    "doi": "10.18653/v1/2025.findings-naacl.75",
+    "url": "https://aclanthology.org/2025.findings-naacl.75",
+    "abstract": "",
+    "bibtex": "@inproceedings{horych_promises_2025,\n\taddress = {Albuquerque, New Mexico},\n\ttitle = {The {Promises} and {Pitfalls} of {LLM} {Annotations} in {Dataset} {Labeling}: a {Case} {Study} on {Media} {Bias} {Detection}},\n\tshorttitle = {The {Promises} and {Pitfalls} of {LLM} {Annotations} in {Dataset} {Labeling}},\n\turl = {https://aclanthology.org/2025.findings-naacl.75},\n\tdoi = {10.18653/v1/2025.findings-naacl.75},\n\tlanguage = {en},\n\turldate = {2026-05-16},\n\tbooktitle = {Findings of the {Association} for {Computational} {Linguistics}: {NAACL} 2025},\n\tpublisher = {Association for Computational Linguistics},\n\tauthor = {Horych, Tomáš and Mandl, Christoph and Ruas, Terry and Greiner-Petter, Andre and Gipp, Bela and Aizawa, Akiko and Spinde, Timo},\n\tyear = {2025},\n\tpages = {1370--1386},\n}"
+  },
+  {
     "id": "meier-etal-2025-towards",
     "type": "Conference",
     "bibtype": "inproceedings",
@@ -686,26 +708,6 @@
     "url": "http://arxiv.org/abs/2312.16148",
     "abstract": "The way the media presents events can significantly affect public perception, which in turn can alter people's beliefs and views. Media bias describes a one-sided or polarizing perspective on a topic. This article summarizes the research on computational methods to detect media bias by systematically reviewing 3140 research papers published between 2019 and 2022. To structure our review and support a mutual understanding of bias across research domains, we introduce the Media Bias Taxonomy, which provides a coherent overview of the current state of research on media bias from different perspectives. We show that media bias detection is a highly active research field, in which transformer-based classification approaches have led to significant improvements in recent years. These improvements include higher classification accuracy and the ability to detect more fine-granular types of bias. However, we have identified a lack of interdisciplinarity in existing projects, and a need for more awareness of the various types of media bias to support methodologically thorough performance evaluations of media bias detection systems. Concluding from our analysis, we see the integration of recent machine learning advancements with reliable and diverse bias assessment strategies from other research areas as the most promising area for future research contributions in the field.",
     "bibtex": "@misc{spinde_media_2024,\n\ttitle = {The {Media} {Bias} {Taxonomy}: {A} {Systematic} {Literature} {Review} on the {Forms} and {Automated} {Detection} of {Media} {Bias}},\n\tshorttitle = {The {Media} {Bias} {Taxonomy}},\n\turl = {http://arxiv.org/abs/2312.16148},\n\tabstract = {The way the media presents events can significantly affect public perception, which in turn can alter people's beliefs and views. Media bias describes a one-sided or polarizing perspective on a topic. This article summarizes the research on computational methods to detect media bias by systematically reviewing 3140 research papers published between 2019 and 2022. To structure our review and support a mutual understanding of bias across research domains, we introduce the Media Bias Taxonomy, which provides a coherent overview of the current state of research on media bias from different perspectives. We show that media bias detection is a highly active research field, in which transformer-based classification approaches have led to significant improvements in recent years. These improvements include higher classification accuracy and the ability to detect more fine-granular types of bias. However, we have identified a lack of interdisciplinarity in existing projects, and a need for more awareness of the various types of media bias to support methodologically thorough performance evaluations of media bias detection systems. Concluding from our analysis, we see the integration of recent machine learning advancements with reliable and diverse bias assessment strategies from other research areas as the most promising area for future research contributions in the field.},\n\turldate = {2024-02-02},\n\tpublisher = {arXiv},\n\tauthor = {Spinde, Timo and Hinterreiter, Smi and Haak, Fabian and Ruas, Terry and Giese, Helge and Meuschke, Norman and Gipp, Bela},\n\tmonth = jan,\n\tyear = {2024},\n\tnote = {arXiv:2312.16148 [cs]},\n\tkeywords = {!tr, !tr\\_author, Computer Science - Computation and Language, nlp\\_lit\\_rev, nlp\\_media\\_bias},\n}"
-  },
-  {
-    "id": "xu_promises_2024",
-    "type": "Conference",
-    "bibtype": "inproceedings",
-    "year": 2024,
-    "title": "The Promises and Pitfalls of Using Language Models to Measure Instruction Quality in Education",
-    "authors": [
-      "Paiheng Xu",
-      "Jing Liu",
-      "Nathan Jones",
-      "Julie Cohen",
-      "Wei Ai"
-    ],
-    "venue": "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
-    "publisher": "Association for Computational Linguistics",
-    "doi": "10.18653/v1/2024.naacl-long.246",
-    "url": "https://aclanthology.org/2024.naacl-long.246",
-    "abstract": "",
-    "bibtex": "@inproceedings{xu_promises_2024,\n\taddress = {Mexico City, Mexico},\n\ttitle = {The {Promises} and {Pitfalls} of {Using} {Language} {Models} to {Measure} {Instruction} {Quality} in {Education}},\n\turl = {https://aclanthology.org/2024.naacl-long.246},\n\tdoi = {10.18653/v1/2024.naacl-long.246},\n\tlanguage = {en},\n\turldate = {2025-06-25},\n\tbooktitle = {Proceedings of the 2024 {Conference} of the {North} {American} {Chapter} of the {Association} for {Computational} {Linguistics}: {Human} {Language} {Technologies} ({Volume} 1: {Long} {Papers})},\n\tpublisher = {Association for Computational Linguistics},\n\tauthor = {Xu, Paiheng and Liu, Jing and Jones, Nathan and Cohen, Julie and Ai, Wei},\n\tyear = {2024},\n\tkeywords = {!tr\\_author, media\\_bias},\n\tpages = {4375--4389},\n}"
   },
   {
     "id": "kirstein_whats_2024",
