@@ -1036,6 +1036,17 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
 }
 
 /* ── projects ────────────────────────────────────────────────────────── */
+.proj-group + .proj-group { margin-top: 40px; }
+.proj-group-title {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-mute);
+  margin: 0 0 8px;
+  padding-bottom: 8px;
+}
 .proj-list {
   display: flex;
   flex-direction: column;

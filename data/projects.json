@@ -1,44 +1,72 @@
 [
   {
     "year": 2025,
+    "role": "pi",
     "period": "02/2026 - 02/2029",
     "title": "Paraphrase Types: A New Paradigm for Paraphrase Generation and Detection",
-    "agency": "DFG"
+    "agency": "Deutsche Forschungsgemeinschaft (DFG)"
   },
   {
     "year": 2025,
+    "role": "pi",
     "period": "03/2025 - 11/2025",
     "title": "Aktives und interaktives Lernen in der Natürlichen Sprachverarbeitung",
     "agency": "Twillo"
   },
   {
-    "year": 2025,
-    "period": "04/2025 - 12/2026",
-    "title": "Fake News Detection: A Manipulated Content Authenticity System",
-    "agency": "Korean National Police Agency (KNPA)"
-  },
-  {
     "year": 2024,
+    "role": "pi",
     "period": null,
     "title": "Application for Usage of CIDAS Resources",
     "agency": "University of Göttingen"
   },
   {
     "year": 2018,
+    "role": "pi",
     "period": null,
     "title": "IAVS Seed Funding Award",
     "agency": "University of Michigan"
   },
   {
     "year": 2018,
+    "role": "pi",
     "period": "01/2018 - 07/2018",
     "title": "Doctorate Fellowship, NII International Internship Program",
     "agency": "National Institute of Informatics"
   },
   {
     "year": 2015,
+    "role": "pi",
     "period": "09/2015 - 09/2019",
     "title": "Doctorate Scholarship for the Science Without Borders Program",
     "agency": "National Council for Scientific and Technological Development (CNPq)"
+  },
+  {
+    "year": 2026,
+    "role": "kc",
+    "period": "01/2026 - 12/2027",
+    "title": "AI in Museums",
+    "agency": "Lower Saxony Ministry for Science and Culture (MWK)"
+  },
+  {
+    "year": 2025,
+    "role": "kc",
+    "period": "11/2025 - 11/2029",
+    "title": "EDIKILEX: AI and Lexicography for Early New High German Texts",
+    "agency": "Lower Saxony Ministry for Science and Culture (MWK)"
+  },
+  {
+    "year": 2025,
+    "role": "kc",
+    "period": "10/2025 - 10/2028",
+    "title": "Application of AI in Temporal Data Fusion for Hybrid Recommendation Systems in the Treatment of Renal Lithiasis",
+    "agency": "FAPESP (São Paulo Research Foundation)"
+  },
+  {
+    "year": 2025,
+    "role": "kc",
+    "period": "04/2025 - 12/2026",
+    "title": "Fake News Detection: A Manipulated Content Authenticity System",
+    "agency": "Korean National Police Agency (KNPA)"
   }
 ]

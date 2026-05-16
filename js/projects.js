@@ -40,6 +40,11 @@ function renderCard(e) {
   return article;
 }
 
+const ROLE_ORDER = [
+  { key: "pi", label: "Principal Investigator" },
+  { key: "kc", label: "Key Contributor" },
+];
+
 function renderList() {
   const root = document.getElementById("projects-list");
   root.innerHTML = "";
@@ -52,9 +57,18 @@ function renderList() {
     return;
   }
 
-  const list = el("div", { class: "proj-list" });
-  state.all.forEach((e) => list.appendChild(renderCard(e)));
-  root.appendChild(list);
+  ROLE_ORDER.forEach(({ key, label }) => {
+    const items = state.all
+      .filter((e) => (e.role || "pi") === key)
+      .sort((a, b) => (b.year || 0) - (a.year || 0));
+    if (!items.length) return;
+    const section = el("section", { class: "proj-group" });
+    section.appendChild(el("h2", { class: "proj-group-title" }, label));
+    const list = el("div", { class: "proj-list" });
+    items.forEach((e) => list.appendChild(renderCard(e)));
+    section.appendChild(list);
+    root.appendChild(section);
+  });
 }
 
 async function init() {
