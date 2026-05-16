@@ -1036,16 +1036,16 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
 }
 
 /* ── projects ────────────────────────────────────────────────────────── */
-.proj-group + .proj-group { margin-top: 40px; }
+.proj-group + .proj-group { margin-top: 18px; }
 .proj-group-title {
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--fg-mute);
-  margin: 0 0 8px;
-  padding-bottom: 8px;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  margin: 0 0 10px;
+  padding-bottom: 6px;
 }
 .proj-list {
   display: flex;
