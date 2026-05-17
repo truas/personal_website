@@ -28,9 +28,13 @@ async function init() {
     return;
   }
 
+  // Postdocs are co-supervised colleagues -- they don't count toward the
+  // student totals on either the stats line or the summary bar.
+  const studentTotal = all.filter((s) => (s.program || "").trim() !== "Postdoc").length;
+
   const stats = document.getElementById("students-stats");
   if (stats) {
-    stats.textContent = `${all.length} ${all.length === 1 ? "student" : "students"}`;
+    stats.textContent = `${studentTotal} ${studentTotal === 1 ? "student" : "students"}`;
   }
 
   root.innerHTML = "";
@@ -41,7 +45,7 @@ async function init() {
     summary.className = "students-summary";
     const totalCell = document.createElement("div");
     totalCell.className = "summary-cell summary-total";
-    totalCell.innerHTML = `<span class="num">${all.length}</span><span class="label">Total</span>`;
+    totalCell.innerHTML = `<span class="num">${studentTotal}</span><span class="label">Total</span>`;
     summary.appendChild(totalCell);
     PROGRAM_ORDER.forEach((prog) => {
       const n = all.filter((s) => (s.program || "").trim() === prog).length;
