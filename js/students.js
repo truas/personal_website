@@ -45,9 +45,12 @@ async function init() {
     h.textContent = PROGRAM_LABEL[prog] || prog;
     group.appendChild(h);
 
-    // Sort former-student entries newest first; leave current as-is.
+    // Former students (have a Year) sort newest first; current students
+    // sort alphabetically by name.
     if (items.some((s) => s.year)) {
       items.sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0));
+    } else {
+      items.sort((a, b) => (a.name || "").localeCompare(b.name || ""));
     }
 
     const list = document.createElement("ul");
