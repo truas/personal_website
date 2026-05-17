@@ -6,11 +6,11 @@
 // Vanilla DOM; no dependencies.
 
 const SRC = document.documentElement.dataset.studentsSrc;
-const PROGRAM_ORDER = ["Bachelor", "Masters", "Doctorate"];
+const PROGRAM_ORDER = ["Doctorate", "Masters", "Bachelor"];
 const PROGRAM_LABEL = {
-  Bachelor: "Bachelor's",
-  Masters: "Master's",
   Doctorate: "Doctorate",
+  Masters: "Master's",
+  Bachelor: "Bachelor's",
 };
 
 async function init() {
@@ -45,17 +45,38 @@ async function init() {
     h.textContent = PROGRAM_LABEL[prog] || prog;
     group.appendChild(h);
 
+    // Sort former-student entries newest first; leave current as-is.
+    if (items.some((s) => s.year)) {
+      items.sort((a, b) => (Number(b.year) || 0) - (Number(a.year) || 0));
+    }
+
     const list = document.createElement("ul");
     list.className = "students-list";
     items.forEach((s) => {
       const li = document.createElement("li");
       li.className = "student-row";
 
+      // Top row: name on the left, year (if any) on the right.
+      const head = document.createElement("div");
+      head.className = "student-head";
       const name = document.createElement("div");
       name.className = "student-name";
       name.textContent = s.name;
-      li.appendChild(name);
+      head.appendChild(name);
+      if (s.year) {
+        const yr = document.createElement("div");
+        yr.className = "student-year";
+        yr.textContent = String(s.year);
+        head.appendChild(yr);
+      }
+      li.appendChild(head);
 
+      if (s.thesis) {
+        const th = document.createElement("div");
+        th.className = "student-thesis";
+        th.textContent = s.thesis;
+        li.appendChild(th);
+      }
       if (s.school) {
         const school = document.createElement("div");
         school.className = "student-school";
