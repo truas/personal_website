@@ -12,47 +12,56 @@
   {
     "name": "Dominik Meier",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Goettingen, Goettingen, Germany",
+    "interests": ["AI safety"]
   },
   {
     "name": "Tianyu Yang",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Goettingen, Goettingen, Germany",
+    "interests": ["reinforcement learning", "reasoning"]
   },
   {
     "name": "Jonas Becker",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Goettingen, Goettingen, Germany",
+    "interests": ["llm as agents", "misinformation spread"]
   },
   {
     "name": "Lars Kaesberg",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Goettingen, Goettingen, Germany",
+    "interests": ["spatial reasoning"]
   },
   {
     "name": "Constanting Dalinghaus",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Goettingen, Goettingen, Germany",
+    "interests": ["llms", "information retrieval"]
   },
   {
     "name": "Niklas Bauer",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Goettingen, Goettingen, Germany",
+    "interests": ["paraphrase generation and detection", "AI use and impact"]
   },
   {
     "name": "Kia Jüng Yang",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Goettingen, Goettingen, Germany",
+    "interests": ["reasoning", "interpretability"]
   },
   {
     "name": "Shakib Yazdani",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Goettingen, Goettingen, Germany",
+    "interests": ["named entity recognition", "multimodal llm"]
   },
   {
     "name": "Yiwei Wang",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Goettingen, Goettingen, Germany",
+    "interests": ["mechanistic interpretability", "bias in llm"]
   },
   {
     "name": "Sakshi Deo Shukla",

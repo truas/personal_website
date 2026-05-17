@@ -87,10 +87,24 @@ async function init() {
       // Top row: name on the left, year (if any) on the right.
       const head = document.createElement("div");
       head.className = "student-head";
+      const nameWrap = document.createElement("div");
+      nameWrap.className = "student-name-wrap";
       const name = document.createElement("div");
       name.className = "student-name";
       name.textContent = s.name;
-      head.appendChild(name);
+      nameWrap.appendChild(name);
+      if (Array.isArray(s.interests) && s.interests.length) {
+        const tags = document.createElement("div");
+        tags.className = "student-interests";
+        s.interests.forEach((kw) => {
+          const tag = document.createElement("span");
+          tag.className = "student-tag";
+          tag.textContent = kw;
+          tags.appendChild(tag);
+        });
+        nameWrap.appendChild(tags);
+      }
+      head.appendChild(nameWrap);
       if (s.year) {
         const yr = document.createElement("div");
         yr.className = "student-year";
