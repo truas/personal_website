@@ -987,6 +987,51 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
   .about-section li .when { order: -1; font-size: 11px; }
 }
 
+/* ── students & alumni ──────────────────────────────────────────────── */
+.student-group + .student-group { margin-top: 22px; }
+.student-group-title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(22px, 2.4vw, 28px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  margin: 0 0 8px;
+  padding-bottom: 4px;
+}
+.students-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.student-row {
+  padding: 12px 0;
+  border-top: 1px solid var(--rule);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.student-row:last-child { border-bottom: 1px solid var(--rule); }
+.student-name {
+  font-family: var(--display);
+  font-size: 17px;
+  color: var(--fg);
+  line-height: 1.3;
+}
+.student-school {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: var(--fg-mute);
+}
+.alumni-link {
+  margin-top: 28px;
+  font-size: 15px;
+  color: var(--fg-soft);
+}
+
 /* ── collaborators ───────────────────────────────────────────────────── */
 .collab-grid {
   list-style: none;

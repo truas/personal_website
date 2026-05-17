@@ -3,11 +3,12 @@
       data-palette="ink"
       data-theme="dark"
       data-type="modern"
-      data-density="regular">
+      data-density="regular"
+      data-students-src="data/alumni.json">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page Title — PD Dr. Terry Ruas</title>
+  <title>Alumni — PD Dr. Terry Ruas</title>
   <link rel="icon" type="image/svg+xml" href="images/favicon.svg?v=3">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png?v=3">
   <link rel="apple-touch-icon" sizes="180x180" href="images/favicon-180.png?v=3">
@@ -27,7 +28,6 @@
 
   <div class="shell">
 
-    <!-- Side-rail nav. Set `active` on the link representing this page. -->
     <nav class="rail" aria-label="Primary">
       <a class="rail-brand" href="index.html">
         <span class="dot" aria-hidden="true"></span>
@@ -35,14 +35,14 @@
       </a>
 
       <div class="rail-section">Sections</div>
-      <a class="rail-link" href="index.html"><span>Index</span><span class="idx">00</span></a>
-      <a class="rail-link" href="about.html"><span>About</span><span class="idx">01</span></a>
+      <a class="rail-link"        href="index.html"><span>Index</span><span class="idx">00</span></a>
+      <a class="rail-link"        href="about.html"><span>About</span><span class="idx">01</span></a>
       <a class="rail-link"        href="students.html"><span>Students</span><span class="idx">02</span></a>
-      <a class="rail-link" href="publications.html"><span>Publications</span><span class="idx">03</span></a>
-      <a class="rail-link" href="collaborators.html"><span>Collaborators</span><span class="idx">04</span></a>
-      <a class="rail-link" href="teaching.html"><span>Teaching</span><span class="idx">05</span></a>
-      <a class="rail-link" href="projects.html"><span>Projects</span><span class="idx">06</span></a>
-      <a class="rail-link" href="index.html#contact"><span>Contact</span><span class="idx">07</span></a>
+      <a class="rail-link"        href="publications.html"><span>Publications</span><span class="idx">03</span></a>
+      <a class="rail-link"        href="collaborators.html"><span>Collaborators</span><span class="idx">04</span></a>
+      <a class="rail-link"        href="teaching.html"><span>Teaching</span><span class="idx">05</span></a>
+      <a class="rail-link"        href="projects.html"><span>Projects</span><span class="idx">06</span></a>
+      <a class="rail-link"        href="index.html#contact"><span>Contact</span><span class="idx">07</span></a>
 
       <div class="rail-section" style="margin-top: auto;">Connect</div>
       <a class="rail-link" href="https://scholar.google.com/citations?user=mCDF4XMAAAAJ" target="_blank" rel="noopener noreferrer"><span>Scholar</span><span class="idx">↗</span></a>
@@ -58,21 +58,27 @@
     <main class="main">
 
       <header class="page-head">
-        <div class="sec-num">NN / Section</div>
-        <h1 class="page-title">Page Title.</h1>
-        <p class="page-lead">Short editorial intro. Use <em>em</em> for emphasis.</p>
+        <h1 class="page-title">Alumni.</h1>
+        <p class="page-lead">Former students I had the pleasure to supervise / co-supervise.</p>
       </header>
 
-      <p>Main content goes here.</p>
+      <section aria-label="Alumni">
+        <p id="students-stats" class="pubs-stats" aria-live="polite"></p>
+        <div id="students-list"></div>
+        <p class="alumni-link">
+          <a class="inline-link" href="students.html">← Back to current students</a>
+        </p>
+      </section>
 
       <footer>
         <span>© 2026 · Terry Ruas</span>
-        <span>terryruas.com</span>
+        <span>terryruas.com · revised May 2026</span>
       </footer>
 
     </main>
   </div>
 
   <script src="js/redesign-common.js?v=5" defer></script>
+  <script src="js/students.js?v=1" defer></script>
 </body>
 </html>
