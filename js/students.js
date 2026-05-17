@@ -34,6 +34,26 @@ async function init() {
   }
 
   root.innerHTML = "";
+
+  // Optional per-program summary at the top of the list.
+  if (document.documentElement.dataset.showSummary === "true") {
+    const summary = document.createElement("div");
+    summary.className = "students-summary";
+    const totalCell = document.createElement("div");
+    totalCell.className = "summary-cell summary-total";
+    totalCell.innerHTML = `<span class="num">${all.length}</span><span class="label">Total</span>`;
+    summary.appendChild(totalCell);
+    PROGRAM_ORDER.forEach((prog) => {
+      const n = all.filter((s) => (s.program || "").trim() === prog).length;
+      if (!n) return;
+      const cell = document.createElement("div");
+      cell.className = "summary-cell";
+      cell.innerHTML = `<span class="num">${n}</span><span class="label">${PROGRAM_LABEL[prog] || prog}</span>`;
+      summary.appendChild(cell);
+    });
+    root.appendChild(summary);
+  }
+
   PROGRAM_ORDER.forEach((prog) => {
     const items = all.filter((s) => (s.program || "").trim() === prog);
     if (!items.length) return;
