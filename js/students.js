@@ -6,8 +6,9 @@
 // Vanilla DOM; no dependencies.
 
 const SRC = document.documentElement.dataset.studentsSrc;
-const PROGRAM_ORDER = ["Doctorate", "Masters", "Bachelor"];
+const PROGRAM_ORDER = ["Postdoc", "Doctorate", "Masters", "Bachelor"];
 const PROGRAM_LABEL = {
+  Postdoc: "Postdocs (co-supervisors)",
   Doctorate: "Doctorate",
   Masters: "Master's",
   Bachelor: "Bachelor's",
