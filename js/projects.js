@@ -42,7 +42,7 @@ function renderCard(e) {
 
 const ROLE_ORDER = [
   { key: "pi", label: "Principal Investigator" },
-  { key: "kc", label: "Key Contributor" },
+  { key: "kc", label: "Key Contributor / Support" },
 ];
 
 function renderList() {
