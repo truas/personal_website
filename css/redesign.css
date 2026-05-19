@@ -1110,6 +1110,14 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
   font-size: 15px;
   color: var(--fg-soft);
 }
+.alumni-note {
+  margin-top: 28px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--fg-mute);
+}
+.alumni-note + .alumni-link { margin-top: 6px; }
 
 /* ── collaborators ───────────────────────────────────────────────────── */
 .collab-grid {
