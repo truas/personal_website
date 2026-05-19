@@ -101,6 +101,26 @@
     "bibtex": "@misc{kaesberg_mind_2026,\n\ttitle = {Mind the {Gap} {Between} {Spatial} {Reasoning} and {Acting}! {Step}-by-{Step} {Evaluation} of {Agents} {With} {Spatial}-{Gym}},\n\turl = {http://arxiv.org/abs/2604.09338},\n\tdoi = {10.48550/arXiv.2604.09338},\n\tabstract = {Spatial reasoning is central to navigation and robotics, yet measuring model capabilities on these tasks remains difficult. Existing benchmarks evaluate models in a one-shot setting, requiring full solution generation in a single response, unlike humans, who work in interactive environments step-by-step. We introduce Spatial-Gym, a Gymnasium environment that isolates spatial constraint reasoning by testing pathfinding in 2D-grid puzzles as a sequential decision task with optional backtracking. We evaluate eight models in three settings (one-shot, step-by-step, step-by-step with backtracking) against human, random, and A* baselines on 500 episodes. The best model, GPT-OSS 120B, achieves a solve rate of 16.0\\%, 82 points below the human baseline (98.0\\%). Step-by-step format helps weaker models (up to +5.4\\%) by removing formatting errors, but hurts stronger models (up to 5.6\\%) by constraining global planning. Backtracking improves episode completion, but increases solve rate only for weaker models; stronger models rarely backtrack and do not benefit from it. Our experiments have three key findings: (1) models fail to scale reasoning effort with difficulty, (2) vision models receiving images of the spatial environment reduce solve rate by 73\\%, and (3) extended chain-of-thought reasoning retains a 3-5x accuracy advantage over standard inference even in the step-by-step setting. Spatial-Gym enables diagnosis of model limitations and provides a framework for improving spatial reasoning through reinforcement learning.},\n\turldate = {2026-04-13},\n\tpublisher = {arXiv},\n\tauthor = {Kaesberg, Lars Benedikt and Yang, Tianyu and Bauer, Niklas and Ruas, Terry and Wahle, Jan Philip and Gipp, Bela},\n\tmonth = apr,\n\tyear = {2026},\n\tnote = {arXiv:2604.09338 [cs]},\n\tkeywords = {!tr, Computer Science - Artificial Intelligence, Computer Science - Computation and Language, nlp\\_reasoning},\n}"
   },
   {
+    "id": "wunderlich_multi-agent_2026",
+    "type": "Preprint",
+    "bibtype": "misc",
+    "year": 2026,
+    "title": "Multi-Agent Reasoning Improves Compute Efficiency: Pareto-Optimal Test-Time Scaling",
+    "authors": [
+      "Florian Valentin Wunderlich",
+      "Lars Benedikt Kaesberg",
+      "Jan Philip Wahle",
+      "Terry Ruas",
+      "Bela Gipp"
+    ],
+    "venue": "",
+    "publisher": "",
+    "doi": "",
+    "url": "https://arxiv.org/abs/2605.01566",
+    "abstract": "",
+    "bibtex": "@misc{wunderlich_multi-agent_2026,\n\ttitle = {Multi-{Agent} {Reasoning} {Improves} {Compute} {Efficiency}: {Pareto}-{Optimal} {Test}-{Time} {Scaling}},\n\turl = {https://arxiv.org/abs/2605.01566},\n\tauthor = {Wunderlich, Florian Valentin and Kaesberg, Lars Benedikt and Wahle, Jan Philip and Ruas, Terry and Gipp, Bela},\n\tyear = {2026},\n\tnote = {\\_eprint: 2605.01566},\n}"
+  },
+  {
     "id": "zhukova_piecing_2026",
     "type": "Conference",
     "bibtype": "inproceedings",
