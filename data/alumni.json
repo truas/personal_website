@@ -1,5 +1,12 @@
 [
   {
+    "name": "Anastasia Zhukova",
+    "program": "Doctorate",
+    "school": "University of Goettingen, Goettingen, Germany",
+    "year": 2026,
+    "thesis": "Plant Assistant and CDCR Domain Adaptation Techniques in Natural Language Processing for Low-Resource Settings: Case Studies in the German Process Industry Domain and Media Bias Analysis"
+  },
+  {
     "name": "Jan Philip Wahle",
     "program": "Doctorate",
     "school": "University of Goettingen, Goettingen, Germany",
