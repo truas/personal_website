@@ -14,6 +14,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const themeBtn = document.getElementById("theme-toggle");
   if (themeBtn) themeBtn.addEventListener("click", flipTheme);
 
+  // ---- Footer "revised" date ----------------------------------------------
+  // Fill any .revised-date span from the page's last-modified date. On
+  // GitHub Pages document.lastModified reflects the file's deploy time, so
+  // each page shows the month it was actually last changed -- no manual
+  // editing. Falls back to the static text already in the span if the date
+  // can't be parsed.
+  const revised = document.querySelectorAll(".revised-date");
+  if (revised.length) {
+    const modified = new Date(document.lastModified);
+    if (!isNaN(modified.getTime()) && modified.getTime() > 0) {
+      const label = modified.toLocaleDateString("en-US", { month: "long", year: "numeric" });
+      revised.forEach((el) => { el.textContent = label; });
+    }
+  }
+
   // ---- Build mobile nav ---------------------------------------------------
   const rail = document.querySelector(".rail");
   const shell = document.querySelector(".shell");
