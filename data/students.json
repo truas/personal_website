@@ -2,90 +2,90 @@
   {
     "name": "Dr. Frederic Kirstein",
     "program": "Postdoc",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Göttingen, Göttingen, Germany"
   },
   {
     "name": "Dr. Jan Philip Wahle",
     "program": "Postdoc",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Göttingen, Göttingen, Germany"
   },
   {
     "name": "Dominik Meier",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany",
+    "school": "University of Göttingen, Göttingen, Germany",
     "interests": ["AI safety"]
   },
   {
     "name": "Tianyu Yang",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany",
+    "school": "University of Göttingen, Göttingen, Germany",
     "interests": ["reinforcement learning", "reasoning"]
   },
   {
     "name": "Jonas Becker",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany",
+    "school": "University of Göttingen, Göttingen, Germany",
     "interests": ["llm as agents", "misinformation spread"]
   },
   {
     "name": "Lars Kaesberg",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany",
+    "school": "University of Göttingen, Göttingen, Germany",
     "interests": ["spatial reasoning"]
   },
   {
     "name": "Constanting Dalinghaus",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany",
-    "interests": ["llms", "information retrieval"]
+    "school": "University of Göttingen, Göttingen, Germany",
+    "interests": ["llms", "sycophancy", "diffusion language models"]
   },
   {
     "name": "Niklas Bauer",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany",
+    "school": "University of Göttingen, Göttingen, Germany",
     "interests": ["paraphrase generation and detection", "AI use and impact"]
   },
   {
     "name": "Kia Jüng Yang",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany",
+    "school": "University of Göttingen, Göttingen, Germany",
     "interests": ["reasoning", "interpretability"]
   },
   {
     "name": "Shakib Yazdani",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany",
+    "school": "University of Göttingen, Göttingen, Germany",
     "interests": ["named entity recognition", "multimodal llm"]
   },
   {
     "name": "Yiwei Wang",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany",
+    "school": "University of Göttingen, Göttingen, Germany",
     "interests": ["mechanistic interpretability", "bias in llm"]
   },
   {
     "name": "Sakshi Deo Shukla",
     "program": "Doctorate",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Göttingen, Göttingen, Germany"
   },
   {
     "name": "Emma Victoria Stein",
     "program": "Masters",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Göttingen, Göttingen, Germany"
   },
   {
     "name": "Batyrkhan Abukhanov",
     "program": "Masters",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Göttingen, Göttingen, Germany"
   },
   {
     "name": "Florian Wunderlich",
     "program": "Bachelor",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Göttingen, Göttingen, Germany"
   },
   {
     "name": "Tobias Kristoffer Mark",
     "program": "Bachelor",
-    "school": "University of Goettingen, Goettingen, Germany"
+    "school": "University of Göttingen, Göttingen, Germany"
   }
 ]
