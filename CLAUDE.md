@@ -124,6 +124,4 @@ loads it (and on the favicon links). GitHub Pages caches aggressively.
 
 ## Known cleanups (not yet done — confirm before touching content)
 
-- `data/students.json` has likely name typos: "Constanting Dalinghaus" (→ "Constantin"?), and
-  verify "Kia Jüng Yang".
 - `images/portrait.png` (~680 KB) and `images/logo.png` appear unused by the current rail pages.
