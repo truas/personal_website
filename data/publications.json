@@ -1,5 +1,26 @@
 [
   {
+    "id": "yang_alden_2026",
+    "type": "Conference",
+    "bibtype": "inproceedings",
+    "year": 2026,
+    "title": "ALDEN: Reinforcement Learning for Active Navigation and Evidence Gathering in Long Documents",
+    "authors": [
+      "Tianyu Yang",
+      "Terry Ruas",
+      "Yijun Tian",
+      "Jan Philip Wahle",
+      "Daniel Kurzawe",
+      "Bela Gipp"
+    ],
+    "venue": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "publisher": "Association for Computational Linguistics",
+    "doi": "10.18653/v1/2026.acl-long.611",
+    "url": "https://aclanthology.org/2026.acl-long.611",
+    "abstract": "",
+    "bibtex": "@inproceedings{yang_alden_2026,\n\taddress = {San Diego, California, United States},\n\ttitle = {{ALDEN}: {Reinforcement} {Learning} for {Active} {Navigation} and {Evidence} {Gathering} in {Long} {Documents}},\n\tshorttitle = {{ALDEN}},\n\turl = {https://aclanthology.org/2026.acl-long.611},\n\tdoi = {10.18653/v1/2026.acl-long.611},\n\tlanguage = {en},\n\turldate = {2026-07-06},\n\tbooktitle = {Proceedings of the 64th {Annual} {Meeting} of the {Association} for {Computational} {Linguistics} ({Volume} 1: {Long} {Papers})},\n\tpublisher = {Association for Computational Linguistics},\n\tauthor = {Yang, Tianyu and Ruas, Terry and Tian, Yijun and Wahle, Jan Philip and Kurzawe, Daniel and Gipp, Bela},\n\tyear = {2026},\n\tpages = {13371--13392},\n}"
+  },
+  {
     "id": "yang_beyond_2026",
     "type": "Preprint",
     "bibtype": "misc",
@@ -40,14 +61,14 @@
   },
   {
     "id": "lee_dimabsa_2026",
-    "type": "Preprint",
-    "bibtype": "misc",
+    "type": "Conference",
+    "bibtype": "inproceedings",
     "year": 2026,
     "title": "DimABSA: Building Multilingual and Multidomain Datasets for Dimensional Aspect-Based Sentiment Analysis",
     "authors": [
       "Lung-Hao Lee",
       "Liang-Chih Yu",
-      "Natalia Loukashevich",
+      "Natalia V Loukachevitch",
       "Ilseyar Alimova",
       "Alexander Panchenko",
       "Tzu-Mi Lin",
@@ -62,12 +83,12 @@
       "Shamsuddeen Hassan Muhammad",
       "Saif M. Mohammad"
     ],
-    "venue": "arXiv",
-    "publisher": "arXiv",
-    "doi": "10.48550/arXiv.2601.23022",
-    "url": "http://arxiv.org/abs/2601.23022",
-    "abstract": "Aspect-Based Sentiment Analysis (ABSA) focuses on extracting sentiment at a fine-grained aspect level and has been widely applied across real-world domains. However, existing ABSA research relies on coarse-grained categorical labels (e.g., positive, negative), which limits its ability to capture nuanced affective states. To address this limitation, we adopt a dimensional approach that represents sentiment with continuous valence-arousal (VA) scores, enabling fine-grained analysis at both the aspect and sentiment levels. To this end, we introduce DimABSA, the first multilingual, dimensional ABSA resource annotated with both traditional ABSA elements (aspect terms, aspect categories, and opinion terms) and newly introduced VA scores. This resource contains 76,958 aspect instances across 42,590 sentences, spanning six languages and four domains. We further introduce three subtasks that combine VA scores with different ABSA elements, providing a bridge from traditional ABSA to dimensional ABSA. Given that these subtasks involve both categorical and continuous outputs, we propose a new unified metric, continuous F1 (cF1), which incorporates VA prediction error into standard F1. We provide a comprehensive benchmark using both prompted and fine-tuned large language models across all subtasks. Our results show that DimABSA is a challenging benchmark and provides a foundation for advancing multilingual dimensional ABSA. We publicly released the DimABSA dataset, which was used for Track A of SemEval-2026 Task 3, attracting over 300 participants.",
-    "bibtex": "@misc{lee_dimabsa_2026,\n\ttitle = {{DimABSA}: {Building} {Multilingual} and {Multidomain} {Datasets} for {Dimensional} {Aspect}-{Based} {Sentiment} {Analysis}},\n\tshorttitle = {{DimABSA}},\n\turl = {http://arxiv.org/abs/2601.23022},\n\tdoi = {10.48550/arXiv.2601.23022},\n\tabstract = {Aspect-Based Sentiment Analysis (ABSA) focuses on extracting sentiment at a fine-grained aspect level and has been widely applied across real-world domains. However, existing ABSA research relies on coarse-grained categorical labels (e.g., positive, negative), which limits its ability to capture nuanced affective states. To address this limitation, we adopt a dimensional approach that represents sentiment with continuous valence-arousal (VA) scores, enabling fine-grained analysis at both the aspect and sentiment levels. To this end, we introduce DimABSA, the first multilingual, dimensional ABSA resource annotated with both traditional ABSA elements (aspect terms, aspect categories, and opinion terms) and newly introduced VA scores. This resource contains 76,958 aspect instances across 42,590 sentences, spanning six languages and four domains. We further introduce three subtasks that combine VA scores with different ABSA elements, providing a bridge from traditional ABSA to dimensional ABSA. Given that these subtasks involve both categorical and continuous outputs, we propose a new unified metric, continuous F1 (cF1), which incorporates VA prediction error into standard F1. We provide a comprehensive benchmark using both prompted and fine-tuned large language models across all subtasks. Our results show that DimABSA is a challenging benchmark and provides a foundation for advancing multilingual dimensional ABSA. We publicly released the DimABSA dataset, which was used for Track A of SemEval-2026 Task 3, attracting over 300 participants.},\n\turldate = {2026-05-05},\n\tpublisher = {arXiv},\n\tauthor = {Lee, Lung-Hao and Yu, Liang-Chih and Loukashevich, Natalia and Alimova, Ilseyar and Panchenko, Alexander and Lin, Tzu-Mi and Xu, Zhe-Yu and Zhou, Jian-Yu and Zheng, Guangmin and Wang, Jin and Awasthi, Sharanya and Becker, Jonas and Wahle, Jan Philip and Ruas, Terry and Muhammad, Shamsuddeen Hassan and Mohammad, Saif M.},\n\tmonth = apr,\n\tyear = {2026},\n\tnote = {arXiv:2601.23022 [cs]},\n\tkeywords = {!tr, Computer Science - Computation and Language, semeval},\n}"
+    "venue": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    "publisher": "Association for Computational Linguistics",
+    "doi": "10.18653/v1/2026.acl-long.1881",
+    "url": "https://aclanthology.org/2026.acl-long.1881",
+    "abstract": "",
+    "bibtex": "@inproceedings{lee_dimabsa_2026,\n\taddress = {San Diego, California, United States},\n\ttitle = {{DimABSA}: {Building} {Multilingual} and {Multidomain} {Datasets} for {Dimensional} {Aspect}-{Based} {Sentiment} {Analysis}},\n\tshorttitle = {{DimABSA}},\n\turl = {https://aclanthology.org/2026.acl-long.1881},\n\tdoi = {10.18653/v1/2026.acl-long.1881},\n\tlanguage = {en},\n\turldate = {2026-07-06},\n\tbooktitle = {Proceedings of the 64th {Annual} {Meeting} of the {Association} for {Computational} {Linguistics} ({Volume} 1: {Long} {Papers})},\n\tpublisher = {Association for Computational Linguistics},\n\tauthor = {Lee, Lung-Hao and Yu, Liang-Chih and Loukachevitch, Natalia V and Alimova, Ilseyar and Panchenko, Alexander and Lin, Tzu-Mi and Xu, Zhe-Yu and Zhou, Jian-Yu and Zheng, Guangmin and Wang, Jin and Awasthi, Sharanya and Becker, Jonas and Wahle, Jan Philip and Ruas, Terry and Muhammad, Shamsuddeen Hassan and Mohammad, Saif M.},\n\tyear = {2026},\n\tpages = {40492--40518},\n}"
   },
   {
     "id": "becker_dimstance_2026",
@@ -141,8 +162,8 @@
   },
   {
     "id": "wunderlich_multi-agent_2026",
-    "type": "Preprint",
-    "bibtype": "misc",
+    "type": "Conference",
+    "bibtype": "inproceedings",
     "year": 2026,
     "title": "Multi-Agent Reasoning Improves Compute Efficiency: Pareto-Optimal Test-Time Scaling",
     "authors": [
@@ -152,12 +173,12 @@
       "Terry Ruas",
       "Bela Gipp"
     ],
-    "venue": "arXiv",
-    "publisher": "arXiv",
-    "doi": "10.48550/arXiv.2605.01566",
-    "url": "https://arxiv.org/abs/2605.01566",
+    "venue": "Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 4: Student Research Workshop)",
+    "publisher": "Association for Computational Linguistics",
+    "doi": "10.18653/v1/2026.acl-srw.1",
+    "url": "https://aclanthology.org/2026.acl-srw.1",
     "abstract": "",
-    "bibtex": "@misc{wunderlich_multi-agent_2026,\n\ttitle = {Multi-{Agent} {Reasoning} {Improves} {Compute} {Efficiency}: {Pareto}-{Optimal} {Test}-{Time} {Scaling}},\n\turl = {https://arxiv.org/abs/2605.01566},\n\tdoi = {10.48550/arXiv.2605.01566},\n\tpublisher = {arXiv},\n\tauthor = {Wunderlich, Florian Valentin and Kaesberg, Lars Benedikt and Wahle, Jan Philip and Ruas, Terry and Gipp, Bela},\n\tyear = {2026},\n\tnote = {\\_eprint: 2605.01566},\n}"
+    "bibtex": "@inproceedings{wunderlich_multi-agent_2026,\n\taddress = {San Diego, California, United States},\n\ttitle = {Multi-{Agent} {Reasoning} {Improves} {Compute} {Efficiency}: {Pareto}-{Optimal} {Test}-{Time} {Scaling}},\n\tshorttitle = {Multi-{Agent} {Reasoning} {Improves} {Compute} {Efficiency}},\n\turl = {https://aclanthology.org/2026.acl-srw.1},\n\tdoi = {10.18653/v1/2026.acl-srw.1},\n\tlanguage = {en},\n\turldate = {2026-07-06},\n\tbooktitle = {Proceedings of the 64th {Annual} {Meeting} of the {Association} for {Computational} {Linguistics} ({Volume} 4: {Student} {Research} {Workshop})},\n\tpublisher = {Association for Computational Linguistics},\n\tauthor = {Wunderlich, Florian Valentin and Kaesberg, Lars Benedikt and Wahle, Jan Philip and Ruas, Terry and Gipp, Bela},\n\tyear = {2026},\n\tpages = {1--14},\n}"
   },
   {
     "id": "zhukova_piecing_2026",
@@ -180,8 +201,8 @@
   },
   {
     "id": "yu_semeval-2026_2026",
-    "type": "Preprint",
-    "bibtype": "misc",
+    "type": "Conference",
+    "bibtype": "inproceedings",
     "year": 2026,
     "title": "SemEval-2026 Task 3: Dimensional Aspect-Based Sentiment Analysis (DimABSA)",
     "authors": [
@@ -193,22 +214,22 @@
       "Ying-Lung Lin",
       "Jin Wang",
       "Jan Philip Wahle",
-      "Terry Ruas",
+      "Terry Lima Ruas",
       "Natalia Loukachevitch",
       "Alexander Panchenko",
       "Ilseyar Alimova",
-      "Lilian Wanzare",
+      "Lilian Diana Awuor Wanzare",
       "Nelson Odhiambo",
       "Bela Gipp",
       "Kai-Wei Chang",
-      "Saif M. Mohammad"
+      "Saif Mohammad"
     ],
-    "venue": "arXiv",
-    "publisher": "arXiv",
-    "doi": "10.48550/arXiv.2604.07066",
-    "url": "http://arxiv.org/abs/2604.07066",
-    "abstract": "We present the SemEval-2026 shared task on Dimensional Aspect-Based Sentiment Analysis (DimABSA), which improves traditional ABSA by modeling sentiment along valence-arousal (VA) dimensions rather than using categorical polarity labels. To extend ABSA beyond consumer reviews to public-issue discourse (e.g., political, energy, and climate issues), we introduce an additional task, Dimensional Stance Analysis (DimStance), which treats stance targets as aspects and reformulates stance detection as regression in the VA space. The task consists of two tracks: Track A (DimABSA) and Track B (DimStance). Track A includes three subtasks: (1) dimensional aspect sentiment regression, (2) dimensional aspect sentiment triplet extraction, and (3) dimensional aspect sentiment quadruplet extraction, while Track B includes only the regression subtask for stance targets. We also introduce a continuous F1 (cF1) metric to jointly evaluate structured extraction and VA regression. The task attracted more than 400 participants, resulting in 112 final submissions and 42 system description papers. We report baseline results, discuss top-performing systems, and analyze key design choices to provide insights into dimensional sentiment analysis at the aspect and stance-target levels. All resources are available on our GitHub repository.",
-    "bibtex": "@misc{yu_semeval-2026_2026,\n\ttitle = {{SemEval}-2026 {Task} 3: {Dimensional} {Aspect}-{Based} {Sentiment} {Analysis} ({DimABSA})},\n\tshorttitle = {{SemEval}-2026 {Task} 3},\n\turl = {http://arxiv.org/abs/2604.07066},\n\tdoi = {10.48550/arXiv.2604.07066},\n\tabstract = {We present the SemEval-2026 shared task on Dimensional Aspect-Based Sentiment Analysis (DimABSA), which improves traditional ABSA by modeling sentiment along valence-arousal (VA) dimensions rather than using categorical polarity labels. To extend ABSA beyond consumer reviews to public-issue discourse (e.g., political, energy, and climate issues), we introduce an additional task, Dimensional Stance Analysis (DimStance), which treats stance targets as aspects and reformulates stance detection as regression in the VA space. The task consists of two tracks: Track A (DimABSA) and Track B (DimStance). Track A includes three subtasks: (1) dimensional aspect sentiment regression, (2) dimensional aspect sentiment triplet extraction, and (3) dimensional aspect sentiment quadruplet extraction, while Track B includes only the regression subtask for stance targets. We also introduce a continuous F1 (cF1) metric to jointly evaluate structured extraction and VA regression. The task attracted more than 400 participants, resulting in 112 final submissions and 42 system description papers. We report baseline results, discuss top-performing systems, and analyze key design choices to provide insights into dimensional sentiment analysis at the aspect and stance-target levels. All resources are available on our GitHub repository.},\n\turldate = {2026-04-09},\n\tpublisher = {arXiv},\n\tauthor = {Yu, Liang-Chih and Becker, Jonas and Muhammad, Shamsuddeen Hassan and Abdulmumin, Idris and Lee, Lung-Hao and Lin, Ying-Lung and Wang, Jin and Wahle, Jan Philip and Ruas, Terry and Loukachevitch, Natalia and Panchenko, Alexander and Alimova, Ilseyar and Wanzare, Lilian and Odhiambo, Nelson and Gipp, Bela and Chang, Kai-Wei and Mohammad, Saif M.},\n\tmonth = apr,\n\tyear = {2026},\n\tnote = {arXiv:2604.07066 [cs]},\n\tkeywords = {!tr, !tr\\_author, Computer Science - Computation and Language, nlp\\_stance\\_detection, workshop},\n}"
+    "venue": "Proceedings of the 20th International Workshop on Semantic Evaluation (2026)",
+    "publisher": "Association for Computational Linguistics",
+    "doi": "10.18653/v1/2026.semeval-1.452",
+    "url": "https://aclanthology.org/2026.semeval-1.452",
+    "abstract": "",
+    "bibtex": "@inproceedings{yu_semeval-2026_2026,\n\taddress = {San Diego, California, USA},\n\ttitle = {{SemEval}-2026 {Task} 3: {Dimensional} {Aspect}-{Based} {Sentiment} {Analysis} ({DimABSA})},\n\tshorttitle = {{SemEval}-2026 {Task} 3},\n\turl = {https://aclanthology.org/2026.semeval-1.452},\n\tdoi = {10.18653/v1/2026.semeval-1.452},\n\tlanguage = {en},\n\turldate = {2026-07-06},\n\tbooktitle = {Proceedings of the 20th {International} {Workshop} on {Semantic} {Evaluation} (2026)},\n\tpublisher = {Association for Computational Linguistics},\n\tauthor = {Yu, Liang-Chih and Becker, Jonas and Muhammad, Shamsuddeen Hassan and Abdulmumin, Idris and Lee, Lung-Hao and Lin, Ying-Lung and Wang, Jin and Wahle, Jan Philip and Lima Ruas, Terry and Loukachevitch, Natalia and Panchenko, Alexander and Alimova, Ilseyar and Wanzare, Lilian Diana Awuor and Odhiambo, Nelson and Gipp, Bela and Chang, Kai-Wei and Mohammad, Saif},\n\tyear = {2026},\n\tpages = {3753--3778},\n}"
   },
   {
     "id": "becker_stay_2026",
@@ -233,8 +254,8 @@
   },
   {
     "id": "schmidt_who_2026",
-    "type": "Preprint",
-    "bibtype": "misc",
+    "type": "Conference",
+    "bibtype": "inproceedings",
     "year": 2026,
     "title": "Who Watches the Watchmen? Humans Disagree With Translation Metrics on Unseen Domains",
     "authors": [
@@ -243,33 +264,12 @@
       "Terry Ruas",
       "Bela Gipp"
     ],
-    "venue": "arXiv",
-    "publisher": "arXiv",
-    "doi": "10.48550/arXiv.2604.17393",
-    "url": "http://arxiv.org/abs/2604.17393",
-    "abstract": "Automatic evaluation metrics are central to the development of machine translation systems, yet their robustness under domain shift remains unclear. Most metrics are developed on the Workshop on Machine Translation (WMT) benchmarks, raising concerns about their robustness to unseen domains. Prior studies that analyze unseen domains vary translation systems, annotators, or evaluation conditions, confounding domain effects with human annotation noise. To address these biases, we introduce a systematic multi-annotator Cross-Domain Error-Span-Annotation dataset (CD-ESA), comprising 18.8k human error span annotations across three language pairs, where we fix annotators within each language pair and evaluate translations of the same six translation systems across one seen news domain and two unseen technical domains. Using this dataset, we first find that automatic metrics appear surprisingly robust to domain-shifts at the segment level (up to 0.69 agreement), but this robustness largely disappears once we account for human label variation. Averaging annotations increases inter-annotator agreement by up to +0.11. Metrics struggle on the unseen chemical domain compared to humans (inter-annotator agreement of 0.78-0.83 vs. 0.96). We recommend comparing metric-human agreement against inter-annotator agreement, rather than comparing raw metric-human agreement alone, when evaluating across different domains.",
-    "bibtex": "@misc{schmidt_who_2026,\n\ttitle = {Who {Watches} the {Watchmen}? {Humans} {Disagree} {With} {Translation} {Metrics} on {Unseen} {Domains}},\n\tshorttitle = {Who {Watches} the {Watchmen}?},\n\turl = {http://arxiv.org/abs/2604.17393},\n\tdoi = {10.48550/arXiv.2604.17393},\n\tabstract = {Automatic evaluation metrics are central to the development of machine translation systems, yet their robustness under domain shift remains unclear. Most metrics are developed on the Workshop on Machine Translation (WMT) benchmarks, raising concerns about their robustness to unseen domains. Prior studies that analyze unseen domains vary translation systems, annotators, or evaluation conditions, confounding domain effects with human annotation noise. To address these biases, we introduce a systematic multi-annotator Cross-Domain Error-Span-Annotation dataset (CD-ESA), comprising 18.8k human error span annotations across three language pairs, where we fix annotators within each language pair and evaluate translations of the same six translation systems across one seen news domain and two unseen technical domains. Using this dataset, we first find that automatic metrics appear surprisingly robust to domain-shifts at the segment level (up to 0.69 agreement), but this robustness largely disappears once we account for human label variation. Averaging annotations increases inter-annotator agreement by up to +0.11. Metrics struggle on the unseen chemical domain compared to humans (inter-annotator agreement of 0.78-0.83 vs. 0.96). We recommend comparing metric-human agreement against inter-annotator agreement, rather than comparing raw metric-human agreement alone, when evaluating across different domains.},\n\turldate = {2026-04-22},\n\tpublisher = {arXiv},\n\tauthor = {Schmidt, Finn and Wahle, Jan Philip and Ruas, Terry and Gipp, Bela},\n\tmonth = apr,\n\tyear = {2026},\n\tnote = {arXiv:2604.17393 [cs]},\n\tkeywords = {!tr\\_author, Computer Science - Computation and Language, nlp\\_translation},\n}"
-  },
-  {
-    "id": "yang_alden_2025",
-    "type": "Preprint",
-    "bibtype": "misc",
-    "year": 2025,
-    "title": "ALDEN: Reinforcement Learning for Active Navigation and Evidence Gathering in Long Documents",
-    "authors": [
-      "Tianyu Yang",
-      "Terry Ruas",
-      "Yijun Tian",
-      "Jan Philip Wahle",
-      "Daniel Kurzawe",
-      "Bela Gipp"
-    ],
-    "venue": "arXiv",
-    "publisher": "arXiv",
-    "doi": "10.48550/arXiv.2510.25668",
-    "url": "http://arxiv.org/abs/2510.25668",
-    "abstract": "Vision-language models (VLMs) excel at interpreting text-rich images but struggle with long, visually complex documents that demand analysis and integration of information spread across multiple pages. Existing approaches typically rely on fixed reasoning templates or rigid pipelines, which force VLMs into a passive role and hinder both efficiency and generalization. We present Active Long-DocumEnt Navigation (ALDEN), a multi-turn reinforcement learning framework that fine-tunes VLMs as interactive agents capable of actively navigating long, visually rich documents. ALDEN introduces a novel fetch action that directly accesses the page by index, complementing the classic search action and better exploiting document structure. For dense process supervision and efficient training, we propose a rule-based cross-level reward that provides both turn- and token-level signals. To address the empirically observed training instability caused by numerous visual tokens from long documents, we further propose a visual-semantic anchoring mechanism that applies a dual-path KL-divergence constraint to stabilize visual and textual representations separately during training. Trained on a corpus constructed from three open-source datasets, ALDEN achieves state-of-the-art performance on five long-document benchmarks. Overall, ALDEN marks a step beyond passive document reading toward agents that autonomously navigate and reason across long, visually rich documents, offering a robust path to more accurate and efficient long-document understanding.",
-    "bibtex": "@misc{yang_alden_2025,\n\ttitle = {{ALDEN}: {Reinforcement} {Learning} for {Active} {Navigation} and {Evidence} {Gathering} in {Long} {Documents}},\n\tshorttitle = {{ALDEN}},\n\turl = {http://arxiv.org/abs/2510.25668},\n\tdoi = {10.48550/arXiv.2510.25668},\n\tabstract = {Vision-language models (VLMs) excel at interpreting text-rich images but struggle with long, visually complex documents that demand analysis and integration of information spread across multiple pages. Existing approaches typically rely on fixed reasoning templates or rigid pipelines, which force VLMs into a passive role and hinder both efficiency and generalization. We present Active Long-DocumEnt Navigation (ALDEN), a multi-turn reinforcement learning framework that fine-tunes VLMs as interactive agents capable of actively navigating long, visually rich documents. ALDEN introduces a novel fetch action that directly accesses the page by index, complementing the classic search action and better exploiting document structure. For dense process supervision and efficient training, we propose a rule-based cross-level reward that provides both turn- and token-level signals. To address the empirically observed training instability caused by numerous visual tokens from long documents, we further propose a visual-semantic anchoring mechanism that applies a dual-path KL-divergence constraint to stabilize visual and textual representations separately during training. Trained on a corpus constructed from three open-source datasets, ALDEN achieves state-of-the-art performance on five long-document benchmarks. Overall, ALDEN marks a step beyond passive document reading toward agents that autonomously navigate and reason across long, visually rich documents, offering a robust path to more accurate and efficient long-document understanding.},\n\turldate = {2025-12-01},\n\tpublisher = {arXiv},\n\tauthor = {Yang, Tianyu and Ruas, Terry and Tian, Yijun and Wahle, Jan Philip and Kurzawe, Daniel and Gipp, Bela},\n\tmonth = oct,\n\tyear = {2025},\n\tnote = {arXiv:2510.25668 [cs]},\n\tkeywords = {!tr\\_author, Computer Science - Artificial Intelligence, Computer Science - Multimedia, ir, nlp\\_LLM, nlp\\_rl},\n}"
+    "venue": "Findings of the Association for Computational Linguistics: ACL 2026",
+    "publisher": "Association for Computational Linguistics",
+    "doi": "10.18653/v1/2026.findings-acl.1145",
+    "url": "https://aclanthology.org/2026.findings-acl.1145",
+    "abstract": "",
+    "bibtex": "@inproceedings{schmidt_who_2026,\n\taddress = {San Diego, California, United States},\n\ttitle = {Who {Watches} the {Watchmen}? {Humans} {Disagree} {With} {Translation} {Metrics} on {Unseen} {Domains}},\n\tshorttitle = {Who {Watches} the {Watchmen}?},\n\turl = {https://aclanthology.org/2026.findings-acl.1145},\n\tdoi = {10.18653/v1/2026.findings-acl.1145},\n\tlanguage = {en},\n\turldate = {2026-07-06},\n\tbooktitle = {Findings of the {Association} for {Computational} {Linguistics}: {ACL} 2026},\n\tpublisher = {Association for Computational Linguistics},\n\tauthor = {Schmidt, Finn and Wahle, Jan Philip and Ruas, Terry and Gipp, Bela},\n\tyear = {2026},\n\tpages = {22822--22841},\n}"
   },
   {
     "id": "muhammad_brighter_2025",
