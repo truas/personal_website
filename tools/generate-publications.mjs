@@ -12,7 +12,7 @@
 // {id, type, bibtype, year, title, authors[], venue, publisher, doi, url,
 //  abstract, bibtex}.
 
-import { writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -21,6 +21,7 @@ const BIBBASE_URL =
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(__dirname, "..", "data", "publications.json");
+const NOTES = resolve(__dirname, "..", "data", "pub-notes.json");
 
 async function fetchSource() {
   // Append a timestamp so any HTTP / CDN cache in front of BibBase has to
@@ -276,6 +277,22 @@ async function main() {
   );
 
   console.log(`Parsed ${entries.length} entries, ${deduped.length} after dedupe.`);
+
+  // Merge manual annotations (e.g. "Accepted at <venue>") keyed by entry id,
+  // from data/pub-notes.json. Zotero/BibBase has no field that reflects an
+  // accepted-but-not-yet-published status, so these live in-repo and are
+  // re-applied on every regeneration. Missing file = no annotations.
+  let notes = {};
+  try {
+    notes = JSON.parse(await readFile(NOTES, "utf8"));
+  } catch (err) {
+    if (err.code !== "ENOENT") throw err;
+  }
+  let annotated = 0;
+  for (const e of deduped) {
+    if (notes[e.id]) { e.note = notes[e.id]; annotated++; }
+  }
+  if (annotated) console.log(`Applied ${annotated} manual note(s) from pub-notes.json.`);
 
   await mkdir(dirname(OUT), { recursive: true });
   await writeFile(OUT, JSON.stringify(deduped, null, 2) + "\n", "utf8");

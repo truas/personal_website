@@ -83,6 +83,8 @@ function renderCard(e) {
   mid.appendChild(el("h3", { class: "pub-title" }, titleInner));
   mid.appendChild(el("div", { class: "pub-authors" }, ...joinNodes(fmtAuthors(e.authors), ", ")));
 
+  if (e.note) mid.appendChild(el("div", { class: "pub-note" }, e.note));
+
   const links = el("div", { class: "pub-links" });
   const abstractPanel = el("div", { class: "pub-detail", hidden: true });
   const bibtexPanel = el("div", { class: "pub-detail pub-bibtex", hidden: true });

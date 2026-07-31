@@ -513,6 +513,15 @@ html[data-type="instrument"] .theme-title em { font-style: italic; }
 .pub-title a:hover { color: var(--accent); }
 .pub-authors { font-size: 13.5px; color: var(--fg-soft); }
 .pub-authors .me { color: var(--fg); font-weight: 500; }
+.pub-note {
+  display: inline-block;
+  margin-top: 7px;
+  font-family: var(--mono); font-size: 11px; letter-spacing: 0.02em;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
 .pub-venue {
   font-family: var(--mono); font-size: 11px; color: var(--fg-mute);
   text-align: right; text-transform: uppercase; letter-spacing: 0.06em;

@@ -69,6 +69,13 @@ function buildPubCard(p) {
   });
   mid.appendChild(authors);
 
+  if (p.note) {
+    const note = document.createElement("div");
+    note.className = "pub-note";
+    note.textContent = p.note;
+    mid.appendChild(note);
+  }
+
   const linkRow = document.createElement("div");
   linkRow.className = "pub-links";
   if (p.doi) {

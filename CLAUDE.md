@@ -56,6 +56,10 @@ node tools/generate-publications.mjs      # requires Node >= 18
   git push          # deploys via GitHub Pages
   ```
 - Caveats: arXiv entries are typed `Preprint` and may carry arXiv DOIs (`10.48550/arXiv.*`).
+- Annotations: to badge a paper with an "Accepted at …" / status note (e.g. a preprint
+  accepted at a venue), add `"<pub-id>": "<text>"` to `data/pub-notes.json`. The generator
+  merges it as an optional `note` field on that entry (so it survives every refresh), and
+  publications.html / index.html render it as a pill under the authors.
 - Shortcut: the `/refresh-pubs` project command runs and reviews this for you.
 
 ## Data files (this is where the content lives)
@@ -64,7 +68,8 @@ All under `data/`. Edited by hand **except** `publications.json` (generated).
 
 | File | Drives | Schema (keys) |
 |---|---|---|
-| `publications.json` | publications.html, index.html | `id, type, bibtype, year, title, authors[], venue, publisher, doi, url, abstract, bibtex` |
+| `publications.json` | publications.html, index.html | `id, type, bibtype, year, title, authors[], venue, publisher, doi, url, abstract, bibtex, note?` |
+| `pub-notes.json` | publications.html, index.html (badge) | `{ "<pub-id>": "<note>" }` — manual "Accepted at …" overlays, merged onto `publications.json` by `id` at generate time |
 | `teaching.json` | teaching.html, index.html | `id, year, course, code, institution, institution_short, term, role` |
 | `projects.json` | projects.html, index.html | `year, role` ("pi"/"kc"), `period, title, agency` |
 | `students.json` | students.html | `name, program, school, interests[]?` |
