@@ -60,6 +60,27 @@
     "bibtex": "@inproceedings{gnewuch_big_2026,\n\taddress = {Boracay Island, Philippines},\n\ttitle = {Big {Tech}-{Funded} {AI} {Papers} {Have} {Higher} {Citation} {Impact}, {Greater} {Insularity}, and {Larger} {Recency} {Bias}},\n\tcopyright = {https://doi.org/10.15223/policy-029},\n\tisbn = {979-8-3315-7191-7},\n\turl = {https://ieeexplore.ieee.org/document/11468172/},\n\tdoi = {10.1109/ACDSA67686.2026.11468172},\n\turldate = {2026-04-22},\n\tbooktitle = {2026 {International} {Conference} on {Artificial} {Intelligence}, {Computer}, {Data} {Sciences} and {Applications} ({ACDSA})},\n\tpublisher = {IEEE},\n\tauthor = {Gnewuch, Max Martin and Wahle, Jan Philip and Ruas, Terry and Gipp, Bela},\n\tmonth = feb,\n\tyear = {2026},\n\tpages = {1--7},\n}"
   },
   {
+    "id": "bauer_can_2026",
+    "type": "Preprint",
+    "bibtype": "misc",
+    "year": 2026,
+    "title": "Can Agents Deceive? Evaluating Reasoning and Deception in ParliamentBench using a Social Deduction Game",
+    "authors": [
+      "Niklas Bauer",
+      "Lars Benedikt Kaesberg",
+      "Akiko Aizawa",
+      "Jan Philip Wahle",
+      "Bela Gipp",
+      "Terry Ruas"
+    ],
+    "venue": "arXiv",
+    "publisher": "arXiv",
+    "doi": "10.48550/arXiv.2607.28146",
+    "url": "http://arxiv.org/abs/2607.28146",
+    "abstract": "As large language models (LLMs) are deployed as agents in high-stakes settings, such as medical and legal systems, understanding their deceptive capabilities is fundamental to safety. Controlled social deduction games provide a reproducible proxy for isolating and evaluating these complex adversarial behaviors. We present the open-source benchmark framework ParliamentBench based on the game Secret Hitler to evaluate LLMs in scenarios that require deception, persuasion, and reasoning under information asymmetry. We evaluate 16 LLMs across 1,600 simulated matches playing each other, playing against humans, and compare them against a large set of online games. We introduce three novel metrics that isolate social deduction, reasoning, and deceptive consistency. Our experiments reveal that frontier models achieve strong performance across cooperative and deceptive roles, with a strong top-four cluster (GPT-5.4, Kimi K2.5, Grok 4.1 Fast, and DeepSeek 3.1 Terminus), whereas the weakest models fall short of random (33%) and simple algorithmic (45%) baselines. Most LLMs struggle to maintain a consistent deceptive persona throughout an entire game, with deception retention dropping below 50%.",
+    "bibtex": "@misc{bauer_can_2026,\n\ttitle = {Can {Agents} {Deceive}? {Evaluating} {Reasoning} and {Deception} in {ParliamentBench} using a {Social} {Deduction} {Game}},\n\tshorttitle = {Can {Agents} {Deceive}?},\n\turl = {http://arxiv.org/abs/2607.28146},\n\tdoi = {10.48550/arXiv.2607.28146},\n\tabstract = {As large language models (LLMs) are deployed as agents in high-stakes settings, such as medical and legal systems, understanding their deceptive capabilities is fundamental to safety. Controlled social deduction games provide a reproducible proxy for isolating and evaluating these complex adversarial behaviors. We present the open-source benchmark framework ParliamentBench based on the game Secret Hitler to evaluate LLMs in scenarios that require deception, persuasion, and reasoning under information asymmetry. We evaluate 16 LLMs across 1,600 simulated matches playing each other, playing against humans, and compare them against a large set of online games. We introduce three novel metrics that isolate social deduction, reasoning, and deceptive consistency. Our experiments reveal that frontier models achieve strong performance across cooperative and deceptive roles, with a strong top-four cluster (GPT-5.4, Kimi K2.5, Grok 4.1 Fast, and DeepSeek 3.1 Terminus), whereas the weakest models fall short of random (33\\%) and simple algorithmic (45\\%) baselines. Most LLMs struggle to maintain a consistent deceptive persona throughout an entire game, with deception retention dropping below 50\\%.},\n\turldate = {2026-07-31},\n\tpublisher = {arXiv},\n\tauthor = {Bauer, Niklas and Kaesberg, Lars Benedikt and Aizawa, Akiko and Wahle, Jan Philip and Gipp, Bela and Ruas, Terry},\n\tmonth = jul,\n\tyear = {2026},\n\tnote = {arXiv:2607.28146 [cs.CL]},\n\tkeywords = {Computer Science - Artificial Intelligence, Computer Science - Computation and Language},\n}"
+  },
+  {
     "id": "lee_dimabsa_2026",
     "type": "Conference",
     "bibtype": "inproceedings",
