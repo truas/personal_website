@@ -69,13 +69,6 @@ function buildPubCard(p) {
   });
   mid.appendChild(authors);
 
-  if (p.note) {
-    const note = document.createElement("div");
-    note.className = "pub-note";
-    note.textContent = p.note;
-    mid.appendChild(note);
-  }
-
   const linkRow = document.createElement("div");
   linkRow.className = "pub-links";
   if (p.doi) {
@@ -100,7 +93,13 @@ function buildPubCard(p) {
 
   const venue = document.createElement("div");
   venue.className = "pub-venue";
-  venue.textContent = p.venue || p.type || "";
+  venue.appendChild(document.createTextNode(p.venue || p.type || ""));
+  if (p.note) {
+    const note = document.createElement("div");
+    note.className = "pub-venue-note";
+    note.textContent = p.note;
+    venue.appendChild(note);
+  }
 
   article.appendChild(year);
   article.appendChild(mid);

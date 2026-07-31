@@ -83,8 +83,6 @@ function renderCard(e) {
   mid.appendChild(el("h3", { class: "pub-title" }, titleInner));
   mid.appendChild(el("div", { class: "pub-authors" }, ...joinNodes(fmtAuthors(e.authors), ", ")));
 
-  if (e.note) mid.appendChild(el("div", { class: "pub-note" }, e.note));
-
   const links = el("div", { class: "pub-links" });
   const abstractPanel = el("div", { class: "pub-detail", hidden: true });
   const bibtexPanel = el("div", { class: "pub-detail pub-bibtex", hidden: true });
@@ -161,11 +159,14 @@ function renderCard(e) {
 
   article.appendChild(mid);
 
-  // Venue column.
+  // Venue column: "<venue> · <type>", with any manual note (e.g. "Accepted at …")
+  // stacked beneath it in the same mono style.
   const venueParts = [];
   if (e.venue) venueParts.push(e.venue);
   if (e.type)  venueParts.push(e.type);
-  article.appendChild(el("div", { class: "pub-venue" }, venueParts.join(" · ")));
+  const venueEl = el("div", { class: "pub-venue" }, venueParts.join(" · "));
+  if (e.note) venueEl.appendChild(el("div", { class: "pub-venue-note" }, e.note));
+  article.appendChild(venueEl);
 
   return article;
 }
