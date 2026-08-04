@@ -37,7 +37,7 @@
     "name": "Constantin Dalinghaus",
     "program": "Doctorate",
     "school": "University of Göttingen, Göttingen, Germany",
-    "interests": ["llms", "sycophancy", "diffusion language models"]
+    "interests": ["llms", "sycophancy", "post-training"]
   },
   {
     "name": "Niklas Bauer",
@@ -49,7 +49,7 @@
     "name": "Kia-Jüng Yang",
     "program": "Doctorate",
     "school": "University of Göttingen, Göttingen, Germany",
-    "interests": ["reasoning", "interpretability"]
+    "interests": ["reasoning", "interpretability", "AI safety"]
   },
   {
     "name": "Shakib Yazdani",
@@ -75,8 +75,9 @@
   },
   {
     "name": "Batyrkhan Abukhanov",
-    "program": "Masters",
-    "school": "University of Göttingen, Göttingen, Germany"
+    "program": "Doctorate",
+    "school": "University of Göttingen, Göttingen, Germany",
+    "interests": ["interpretability", "AI safety"]
   },
   {
     "name": "Florian Wunderlich",
