@@ -126,6 +126,9 @@ loads it (and on the favicon links). GitHub Pages caches aggressively.
 - `_log/` — dated session logs documenting *what changed and why*. Add one for substantial work.
 - `_archiv/*.empty` — retired page snapshots kept for reference; **not** served.
 - Author highlighting: any author surname ending in "Ruas" is bolded in rendered author lists.
+- Author canonicalization: the generator normalizes Terry's name variants ("Terry Lima Ruas",
+  "Terry L. Ruas") to "Terry Ruas" in the displayed `authors[]` (each entry's BibTeX keeps its
+  original spelling). See `canonAuthor` in `tools/generate-publications.mjs`.
 
 ## Known cleanups (not yet done — confirm before touching content)
 

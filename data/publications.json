@@ -252,7 +252,7 @@
     "title": "Piecing Together Cross-Document Coreference Resolution Datasets: Systematic Dataset Analysis and Unification",
     "authors": [
       "Anastasia Zhukova",
-      "Terry Lima Ruas",
+      "Terry Ruas",
       "Jan Philip Wahle",
       "Bela Gipp"
     ],
@@ -299,7 +299,7 @@
       "Ying-Lung Lin",
       "Jin Wang",
       "Jan Philip Wahle",
-      "Terry Lima Ruas",
+      "Terry Ruas",
       "Natalia Loukachevitch",
       "Alexander Panchenko",
       "Ilseyar Alimova",
@@ -465,7 +465,7 @@
     "title": "Citation Amnesia: On The Recency Bias of NLP and Other Academic Fields",
     "authors": [
       "Jan Philip Wahle",
-      "Terry Lima Ruas",
+      "Terry Ruas",
       "Mohamed Abdalla",
       "Bela Gipp",
       "Saif M. Mohammad"
@@ -504,7 +504,7 @@
     "title": "Is my Meeting Summary Good? Estimating Quality with a Multi-LLM Evaluator",
     "authors": [
       "Frederic Thomas Kirstein",
-      "Terry Lima Ruas",
+      "Terry Ruas",
       "Bela Gipp"
     ],
     "venue": "Proceedings of the 31st International Conference on Computational Linguistics: Industry Track",
@@ -588,7 +588,7 @@
       "Idris Abdulmumin",
       "Seid Muhie Yimam",
       "Jan Philip Wahle",
-      "Terry Lima Ruas",
+      "Terry Ruas",
       "Meriem Beloucif",
       "Christine De Kock",
       "Tadesse Destaw Belay",
@@ -662,7 +662,7 @@
     "authors": [
       "Dominik Meier",
       "Jan Philip Wahle",
-      "Terry Lima Ruas",
+      "Terry Ruas",
       "Bela Gipp"
     ],
     "venue": "Proceedings of the 31st International Conference on Computational Linguistics",
@@ -720,7 +720,7 @@
     "title": "What`s Wrong? Refining Meeting Summaries with LLM Feedback",
     "authors": [
       "Frederic Thomas Kirstein",
-      "Terry Lima Ruas",
+      "Terry Ruas",
       "Bela Gipp"
     ],
     "venue": "Proceedings of the 31st International Conference on Computational Linguistics",
@@ -959,7 +959,7 @@
     "authors": [
       "Mohamed Abdalla",
       "Jan Philip Wahle",
-      "Terry Lima Ruas",
+      "Terry Ruas",
       "Aurélie Névéol",
       "Fanny Ducel",
       "Saif Mohammad",
@@ -1221,7 +1221,7 @@
       "Johannes Stegmüller",
       "Fabian Bauer-Marquart",
       "Norman Meuschke",
-      "Terry Lima Ruas",
+      "Terry Ruas",
       "Moritz Schubotz",
       "Bela Gipp"
     ],
@@ -1511,7 +1511,7 @@
     "year": 2017,
     "title": "Science, technology and innovation exploration in biophotonics through a scientometric approach",
     "authors": [
-      "Terry L. Ruas",
+      "Terry Ruas",
       "Luciana Pereira",
       "William I. Grosky"
     ],
@@ -1547,7 +1547,7 @@
     "title": "The continuing reinvention of content-based retrieval: Multimedia is not dead",
     "authors": [
       "William I. Grosky",
-      "Terry L. Ruas"
+      "Terry Ruas"
     ],
     "venue": "IEEE MultiMedia",
     "publisher": "",
@@ -1583,7 +1583,7 @@
     "year": 2014,
     "title": "Como construir indicadores de Ciência, Tecnologia e Inovação usando Web of Science, Derwent World Patent Index, Bibexcel e Pajek?",
     "authors": [
-      "Terry Lima Ruas",
+      "Terry Ruas",
       "Luciana Pereira"
     ],
     "venue": "Perspectivas em Ciência da Informação",
@@ -1601,7 +1601,7 @@
     "title": "Simulating the Diffusion of Innovation Process a Multi Agent Approach",
     "authors": [
       "Emerson Noronha",
-      "Terry Lima Ruas",
+      "Terry Ruas",
       "Maria das Graças Bruno Marietto",
       "Margarethe Steinberger-Elias",
       "Wagner Tanaka Botelho",
@@ -1626,7 +1626,7 @@
       "Maria G. B. Marietto",
       "Margarethe S. Born",
       "Wagner T. Botelho",
-      "Terry L. Ruas",
+      "Terry Ruas",
       "Robson França",
       "Camila Soares"
     ],
@@ -1644,7 +1644,7 @@
     "year": 2011,
     "title": "Modeling artificial life through multi-agent based simulation",
     "authors": [
-      "Terry L. Ruas",
+      "Terry Ruas",
       "Maria G. B. Marietto",
       "André F. Batista",
       "Robson S. França",
@@ -1672,7 +1672,7 @@
       "Guiou Kobayashi",
       "Brunno A. Passos",
       "Sidney Castro",
-      "Terry L. Ruas"
+      "Terry Ruas"
     ],
     "venue": "Multi-agent systems - modeling, control, programming, simulations and applications",
     "publisher": "IntechOpen",
@@ -1690,7 +1690,7 @@
     "authors": [
       "Luís F. O. Jacintho",
       "André F. M. Batista",
-      "Terry L. Ruas",
+      "Terry Ruas",
       "Maria G. B. Marietto",
       "Fábio A. Silva"
     ],
@@ -1708,7 +1708,7 @@
     "year": 2009,
     "title": "A Model for fire spreading by multi-agent systems: A RoboCup Rescue simulation and Swarm platform approach",
     "authors": [
-      "Terry L. Ruas",
+      "Terry Ruas",
       "Maria Das Gracas B. Marietto",
       "Robson Dos S. Franca",
       "Andre Filipe De M. Batista"

@@ -168,6 +168,15 @@ function cleanText(t) {
   return s;
 }
 
+// Terry publishes under several name forms ("Terry Ruas", "Terry Lima Ruas",
+// "Terry L. Ruas"). Canonicalize any "Terry … Ruas" spelling to his preferred
+// display name so author lists are consistent regardless of how each record
+// spells it. Only the displayed authors[] is affected — each entry's raw
+// BibTeX keeps its original spelling for accurate citations.
+function canonAuthor(name) {
+  return /^terry\b.*\bruas$/i.test(name) ? "Terry Ruas" : name;
+}
+
 function parseAuthors(t) {
   if (!t) return [];
   return t
@@ -175,11 +184,16 @@ function parseAuthors(t) {
     .map((a) => {
       const clean = cleanText(a);
       const parts = clean.split(",").map((x) => x.trim()).filter(Boolean);
-      if (parts.length === 1) return parts[0];
-      // "Last, First Middle" → "First Middle Last"
-      const last = parts[0];
-      const rest = parts.slice(1).join(", ");
-      return `${rest} ${last}`.replace(/\s+/g, " ").trim();
+      let name;
+      if (parts.length === 1) {
+        name = parts[0];
+      } else {
+        // "Last, First Middle" → "First Middle Last"
+        const last = parts[0];
+        const rest = parts.slice(1).join(", ");
+        name = `${rest} ${last}`.replace(/\s+/g, " ").trim();
+      }
+      return canonAuthor(name);
     })
     .filter(Boolean);
 }
