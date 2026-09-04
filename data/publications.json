@@ -317,6 +317,26 @@
     "bibtex": "@inproceedings{yu_semeval-2026_2026,\n\taddress = {San Diego, California, USA},\n\ttitle = {{SemEval}-2026 {Task} 3: {Dimensional} {Aspect}-{Based} {Sentiment} {Analysis} ({DimABSA})},\n\tshorttitle = {{SemEval}-2026 {Task} 3},\n\turl = {https://aclanthology.org/2026.semeval-1.452},\n\tdoi = {10.18653/v1/2026.semeval-1.452},\n\tlanguage = {en},\n\turldate = {2026-07-06},\n\tbooktitle = {Proceedings of the 20th {International} {Workshop} on {Semantic} {Evaluation} (2026)},\n\tpublisher = {Association for Computational Linguistics},\n\tauthor = {Yu, Liang-Chih and Becker, Jonas and Muhammad, Shamsuddeen Hassan and Abdulmumin, Idris and Lee, Lung-Hao and Lin, Ying-Lung and Wang, Jin and Wahle, Jan Philip and Lima Ruas, Terry and Loukachevitch, Natalia and Panchenko, Alexander and Alimova, Ilseyar and Wanzare, Lilian Diana Awuor and Odhiambo, Nelson and Gipp, Bela and Chang, Kai-Wei and Mohammad, Saif},\n\tyear = {2026},\n\tpages = {3753--3778},\n}"
   },
   {
+    "id": "khan_speak_2026",
+    "type": "Preprint",
+    "bibtype": "misc",
+    "year": 2026,
+    "title": "Speak for Me: Giving LLMs the Situational Awareness to Participate in a Meeting",
+    "authors": [
+      "Muneeb Khan",
+      "Frederic Kirstein",
+      "Terry Ruas",
+      "Bela Gipp"
+    ],
+    "venue": "arXiv",
+    "publisher": "arXiv",
+    "doi": "10.48550/arXiv.2609.03923",
+    "url": "http://arxiv.org/abs/2609.03923",
+    "abstract": "In online meeting delegation, LLM agents fail to recognize when to speak. With no structured way to track stances, coverage, and floor, they miss the moments where they should contribute. Prompt-only delegates stay silent on 51.4% of the absent participant's talking opportunities on the AMI corpus. We present CAPA (Collaborative Agent Predictive Architecture), an architecture for online meeting delegation. A Perceiver updates the meeting state from each observed turn. A Predictor forecasts how the conversation will continue. A Controller decides whether to speak and which proposition to surface. A Generator phrases the chosen contribution in the participant's style. Two judges score the forecast and the action against the next observed turn. A Recalibrator updates the meeting state from those verdicts for future decisions. To evaluate online delegation, we introduce an episode-level protocol that scores whether, when, and what a delegate contributes around the participant's actual idea units. The protocol's schema-constrained LLM judges align with human annotations at Cohen's kappa = 0.71. On 137 AMI meetings, CAPA reduces the silence rate from 51.4% to 2.5%, doubles credited recovery (26.1 –{\\textgreater} 52.2), and keeps hallucination at 0.6%. The failure mode shifts from omission to selection, with each residual near-miss attributable to a specific module of the architecture. Mechanism ablations identify the meeting state as the lever that closes the recognition gap, where raw-context scaling alone does not.",
+    "bibtex": "@misc{khan_speak_2026,\n\ttitle = {Speak for {Me}: {Giving} {LLMs} the {Situational} {Awareness} to {Participate} in a {Meeting}},\n\tshorttitle = {Speak for {Me}},\n\turl = {http://arxiv.org/abs/2609.03923},\n\tdoi = {10.48550/arXiv.2609.03923},\n\tabstract = {In online meeting delegation, LLM agents fail to recognize when to speak. With no structured way to track stances, coverage, and floor, they miss the moments where they should contribute. Prompt-only delegates stay silent on 51.4\\% of the absent participant's talking opportunities on the AMI corpus. We present CAPA (Collaborative Agent Predictive Architecture), an architecture for online meeting delegation. A Perceiver updates the meeting state from each observed turn. A Predictor forecasts how the conversation will continue. A Controller decides whether to speak and which proposition to surface. A Generator phrases the chosen contribution in the participant's style. Two judges score the forecast and the action against the next observed turn. A Recalibrator updates the meeting state from those verdicts for future decisions. To evaluate online delegation, we introduce an episode-level protocol that scores whether, when, and what a delegate contributes around the participant's actual idea units. The protocol's schema-constrained LLM judges align with human annotations at Cohen's kappa = 0.71. On 137 AMI meetings, CAPA reduces the silence rate from 51.4\\% to 2.5\\%, doubles credited recovery (26.1 --{\\textgreater} 52.2), and keeps hallucination at 0.6\\%. The failure mode shifts from omission to selection, with each residual near-miss attributable to a specific module of the architecture. Mechanism ablations identify the meeting state as the lever that closes the recognition gap, where raw-context scaling alone does not.},\n\turldate = {2026-09-04},\n\tpublisher = {arXiv},\n\tauthor = {Khan, Muneeb and Kirstein, Frederic and Ruas, Terry and Gipp, Bela},\n\tmonth = sep,\n\tyear = {2026},\n\tnote = {arXiv:2609.03923 [cs.AI]},\n\tkeywords = {Computer Science - Artificial Intelligence, Computer Science - Computation and Language},\n}",
+    "note": "Accepted — EMNLP 2026 Main Conference"
+  },
+  {
     "id": "becker_stay_2026",
     "type": "Conference",
     "bibtype": "inproceedings",
