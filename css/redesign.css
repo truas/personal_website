@@ -1088,6 +1088,17 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
   color: var(--fg-soft);
   white-space: nowrap;
 }
+.student-mainsup {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.04em;
+  padding: 2px 8px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent);
+  white-space: nowrap;
+}
 .student-year {
   font-family: var(--mono);
   font-size: 12px;

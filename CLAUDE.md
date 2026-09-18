@@ -72,7 +72,7 @@ All under `data/`. Edited by hand **except** `publications.json` (generated).
 | `pub-notes.json` | publications.html, index.html (badge) | `{ "<pub-id>": "<note>" }` — manual "Accepted at …" overlays, merged onto `publications.json` by `id` at generate time |
 | `teaching.json` | teaching.html, index.html | `id, year, course, code, institution, institution_short, term, role` |
 | `projects.json` | projects.html, index.html | `year, role` ("pi"/"kc"), `period, title, agency` |
-| `students.json` | students.html | `name, program, school, interests[]?` |
+| `students.json` | students.html | `name, program, school, interests[]?, main_supervisor?` |
 | `alumni.json` | alumni.html | rendered by `students.js` (with summary stats) |
 
 `type` for publications is one of: Conference, Journal, Preprint, Workshop, Book, Report, Thesis, Other.
@@ -125,6 +125,9 @@ loads it (and on the favicon links). GitHub Pages caches aggressively.
 
 - `_log/` — dated session logs documenting *what changed and why*. Add one for substantial work.
 - `_archiv/*.empty` — retired page snapshots kept for reference; **not** served.
+- Supervision: `"main_supervisor": true` on a `students.json` entry renders a "main supervisor"
+  pill beside the name. Students without the flag are co-supervised (Frederic / Jan lead those),
+  which is what the page lead means by "supervise / co-supervise". `alumni.json` does not use it.
 - Author highlighting: any author surname ending in "Ruas" is bolded in rendered author lists.
 - Author canonicalization: the generator normalizes Terry's name variants ("Terry Lima Ruas",
   "Terry L. Ruas") to "Terry Ruas" in the displayed `authors[]` (each entry's BibTeX keeps its

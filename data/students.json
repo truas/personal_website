@@ -17,12 +17,14 @@
   },
   {
     "name": "Tianyu Yang",
+    "main_supervisor": true,
     "program": "Doctorate",
     "school": "University of Göttingen, Göttingen, Germany",
     "interests": ["reinforcement learning", "reasoning"]
   },
   {
     "name": "Jonas Becker",
+    "main_supervisor": true,
     "program": "Doctorate",
     "school": "University of Göttingen, Göttingen, Germany",
     "interests": ["llm as agents", "misinformation spread"]
@@ -41,12 +43,14 @@
   },
   {
     "name": "Niklas Bauer",
+    "main_supervisor": true,
     "program": "Doctorate",
     "school": "University of Göttingen, Göttingen, Germany",
     "interests": ["paraphrase generation and detection", "AI usage and impact"]
   },
   {
     "name": "Kia-Jüng Yang",
+    "main_supervisor": true,
     "program": "Doctorate",
     "school": "University of Göttingen, Göttingen, Germany",
     "interests": ["reasoning", "interpretability", "AI safety"]

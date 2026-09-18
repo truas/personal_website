@@ -93,6 +93,14 @@ async function init() {
       name.className = "student-name";
       name.textContent = s.name;
       nameWrap.appendChild(name);
+      // Students I advise as main supervisor carry a pill; the rest are
+      // co-supervised, as the page lead explains.
+      if (s.main_supervisor) {
+        const sup = document.createElement("span");
+        sup.className = "student-mainsup";
+        sup.textContent = "main supervisor";
+        nameWrap.appendChild(sup);
+      }
       if (Array.isArray(s.interests) && s.interests.length) {
         const tags = document.createElement("div");
         tags.className = "student-interests";
