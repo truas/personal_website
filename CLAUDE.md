@@ -121,6 +121,19 @@ Fonts: Newsreader (serif) / Geist (sans) / Geist Mono, loaded from Google Fonts.
 **Cache-busting:** when you change a CSS/JS file, bump its `?v=N` query string in the HTML that
 loads it (and on the favicon links). GitHub Pages caches aggressively.
 
+## Design conventions (minimalist pass, Oct 2026)
+
+- **No numbered labels.** Navigation and sections are not a sequence: no `01 /` markers, no rail
+  numbers. Rail markers are only `↗` (external) and the theme icon.
+- **Sentence-case labels**, no all-caps eyebrows or kickers. A label must carry information that
+  is not already on screen.
+- **Accent = interactive only** (links, active state, focus ring). Don't colour words in prose.
+- **Text tiers:** content (titles, years, venues, meta) uses `--fg` / `--fg-soft`, which pass AA
+  in every palette and theme. `--fg-mute` is only for structural text.
+- **Landing page:** the portrait (`images/terry-ruas-{480,960}.{webp,jpg}`, 4:5) is the one image.
+  Its top aligns to the name's cap height and the affiliations end on its bottom edge. Courses and
+  projects use the shared `.rows` / `.row` pattern from `index.js` (`buildRow`).
+
 ## Conventions & housekeeping
 
 - `_log/` — dated session logs documenting *what changed and why*. Add one for substantial work.
@@ -135,4 +148,7 @@ loads it (and on the favicon links). GitHub Pages caches aggressively.
 
 ## Known cleanups (not yet done — confirm before touching content)
 
-- `images/portrait.png` (~680 KB) and `images/logo.png` appear unused by the current rail pages.
+- `images/portrait.png` (~680 KB, old circular headshot, superseded by `images/terry-ruas-*`) and
+  `images/logo.png` are unused by every page.
+- `--fg-mute` is below AA for small text in light mode (~2.6:1). It now only colours structural text,
+  but raising it is a site-wide tone change; decide before touching.

@@ -1,9 +1,8 @@
 /* ─────────────────────────────────────────────────────────────────────────
-   Terry Ruas — index page redesign
+   Terry Ruas — site stylesheet, loaded by every page.
    Ported from the Claude Design handoff (Website TR project).
-   Loaded only on index.html; other pages continue to use css/styles.css.
    Tokens via CSS custom properties; the <html> element carries data-*
-   attributes for palette / theme / type / density / hero layout.
+   attributes for palette / theme / type / density.
    ───────────────────────────────────────────────────────────────────────── */
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -216,9 +215,8 @@ img { max-width: 100%; display: block; }
   }
   .mn-drawer-label {
     font-family: var(--mono);
-    font-size: 10.5px;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
     color: var(--fg-mute);
     padding: 12px 0 4px;
   }
@@ -264,7 +262,7 @@ img { max-width: 100%; display: block; }
 .rail-brand .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); display: inline-block; transform: translateY(-2px); }
 .rail-brand .name { font-style: normal; }
 
-.rail-section { color: var(--fg-mute); text-transform: uppercase; padding: 18px 0 8px; }
+.rail-section { color: var(--fg-mute); padding: 18px 0 8px; }
 
 .rail-link {
   display: flex; align-items: center; justify-content: space-between;
@@ -294,6 +292,9 @@ img { max-width: 100%; display: block; }
   text-align: left;
 }
 .rail-button:hover .idx { opacity: 1; }
+/* Cloned into the mobile drawer, the theme button matches the drawer links
+   (.rail-button's font: inherit would otherwise win, being declared later). */
+.mn-drawer-link.rail-button { font-family: var(--mono); font-size: 13px; }
 
 /* ── main column ──────────────────────────────────────────────────────── */
 .main { min-width: 0; padding-left: 48px; padding-right: 0; padding-bottom: 64px; }
@@ -303,133 +304,91 @@ section { padding-top: var(--pad-section); scroll-margin-top: 24px; }
 section:first-child { padding-top: 40px; }
 .page-head + section { padding-top: 0; }
 
-/* ── section header ───────────────────────────────────────────────────── */
+/* ── section header (index) ───────────────────────────────────────────── */
+/* Title on the left, the "see all" link on the right, on one baseline.
+   The list below brings its own top rule, so the header draws none. */
 .sec-head {
-  display: grid;
-  grid-template-columns: 80px 1fr;
-  gap: 32px;
+  display: flex;
   align-items: baseline;
-  margin-bottom: 40px;
-  padding-bottom: 18px;
-  border-bottom: 1px solid var(--rule);
-}
-.sec-num {
-  font-family: var(--mono);
-  font-size: var(--t-mono);
-  color: var(--fg-mute);
-  letter-spacing: 0.04em;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
 }
 .sec-title {
   font-family: var(--display);
   font-weight: 400;
-  font-size: var(--t-h2);
-  letter-spacing: -0.02em;
-  line-height: 1.18;
+  font-size: clamp(24px, 2.4vw, 32px);
+  letter-spacing: -0.015em;
+  line-height: 1.2;
   margin: 0;
 }
-.sec-head h2.sec-title + p { margin-top: 22px; }
 html[data-type="editorial"] .sec-title,
 html[data-type="instrument"] .sec-title { font-style: italic; }
-.sec-kicker {
-  font-family: var(--mono);
-  font-size: var(--t-mono);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--fg-mute);
-  margin-bottom: 14px;
-}
-.sec-lead {
+.sec-more {
+  font-size: 14px;
   color: var(--fg-soft);
-  max-width: 60ch;
-  margin-top: 14px;
-  font-size: 15px;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--rule-strong);
+  padding-bottom: 1px;
+  transition: color .15s ease, border-color .15s ease;
 }
+.sec-more:hover { color: var(--accent); border-color: var(--accent); }
 
-/* ── hero — editorial layout ──────────────────────────────────────────── */
-.hero { padding-top: 40px; }
-
-.hero-eyebrow {
-  font-family: var(--mono);
-  font-size: var(--t-mono);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--fg-mute);
-  display: flex; align-items: center; gap: 14px;
-  margin-bottom: 32px;
+/* ── hero ─────────────────────────────────────────────────────────────── */
+/* Name, statement and affiliations on the left; the portrait on the right,
+   its top edge level with the name's cap height. The photo is the page's
+   one image and its only real colour, so nothing else here is decorated. */
+.hero {
+  --hero-name-size: clamp(44px, 6.2vw, 96px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(220px, 24vw, 340px);
+  gap: clamp(32px, 5vw, 80px);
+  align-items: stretch;
 }
-.hero-eyebrow .pulse {
-  width: 8px; height: 8px; border-radius: 50%; background: var(--accent);
-  box-shadow: 0 0 0 3px var(--accent-soft);
-  animation: pulse 2.4s infinite;
-}
-@keyframes pulse {
-  0%,100% { box-shadow: 0 0 0 3px var(--accent-soft); }
-  50%     { box-shadow: 0 0 0 7px transparent; }
-}
-
+/* The affiliations sit on the portrait's bottom edge, so the photo frames
+   the text column top (cap height) and bottom. */
+.hero-text { display: flex; flex-direction: column; }
 .hero-name {
   font-family: var(--display);
   font-weight: 400;
-  font-size: var(--t-display);
-  line-height: 0.92;
-  letter-spacing: -0.04em;
-  display: flex;
-  align-items: center;
-  gap: 0.45em;
-  flex-wrap: wrap;
-  margin: 0 0 0 -0.06em;
+  font-size: var(--hero-name-size);
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  margin: 0 0 0 -0.05em;
 }
 html[data-type="editorial"] .hero-name .last,
 html[data-type="instrument"] .hero-name .last { font-style: italic; }
-
-.hero-logo {
-  height: 0.72em;
-  width: 0.72em;
-  border-radius: 14%;
-  flex: 0 0 auto;
-}
-
-.hero-lead {
-  margin-top: 36px;
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 56px;
-  align-items: start;
-}
-@media (max-width: 800px) { .hero-lead { grid-template-columns: 1fr; gap: 32px; } }
-
 .hero-statement {
   font-family: var(--display);
   font-weight: 300;
-  font-size: clamp(20px, 2.1vw, 28px);
-  line-height: 1.35;
+  font-size: clamp(20px, 1.9vw, 26px);
+  line-height: 1.4;
   letter-spacing: -0.01em;
   color: var(--fg);
-  max-width: 30ch;
-  margin: 0;
+  max-width: 32ch;
+  margin: clamp(28px, 3vw, 44px) 0 0;
 }
-html[data-type="editorial"] .hero-statement em,
-html[data-type="instrument"] .hero-statement em { font-style: italic; color: var(--accent); }
-html[data-type="modern"] .hero-statement em { font-style: normal; color: var(--accent); }
-
-.hero-meta {
-  font-family: var(--mono);
-  font-size: var(--t-mono);
-  line-height: 2;
+.hero-affil {
+  margin: auto 0 0;
+  padding-top: 28px;
+  font-size: 15px;
+  line-height: 1.6;
   color: var(--fg-soft);
-  margin: 0;
 }
-.hero-meta dt { color: var(--fg-mute); text-transform: uppercase; letter-spacing: 0.06em; font-size: 10.5px; margin-top: 8px; }
-.hero-meta dd { margin: 0 0 14px 0; color: var(--fg); }
-.hero-meta dt:first-child { margin-top: 0; }
+.hero-portrait { display: block; align-self: start; margin: calc(var(--hero-name-size) * 0.12) 0 0; }
+.hero-portrait img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  background: var(--bg-soft);
+}
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; gap: 28px; }
+  .hero-portrait { order: -1; margin-top: 0; width: min(60vw, 260px); }
+}
 
 /* ── about ────────────────────────────────────────────────────────────── */
-.about-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: 64px;
-}
-@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; gap: 32px; } }
 .about-text p { font-size: 18px; line-height: 1.6; margin: 0 0 18px; }
 .about-text p:first-of-type {
   font-family: var(--display); font-size: clamp(22px, 2vw, 28px);
@@ -504,7 +463,7 @@ html[data-type="instrument"] .theme-title em { font-style: italic; }
   .pub { grid-template-columns: 60px 1fr; }
   .pub-venue { grid-column: 1 / 3; }
 }
-.pub-year { font-family: var(--mono); font-size: var(--t-mono); color: var(--fg-mute); letter-spacing: 0.04em; }
+.pub-year { font-family: var(--mono); font-size: var(--t-mono); color: var(--fg-soft); letter-spacing: 0.04em; }
 .pub-title {
   font-family: var(--display); font-weight: 400;
   font-size: 19px; line-height: 1.35; letter-spacing: -0.005em;
@@ -514,8 +473,8 @@ html[data-type="instrument"] .theme-title em { font-style: italic; }
 .pub-authors { font-size: 13.5px; color: var(--fg-soft); }
 .pub-authors .me { color: var(--fg); font-weight: 500; }
 .pub-venue {
-  font-family: var(--mono); font-size: 11px; color: var(--fg-mute);
-  text-align: right; text-transform: uppercase; letter-spacing: 0.06em;
+  font-family: var(--mono); font-size: 11.5px; color: var(--fg-soft);
+  text-align: right; letter-spacing: 0.01em;
 }
 /* Manual "Accepted at …" note, stacked under the venue in the same mono style. */
 .pub-venue-note { display: block; margin-top: 5px; }
@@ -533,39 +492,38 @@ html[data-type="instrument"] .theme-title em { font-style: italic; }
   color: var(--fg-mute); padding: 24px 0;
 }
 
-.pubs-foot {
-  margin-top: 28px; display: flex; justify-content: space-between; align-items: center;
-  font-family: var(--mono); font-size: var(--t-mono); color: var(--fg-soft);
-}
-.pubs-foot a { border-bottom: 1px solid var(--rule-strong); padding-bottom: 1px; }
-.pubs-foot a:hover { color: var(--accent); border-color: var(--accent); }
 
-/* ── teaching ─────────────────────────────────────────────────────────── */
-.teach {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
-  background: var(--rule); border: 1px solid var(--rule);
+/* ── landing rows (courses, projects) ─────────────────────────────────── */
+/* Rows, not cards: the same rule rhythm as the publication list. Title and
+   a secondary line on the left; short meta lines (term, role, period) on
+   the right, set like the publication venue column. */
+.rows { display: flex; flex-direction: column; }
+.row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px;
+  column-gap: 32px;
+  padding: 22px 0;
+  border-top: 1px solid var(--rule);
 }
-@media (max-width: 720px) { .teach { grid-template-columns: 1fr; } }
-.course { background: var(--bg); padding: 26px 24px; }
-.course-term {
-  font-family: var(--mono); font-size: 11px; color: var(--fg-mute);
-  text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px;
+.row:last-child { border-bottom: 1px solid var(--rule); }
+.row-title {
+  grid-column: 1; grid-row: 1;
+  font-family: var(--display); font-weight: 400;
+  font-size: 19px; line-height: 1.35; letter-spacing: -0.005em;
+  margin: 0 0 4px;
 }
-.course-title {
-  font-family: var(--display); font-weight: 500;
-  font-size: 21px; letter-spacing: -0.01em; margin: 0 0 6px;
+.row-sub { grid-column: 1; grid-row: 2; color: var(--fg-soft); font-size: 13.5px; line-height: 1.55; }
+.row-meta {
+  grid-column: 2; grid-row: 1;
+  font-family: var(--mono); font-size: 11.5px; color: var(--fg-soft);
+  letter-spacing: 0.01em; text-align: right;
 }
-.course-blurb { color: var(--fg-soft); font-size: 14px; line-height: 1.55; }
-.course-meta {
-  font-family: var(--mono); font-size: 11px; color: var(--fg-mute);
-  margin-top: 14px;
+.row-meta ~ .row-meta { grid-row: 2; }
+@media (max-width: 720px) {
+  .row { grid-template-columns: 1fr; }
+  .row > * { grid-column: 1; grid-row: auto; text-align: left; }
+  .row-meta ~ .row-meta { grid-row: auto; }
 }
-.teach-foot {
-  margin-top: 18px; display: flex; justify-content: flex-end;
-  font-family: var(--mono); font-size: var(--t-mono); color: var(--fg-soft);
-}
-.teach-foot a { border-bottom: 1px solid var(--rule-strong); padding-bottom: 1px; }
-.teach-foot a:hover { color: var(--accent); border-color: var(--accent); }
 
 /* ── contact ──────────────────────────────────────────────────────────── */
 .contact-block {
@@ -578,19 +536,16 @@ html[data-type="instrument"] .theme-title em { font-style: italic; }
 @media (max-width: 800px) { .contact-block { grid-template-columns: 1fr; gap: 28px; } }
 .contact-statement {
   font-family: var(--display); font-weight: 300;
-  font-size: clamp(28px, 3.6vw, 52px); line-height: 1.15;
-  letter-spacing: -0.02em; margin: 0;
+  font-size: clamp(22px, 2.2vw, 30px); line-height: 1.3;
+  letter-spacing: -0.015em; margin: 0; max-width: 28ch;
 }
-html[data-type="editorial"] .contact-statement em,
-html[data-type="instrument"] .contact-statement em { font-style: italic; color: var(--accent); }
-html[data-type="modern"] .contact-statement em { font-style: normal; color: var(--accent); }
 .contact-list {
   font-family: var(--mono); font-size: var(--t-mono);
   line-height: 2; color: var(--fg-soft); margin: 0;
 }
 .contact-list dt {
-  color: var(--fg-mute); text-transform: uppercase;
-  font-size: 10.5px; letter-spacing: 0.08em; margin-top: 10px;
+  color: var(--fg-mute);
+  font-size: 11.5px; letter-spacing: 0.01em; margin-top: 10px;
 }
 .contact-list dt:first-child { margin-top: 0; }
 .contact-list dd { margin: 0; }
@@ -618,6 +573,9 @@ html[data-type="modern"] .contact-statement em { font-style: normal; color: var(
 }
 .inline-link:hover { color: var(--accent); border-color: var(--accent); }
 
+/* Keyboard focus: one visible ring everywhere, shown only for keyboard use. */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
 /* ─────────────────────────────────────────────────────────────────────────
    Subpage primitives — used by about.html, publications.html, teaching.html.
    These pages share the same .shell + .rail + .main skeleton as index.html
@@ -629,9 +587,6 @@ html[data-type="modern"] .contact-statement em { font-style: normal; color: var(
   margin-bottom: 14px;
   padding-bottom: 14px;
   border-bottom: 1px solid var(--rule);
-}
-.page-head .sec-num {
-  margin-bottom: 18px;
 }
 .page-title {
   font-family: var(--display);
@@ -726,9 +681,8 @@ html[data-type="modern"] .page-lead em { font-style: normal; color: var(--accent
   left: 0;
   top: 7px;
   font-family: var(--mono);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 11.5px;
+  letter-spacing: 0.01em;
   color: var(--fg-mute);
 }
 @media (max-width: 560px) {
@@ -800,8 +754,7 @@ html[data-type="instrument"] .pubs-year-summary { font-style: italic; }
   font-weight: 500;
   font-style: normal;
   color: var(--fg-mute);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.01em;
 }
 
 /* ── pub list inside year groups ─────────────────────────────────────── */
@@ -877,8 +830,7 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
   background: var(--bg);
   color: var(--accent);
   cursor: pointer;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.02em;
 }
 .pub-bibtex-copy:hover { opacity: 0.85; }
 .pub-bibtex-copy.copied { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
@@ -938,8 +890,7 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
   border-radius: 999px;
   border: 1px solid var(--rule);
   color: var(--fg-mute);
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.01em;
   white-space: nowrap;
 }
 .teach-role.role-lecturer { color: var(--accent); border-color: var(--accent); }
@@ -1018,9 +969,8 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
 .summary-cell.summary-total .num { color: var(--accent); }
 .summary-cell .label {
   font-family: var(--mono);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 11.5px;
+  letter-spacing: 0.01em;
   color: var(--fg-mute);
 }
 @media (max-width: 560px) {
@@ -1223,9 +1173,8 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
 }
 .proj-meta dt {
   font-family: var(--mono);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 11.5px;
+  letter-spacing: 0.01em;
   color: var(--fg-mute);
   align-self: baseline;
 }
@@ -1240,6 +1189,5 @@ button.pub-link[aria-pressed="true"] { color: var(--accent); border-color: var(-
 
 /* Respect reduced motion. */
 @media (prefers-reduced-motion: reduce) {
-  .hero-eyebrow .pulse { animation: none; }
   * { transition-duration: 0.001ms !important; animation-duration: 0.001ms !important; }
 }

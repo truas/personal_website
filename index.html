@@ -3,8 +3,7 @@
       data-palette="ink"
       data-theme="dark"
       data-type="modern"
-      data-density="regular"
-      data-hero="editorial">
+      data-density="regular">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,7 +22,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/redesign.css?v=24" />
+  <link rel="stylesheet" href="css/redesign.css?v=25" />
 </head>
 <body>
 
@@ -36,14 +35,14 @@
       </a>
 
       <div class="rail-section">Sections</div>
-      <a class="rail-link active" href="index.html" aria-current="page"><span>Index</span><span class="idx">00</span></a>
-      <a class="rail-link"        href="about.html"><span>About</span><span class="idx">01</span></a>
-      <a class="rail-link"        href="students.html"><span>Students</span><span class="idx">02</span></a>
-      <a class="rail-link"        href="publications.html"><span>Publications</span><span class="idx">03</span></a>
-      <a class="rail-link"        href="collaborators.html"><span>Collaborators</span><span class="idx">04</span></a>
-      <a class="rail-link"        href="teaching.html"><span>Teaching</span><span class="idx">05</span></a>
-      <a class="rail-link"        href="projects.html"><span>Projects</span><span class="idx">06</span></a>
-      <a class="rail-link"        href="#contact"><span>Contact</span><span class="idx">07</span></a>
+      <a class="rail-link active" href="index.html" aria-current="page"><span>Index</span></a>
+      <a class="rail-link"        href="about.html"><span>About</span></a>
+      <a class="rail-link"        href="students.html"><span>Students</span></a>
+      <a class="rail-link"        href="publications.html"><span>Publications</span></a>
+      <a class="rail-link"        href="collaborators.html"><span>Collaborators</span></a>
+      <a class="rail-link"        href="teaching.html"><span>Teaching</span></a>
+      <a class="rail-link"        href="projects.html"><span>Projects</span></a>
+      <a class="rail-link"        href="#contact"><span>Contact</span></a>
 
       <div class="rail-section" style="margin-top: auto;">Connect</div>
       <a class="rail-link" href="https://scholar.google.com/citations?user=mCDF4XMAAAAJ" target="_blank" rel="noopener noreferrer"><span>Scholar</span><span class="idx">↗</span></a>
@@ -58,144 +57,80 @@
 
     <main class="main">
 
-      <!-- 00 INDEX / HERO ──────────────────────────────────────────────── -->
+      <!-- HERO ──────────────────────────────────────────────────────────── -->
       <section id="index" class="hero">
-        <div class="hero-eyebrow">
-          <span class="pulse" aria-hidden="true"></span>
-          <span>Senior researcher · NLP &amp; AI</span>
-          <span style="opacity:.4">·</span>
-          <span>Göttingen, DE</span>
-        </div>
-        <h1 class="hero-name">
-          <span class="first">Terry </span><span class="last">Ruas</span>
-          <img class="hero-logo" src="images/favicon.svg?v=3" alt="" aria-hidden="true" width="64" height="64">
-        </h1>
-        <div class="hero-lead">
+        <div class="hero-text">
+          <h1 class="hero-name"><span class="first">Terry</span> <span class="last">Ruas</span></h1>
           <p class="hero-statement">
-            Research Group Leader in <em>Natural Language Processing</em> and <em>Artificial Intelligence</em>, investigating how AI usage influences human norms in writing, reading, and problem-solving.
+            Research Group Leader in Natural Language Processing and Artificial Intelligence, investigating how AI usage influences human norms in writing, reading, and problem-solving.
           </p>
-          <dl class="hero-meta">
-            <dt>Affiliations</dt>
-            <dd>University of Göttingen</dd>
-            <dd>SUB · State &amp; University Library</dd>
-            <dt>Interests</dt>
-            <dd>NLP · AI usage &amp; impact · data science</dd>
-          </dl>
+          <p class="hero-affil">
+            University of Göttingen<br>
+            Göttingen State and University Library
+          </p>
         </div>
+        <picture class="hero-portrait">
+          <source type="image/webp"
+                  srcset="images/terry-ruas-480.webp 480w, images/terry-ruas-960.webp 960w"
+                  sizes="(max-width: 900px) 260px, 340px">
+          <img src="images/terry-ruas-960.jpg"
+               srcset="images/terry-ruas-480.jpg 480w, images/terry-ruas-960.jpg 960w"
+               sizes="(max-width: 900px) 260px, 340px"
+               width="960" height="1200"
+               alt="Portrait of Terry Ruas"
+               fetchpriority="high" decoding="async">
+        </picture>
       </section>
 
-      <!-- 01 ABOUT ─────────────────────────────────────────────────────── -->
-      <section id="about">
-        <header class="sec-head">
-          <div class="sec-num">01 / About</div>
-          <div>
-            <div class="sec-kicker">Who</div>
-            <h2 class="sec-title">A short introduction.</h2>
-          </div>
-        </header>
-        <div class="about-grid">
-          <div class="about-text">
-            <p>
-              I am a Computer Science researcher and project leader at the University of Göttingen — Computer Science Department and Göttingen State and University Library — working in the <a href="https://gipplab.uni-goettingen.de/team/dr-terry-lima-ruas/" class="inline-link" target="_blank" rel="noopener noreferrer">GippLab</a>. My research is focused on natural language processing and artificial intelligence.
-            </p>
-            <p>
-              I obtained my Habilitation at the University of Göttingen, a Ph.D. in Computer Science at the University of Michigan - Dearborn, a master's in Information Engineering at the Federal University of ABC, and a Bachelor's in Computer Science and Science &amp; Technology at the same institution. I also worked as a Ph.D. intern at the National Institute of Informatics (Japan) at the <a href="http://www-al.nii.ac.jp" class="inline-link" target="_blank" rel="noopener noreferrer">Aizawa Laboratory</a>, and spent six years at IBM Brazil in software product, team-lead, and IT specialist roles.
-            </p>
-            <p>
-              My interests lie in the overlap of NLP, AI, and machine learning — particularly research that requires extracting and applying semantic features from textual data to solve significant problems.
-            </p>
-            <p>
-              <a href="about.html" class="inline-link">Read the long version →</a>
-            </p>
-          </div>
-     
-        </div>
-      </section>
-
-      <!-- 03 PUBLICATIONS ─────────────────────────────────────────────── -->
+      <!-- PUBLICATIONS ──────────────────────────────────────────────────── -->
       <section id="publications">
         <header class="sec-head">
-          <div class="sec-num">03 / Publications</div>
-          <div>
-            <div class="sec-kicker">Selected work</div>
-            <h2 class="sec-title">Recent papers.</h2>
-            <p class="sec-lead">
-              A subset of the most recent work. For the complete list of papers, please visit the <a href="publications.html" class="inline-link">publications page</a>.
-            </p>
-          </div>
+          <h2 class="sec-title">Recent papers.</h2>
+          <a class="sec-more" id="pubs-count" href="publications.html">All publications</a>
         </header>
         <div class="pubs" id="index-pubs">
           <div class="pub-loading">Loading publications…</div>
         </div>
-        <div class="pubs-foot">
-          <span id="pubs-count"></span>
-          <a href="publications.html">All publications →</a>
-        </div>
       </section>
 
-      <!-- 05 TEACHING ─────────────────────────────────────────────────── -->
+      <!-- TEACHING ──────────────────────────────────────────────────────── -->
       <section id="teaching">
         <header class="sec-head">
-          <div class="sec-num">05 / Teaching</div>
-          <div>
-            <div class="sec-kicker">What we teach</div>
-            <h2 class="sec-title">Courses.</h2>
-            <p class="sec-lead">
-              Offered courses. For the full list of current and past courses, please visit the <a href="teaching.html" class="inline-link">teaching page</a>.
-            </p>
-          </div>
+          <h2 class="sec-title">Courses.</h2>
+          <a class="sec-more" href="teaching.html">All courses</a>
         </header>
-        <div class="teach" id="index-teach">
-          <div class="course"><div class="course-blurb">Loading courses…</div></div>
-        </div>
-        <div class="teach-foot">
-          <a href="teaching.html">All courses →</a>
+        <div class="rows" id="index-teach">
+          <div class="pub-loading">Loading courses…</div>
         </div>
       </section>
 
-      <!-- 06 PROJECTS ─────────────────────────────────────────────────── -->
+      <!-- PROJECTS ──────────────────────────────────────────────────────── -->
       <section id="projects">
         <header class="sec-head">
-          <div class="sec-num">06 / Projects</div>
-          <div>
-            <div class="sec-kicker">Recent</div>
-            <h2 class="sec-title">Funded projects.</h2>
-            <p class="sec-lead">
-              Some grants and fellowships. Please visit <a href="projects.html" class="inline-link">projects page</a> for the complete list.
-            </p>
-          </div>
+          <h2 class="sec-title">Funded projects.</h2>
+          <a class="sec-more" href="projects.html">All projects</a>
         </header>
         <div id="index-projects">
-          <div class="pub-empty">Loading projects…</div>
-        </div>
-        <div class="teach-foot">
-          <a href="projects.html">All projects →</a>
+          <div class="pub-loading">Loading projects…</div>
         </div>
       </section>
 
-      <!-- 07 CONTACT ──────────────────────────────────────────────────── -->
+      <!-- CONTACT ───────────────────────────────────────────────────────── -->
       <section id="contact">
         <header class="sec-head">
-          <div class="sec-num">07 / Contact</div>
-          <div>
-            <div class="sec-kicker">Get in touch</div>
-            <h2 class="sec-title">Working together.</h2>
-          </div>
+          <h2 class="sec-title">Working together.</h2>
         </header>
         <div class="contact-block">
           <p class="contact-statement">
-            If you have an interesting <em>idea</em>, a paper to discuss, or a <em>good place</em> in Göttingen for <em>coffee</em> — send me a note.
+            If you have an interesting idea, a paper to discuss, or a good place in Göttingen for coffee, send me a note.
           </p>
           <dl class="contact-list">
             <dt>Schedule an appointment</dt>
             <dd><a class="inline-link" href="https://calendar.app.google/zwKpq5k3KkuYscUy7" target="_blank" rel="noopener noreferrer">Appointments</a></dd>
             <dt>Email</dt>
             <dd>ruas{at}uni{dash}goettingen{dot}de</dd>
-            <dt>Affiliations</dt>
-            <dd>University of Göttingen</dd>
-            <dd>SUB · State &amp; University Library</dd>
-            <dt>Scholar / LinkedIn</dt>
-            <dd><a href="https://scholar.google.com/citations?user=mCDF4XMAAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a> · <a href="https://www.linkedin.com/in/terryruas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></dd>
+            <dt>Profiles</dt>
+            <dd><a href="https://scholar.google.com/citations?user=mCDF4XMAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>, <a href="https://www.linkedin.com/in/terryruas/" target="_blank" rel="noopener noreferrer">LinkedIn</a></dd>
             <dt>For prospective students</dt>
             <dd>Send a short note about your interests and a CV.</dd>
           </dl>
@@ -211,6 +146,6 @@
   </div>
 
   <script src="js/redesign-common.js?v=6" defer></script>
-  <script src="js/index.js?v=2" defer></script>
+  <script src="js/index.js?v=3" defer></script>
 </body>
 </html>

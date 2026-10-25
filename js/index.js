@@ -27,10 +27,9 @@ async function renderSelectedPubs() {
 
     root.innerHTML = "";
     top.forEach((p) => root.appendChild(buildPubCard(p)));
-    if (countEl) countEl.textContent = `${top.length} of ${all.length} shown`;
+    if (countEl) countEl.textContent = `All ${all.length} publications`;
   } catch (err) {
     root.innerHTML = `<div class="pub-loading">Could not load publications (${err.message}).</div>`;
-    if (countEl) countEl.textContent = "";
   }
 }
 
@@ -118,9 +117,9 @@ async function renderSelectedTeaching() {
     const top = sorted.slice(0, 4);
 
     root.innerHTML = "";
-    top.forEach((c) => root.appendChild(buildCourseCard(c)));
+    top.forEach((c) => root.appendChild(buildCourseRow(c)));
   } catch (err) {
-    root.innerHTML = `<div class="course"><div class="course-blurb">Could not load courses (${err.message}).</div></div>`;
+    root.innerHTML = `<div class="pub-loading">Could not load courses (${err.message}).</div>`;
   }
 }
 
@@ -135,63 +134,46 @@ async function renderSelectedProjects() {
 
     root.innerHTML = "";
     const list = document.createElement("div");
-    list.className = "proj-list";
-    top.forEach((p) => list.appendChild(buildProjectCard(p)));
+    list.className = "rows";
+    top.forEach((p) => list.appendChild(buildProjectRow(p)));
     root.appendChild(list);
   } catch (err) {
-    root.innerHTML = `<div class="pub-empty">Could not load projects (${err.message}).</div>`;
+    root.innerHTML = `<div class="pub-loading">Could not load projects (${err.message}).</div>`;
   }
 }
 
-function buildProjectCard(p) {
-  const article = document.createElement("article");
-  article.className = "proj-card";
+// Courses and projects share one row: title and a secondary line on the
+// left, one or two short meta lines (term, role, period) on the right.
+function buildRow(titleText, subText, metaTexts) {
+  const row = document.createElement("article");
+  row.className = "row";
 
   const title = document.createElement("h3");
-  title.className = "proj-title";
-  title.textContent = p.title || "";
-  article.appendChild(title);
+  title.className = "row-title";
+  title.textContent = titleText;
+  row.appendChild(title);
 
-  const dl = document.createElement("dl");
-  dl.className = "proj-meta";
-  if (p.agency) {
-    const dt = document.createElement("dt"); dt.textContent = "Funding Agency";
-    const dd = document.createElement("dd"); dd.textContent = p.agency;
-    dl.appendChild(dt); dl.appendChild(dd);
+  if (subText) {
+    const sub = document.createElement("div");
+    sub.className = "row-sub";
+    sub.textContent = subText;
+    row.appendChild(sub);
   }
-  if (p.period) {
-    const dt = document.createElement("dt"); dt.textContent = "Period";
-    const dd = document.createElement("dd"); dd.textContent = p.period;
-    dl.appendChild(dt); dl.appendChild(dd);
-  }
-  article.appendChild(dl);
 
-  return article;
+  metaTexts.filter(Boolean).forEach((text) => {
+    const meta = document.createElement("div");
+    meta.className = "row-meta";
+    meta.textContent = text;
+    row.appendChild(meta);
+  });
+  return row;
 }
 
-function buildCourseCard(c) {
-  const wrap = document.createElement("div");
-  wrap.className = "course";
+function buildProjectRow(p) {
+  return buildRow(p.title || "", p.agency, [p.period]);
+}
 
-  const term = document.createElement("div");
-  term.className = "course-term";
-  term.textContent = c.term || "";
-
-  const title = document.createElement("h3");
-  title.className = "course-title";
-  title.textContent = c.code ? `${c.code} — ${c.course}` : c.course;
-
-  const blurb = document.createElement("div");
-  blurb.className = "course-blurb";
-  blurb.textContent = c.institution || "";
-
-  const meta = document.createElement("div");
-  meta.className = "course-meta";
-  meta.textContent = c.role || "";
-
-  wrap.appendChild(term);
-  wrap.appendChild(title);
-  wrap.appendChild(blurb);
-  wrap.appendChild(meta);
-  return wrap;
+function buildCourseRow(c) {
+  const title = c.code ? `${c.code} — ${c.course}` : c.course;
+  return buildRow(title, c.institution, [c.term, c.role]);
 }
