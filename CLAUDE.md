@@ -127,7 +127,9 @@ loads it (and on the favicon links). GitHub Pages caches aggressively.
   numbers. Rail markers are only `↗` (external) and the theme icon.
 - **Sentence-case labels**, no all-caps eyebrows or kickers. A label must carry information that
   is not already on screen.
-- **Accent = interactive only** (links, active state, focus ring). Don't colour words in prose.
+- **Accent = interactive only** (links, active state, focus ring), with one deliberate exception: the
+  landing-page statement highlights *AI usage and impact* (Terry's request) in the site's `em` accent
+  style. Don't add other coloured words in prose.
 - **Text tiers:** content (titles, years, venues, meta) uses `--fg` / `--fg-soft`, which pass AA
   in every palette and theme. `--fg-mute` is only for structural text.
 - **Landing page:** the portrait (`images/terry-ruas-{480,960}.{webp,jpg}`, 4:5) is the one image.

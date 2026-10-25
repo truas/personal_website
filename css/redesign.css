@@ -368,6 +368,10 @@ html[data-type="instrument"] .hero-name .last { font-style: italic; }
   max-width: 32ch;
   margin: clamp(28px, 3vw, 44px) 0 0;
 }
+/* The one highlighted phrase, in the site's accent style (as .page-lead em). */
+html[data-type="editorial"] .hero-statement em,
+html[data-type="instrument"] .hero-statement em { font-style: italic; color: var(--accent); }
+html[data-type="modern"] .hero-statement em { font-style: normal; color: var(--accent); }
 .hero-affil {
   margin: auto 0 0;
   padding-top: 28px;
