@@ -272,12 +272,26 @@ async function main() {
     });
   }
 
-  // Deduplicate by BibTeX key (in case BibBase still surfaces two records
-  // with keys like "wahle_d3_2022" and "wahle_d3_2022-1"). Keep the entry
-  // with the most-populated venue/doi/abstract.
+  // The Zotero group is shared, so it can pick up papers Terry didn't write
+  // (e.g. a reference someone saved there). Keep only entries with a Ruas
+  // author -- the same rule the renderers use to bold his name -- and report
+  // anything skipped so it can be cleaned up in Zotero.
+  const isMine = (e) => e.authors.some((a) => /ruas$/i.test(a.trim()));
+  const skipped = entries.filter((e) => !isMine(e));
+  for (const e of skipped) {
+    console.warn(`Skipped (no Ruas author): ${e.id} -- ${e.title}`);
+  }
+
+  // Deduplicate (in case BibBase surfaces one paper twice, with keys like
+  // "wahle_d3_2022" and "wahle_d3_2022-1"). Records are duplicates only when
+  // the base key AND the title match: Zotero builds keys from first author,
+  // first title word and year, so two different papers can share a key
+  // (e.g. two 2026 "yang_beyond" papers). Keep the most-populated record.
+  const titleKey = (t) => t.toLowerCase().replace(/[^a-z0-9]+/g, "");
+  const baseOf = (id) => id.replace(/-\d+$/, "");
   const byBase = new Map();
-  for (const e of entries) {
-    const base = e.id.replace(/-\d+$/, "");
+  for (const e of entries.filter(isMine)) {
+    const base = `${baseOf(e.id)}|${titleKey(e.title)}`;
     const prev = byBase.get(base);
     if (!prev) { byBase.set(base, e); continue; }
     const score = (x) => (x.venue ? 1 : 0) + (x.doi ? 1 : 0) + (x.abstract ? 1 : 0);
@@ -285,12 +299,35 @@ async function main() {
   }
   const deduped = [...byBase.values()];
 
+  // Distinct papers that share a key get distinct ids -- and matching keys in
+  // their BibTeX -- so pub-notes.json and copied citations can't collide.
+  // Ordered by title so the result is stable across refreshes: the
+  // alphabetically-first title keeps the plain key, the rest get -1, -2, ...
+  const byId = new Map();
+  for (const e of deduped) {
+    const id = baseOf(e.id);
+    if (!byId.has(id)) byId.set(id, []);
+    byId.get(id).push(e);
+  }
+  for (const [id, group] of byId) {
+    if (group.length < 2) continue;
+    group.sort((a, b) => a.title.localeCompare(b.title));
+    group.forEach((e, i) => {
+      const next = i === 0 ? id : `${id}-${i}`;
+      if (next !== e.id) {
+        e.bibtex = e.bibtex.replace(`{${e.id},`, `{${next},`);
+        e.id = next;
+      }
+    });
+    console.log(`Shared key "${id}" -> ${group.map((e) => `${e.id} (${e.title.slice(0, 40)}...)`).join(", ")}`);
+  }
+
   // Newest first, then title.
   deduped.sort((a, b) =>
     (b.year || 0) - (a.year || 0) || a.title.localeCompare(b.title)
   );
 
-  console.log(`Parsed ${entries.length} entries, ${deduped.length} after dedupe.`);
+  console.log(`Parsed ${entries.length} entries, ${skipped.length} skipped, ${deduped.length} after dedupe.`);
 
   // Merge manual annotations (e.g. "Accepted at <venue>") keyed by entry id,
   // from data/pub-notes.json. Zotero/BibBase has no field that reflects an

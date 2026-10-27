@@ -56,6 +56,11 @@ node tools/generate-publications.mjs      # requires Node >= 18
   git push          # deploys via GitHub Pages
   ```
 - Caveats: arXiv entries are typed `Preprint` and may carry arXiv DOIs (`10.48550/arXiv.*`).
+- Guards: the Zotero group is shared, so the generator **skips entries without a Ruas author** and
+  prints each one it skips (clean those up in Zotero). Different papers can share a Zotero key
+  (first author + first title word + year, e.g. two `yang_beyond_2026`); de-duplication only merges
+  records whose key *and* title match, and colliding papers get stable ids by title order (first
+  keeps the key, others get `-1`, `-2`...; the BibTeX key is rewritten to match).
 - Annotations: to badge a paper with an "Accepted at …" / status note (e.g. a preprint
   accepted at a venue), add `"<pub-id>": "<text>"` to `data/pub-notes.json`. The generator
   merges it as an optional `note` field on that entry (so it survives every refresh), and
