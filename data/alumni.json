@@ -208,5 +208,19 @@
     "school": "University of Göttingen, Göttingen, Germany",
     "year": 2026,
     "thesis": "A Hybrid Multi-Agent LLM Framework for Automated Business Insight Generation"
+  },
+  {
+    "name": "Florian Wunderlich",
+    "program": "Bachelor",
+    "school": "University of Göttingen, Göttingen, Germany",
+    "year": 2026,
+    "thesis": "VRE-Bench: A Benchmark for Visual Rule Exploration of Vision-Language Models in Unknown Environments"
+  },
+  {
+    "name": "Tobias Kristoffer Mark",
+    "program": "Bachelor",
+    "school": "University of Göttingen, Göttingen, Germany",
+    "year": 2026,
+    "thesis": "Does Memory Help? Episodic, Declarative and Procedural Memory for LLM Agents on Spatial and Rule-Based Reasoning"
   }
 ]
