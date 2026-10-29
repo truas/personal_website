@@ -133,12 +133,13 @@ loads it (and on the favicon links). GitHub Pages caches aggressively.
 - **Sentence-case labels**, no all-caps eyebrows or kickers. A label must carry information that
   is not already on screen.
 - **Accent = interactive only** (links, active state, focus ring), with one deliberate exception: the
-  landing-page statement highlights *AI usage and impact* (Terry's request) in the site's `em` accent
-  style. Don't add other coloured words in prose.
+  landing-page statement highlights *how AI usage impacts human communication, expression, and
+  evolution* (Terry's request) in the site's `em` accent style. Don't add other coloured words in prose.
 - **Text tiers:** content (titles, years, venues, meta) uses `--fg` / `--fg-soft`, which pass AA
   in every palette and theme. `--fg-mute` is only for structural text.
-- **Landing page:** the portrait (`images/terry-ruas-{480,960}.{webp,jpg}`, 4:5) is the one image.
-  Its top aligns to the name's cap height and the affiliations end on its bottom edge. Courses and
+- **Landing page:** the portrait (`images/terry-ruas-{480,960}.{webp,jpg}`, 4:5 files shown as a
+  circle via `border-radius` + `object-fit`) is the one image. It is centred on the text's optical
+  block (cap height to affiliations); on mobile it comes first. Courses and
   projects use the shared `.rows` / `.row` pattern from `index.js` (`buildRow`).
 
 ## Conventions & housekeeping
