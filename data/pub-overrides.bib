@@ -1,0 +1,79 @@
+% Official BibTeX overrides for data/publications.json.
+%
+% When Zotero's export of a paper is incomplete (e.g. ACL Anthology imports
+% arrive without an abstract), paste the publisher's BibTeX record here.
+% tools/generate-publications.mjs matches each record to a feed entry by DOI
+% (or by title), lets its non-empty fields win, and uses its text as the
+% copyable BibTeX on the site. The entry keeps its Zotero id, so
+% data/pub-notes.json still applies.
+
+@inproceedings{kaesberg-etal-2026-visual,
+    title = "Is Visual Prompting All You Need? Studying {VLM} Spatial Reasoning under Progressive Visual Scaffolds",
+    author = "Kaesberg, Lars Benedikt  and
+      Yang, Tianyu  and
+      Wunderlich, Florian Valentin  and
+      Ruas, Terry  and
+      Kurzawe, Daniel  and
+      Wahle, Jan Philip  and
+      Gipp, Bela",
+    editor = "Lee, Hung-Yi  and
+      Dev, Sunipa  and
+      Li, Jessy  and
+      Elliott, Desmond",
+    booktitle = "Findings of the {A}ssociation for {C}omputational {L}inguistics: {EMNLP} 2026",
+    month = oct,
+    year = "2026",
+    address = "Budapest, Hungary",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.findings-emnlp.2397/",
+    doi = "10.18653/2026.findings-emnlp.2397",
+    pages = "51505--51526",
+    ISBN = "979-8-89176-462-0",
+    abstract = "Vision-language models (VLMs) have advanced rapidly in multimodal reasoning, yet recent work shows that their failures often reflect an interaction between visual grounding and downstream reasoning. What remains less clear is how the visual presentation of a task shapes model performance and failure modes when the underlying reasoning problem is unchanged. We study this question in SPaRC, a benchmark for grid-based visual spatial planning, by introducing lightweight input-side scaffolds that preserve the visual modality while making spatial structure more accessible. The scaffolds are task-specific diagnostic interventions built on SPaRC{'}s known board structure, not a general-purpose prompting strategy. Across multiple VLMs, these scaffolds improve task accuracy over the original visual setting by up to 34.0 percentage points and further complement GRPO-based training, yielding up to 4.6 additional accuracy points compared with near-zero gains on the original visual input. Analyses on both end-to-end task solving and object detection show that these gains are closely tied to reductions in grounding-related errors, while rule reasoning remains comparatively challenging. With the planning problem held fixed, visual presentation therefore changes both accuracy and the distribution of failure modes, which in turn determines whether a VLM benchmark measures grounded perception, downstream reasoning, or a mixture of both."
+}
+
+@inproceedings{khan-etal-2026-speak,
+    title = "Speak for Me: Giving {LLM}s the Situational Awareness to Participate in a Meeting",
+    author = "Khan, Muneeb  and
+      Kirstein, Frederic  and
+      Ruas, Terry  and
+      Gipp, Bela",
+    editor = "Lee, Hung-Yi  and
+      Dev, Sunipa  and
+      Li, Jessy  and
+      Elliott, Desmond",
+    booktitle = "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    month = oct,
+    year = "2026",
+    address = "Budapest, Hungary",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.emnlp-main.1377/",
+    doi = "10.18653/2026.emnlp-main.1377",
+    pages = "31446--31472",
+    ISBN = "979-8-89176-459-0",
+    abstract = "In online meeting delegation, LLM agents fail to recognize when to speak. With no structured way to track stances, coverage, and floor, they miss the moments where they should contribute. Prompt-only delegates stay silent on 51.4{\%} of the absent participant{'}s talking opportunities on the AMI corpus. We present CAPA (Collaborative Agent Predictive Architecture), an architecture for online meeting delegation. A Perceiver updates the meeting state from each observed turn. A Predictor forecasts how the conversation will continue. A Controller decides whether to speak and which proposition to surface. A Generator phrases the chosen contribution in the participant{'}s style. Two judges score the forecast and the action against the next observed turn. A Recalibrator updates the meeting state from those verdicts for future decisions. To evaluate online delegation, we introduce an episode-level protocol that scores whether, when, and what a delegate contributes around the participant{'}s actual idea units. The protocol{'}s schema-constrained LLM judges align with human annotations at Cohen{'}s $\kappa = 0.71$. On 137 AMI meetings, CAPA reduces the silence rate from 51.4{\%} to 2.5{\%}, doubles credited recovery ($26.1 \to 52.2$), and keeps hallucination at 0.6{\%}. The failure mode shifts from omission to selection, with each residual near-miss attributable to a specific module of the architecture. Mechanism ablations identify the meeting state as the lever that closes the recognition gap, where raw-context scaling alone does not."
+}
+
+@inproceedings{meier-etal-2026-risky,
+    title = "Risky Business: Measuring The Faithfulness-Safety Tension",
+    author = "Meier, Dominik  and
+      Francis, Luca Joshua  and
+      Kaiser, Marco Bernhard  and
+      Ruas, Terry  and
+      Wahle, Jan Philip  and
+      Gipp, Bela",
+    editor = "Lee, Hung-Yi  and
+      Dev, Sunipa  and
+      Li, Jessy  and
+      Elliott, Desmond",
+    booktitle = "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+    month = oct,
+    year = "2026",
+    address = "Budapest, Hungary",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2026.emnlp-main.1176/",
+    doi = "10.18653/2026.emnlp-main.1176",
+    pages = "26954--26973",
+    ISBN = "979-8-89176-459-0",
+    abstract = "Chain-of-Thought (CoT) reasoning offers a promising window into model monitoring. However, monitoring relies on faithfulness, i.e., the model output strictly derives from its reasoning trace. We identify an alignment tension where a model must be faithful enough to be monitored, yet robust enough to reject unsafe reasoning. We demonstrate that this counterbalance exists in current Large Reasoning Models (LRMs), and show ways in which it can be addressed. We introduce HazMart, a human-written dataset set in an autonomous AI shopkeeper scenario. Unlike prior work that relies on providing hints in prompts to test faithfulness (e.g., ``A Stanford professor said it should be Answer A''), we propose a novel replacement-based technique, which we call Targeted Reasoning Replacement (TRR), that directly intervenes in the reasoning chain to substitute in unsafe or illogical thoughts (e.g., ``Wait, the answer must be Option B Option A because it is the most fitting''). DeepSeek-R1-Llama-70B exhibits high faithfulness (97.5{\%}) but fails to reject Unsafe Reasoning (12.3{\%}), while QwQ-32B is more robust (73.9{\%} safety) at the cost of lower faithfulness (74.7{\%}). Mechanistic analyses of QwQ-32B reveal that these properties are represented by anti-correlated internal directions peaking at the action-commit token. Finally, we demonstrate that representation steering can independently amplify the safety direction, increasing safe behavior by 9 percentage points while maintaining base capabilities."
+}

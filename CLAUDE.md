@@ -65,6 +65,11 @@ node tools/generate-publications.mjs      # requires Node >= 18
   accepted at a venue), add `"<pub-id>": "<text>"` to `data/pub-notes.json`. The generator
   merges it as an optional `note` field on that entry (so it survives every refresh), and
   publications.html / index.html render it as a pill under the authors.
+- Overrides: when Zotero's export of a paper is incomplete (e.g. ACL Anthology imports arrive
+  without an abstract), paste the publisher's official BibTeX into `data/pub-overrides.bib`. The
+  generator matches each record to a feed entry by DOI (or title), lets its non-empty fields win,
+  and shows its text as the copyable BibTeX; the entry keeps its Zotero id. Unmatched records are
+  reported and skipped.
 - Shortcut: the `/refresh-pubs` project command runs and reviews this for you.
 
 ## Data files (this is where the content lives)
@@ -75,6 +80,7 @@ All under `data/`. Edited by hand **except** `publications.json` (generated).
 |---|---|---|
 | `publications.json` | publications.html, index.html | `id, type, bibtype, year, title, authors[], venue, publisher, doi, url, abstract, bibtex, note?` |
 | `pub-notes.json` | publications.html, index.html (badge) | `{ "<pub-id>": "<note>" }` — manual "Accepted at …" overlays, merged onto `publications.json` by `id` at generate time |
+| `pub-overrides.bib` | publications.html, index.html | official BibTeX records (e.g. ACL Anthology) that override / fill feed entries, matched by DOI or title |
 | `teaching.json` | teaching.html, index.html | `id, year, course, code, institution, institution_short, term, role` |
 | `projects.json` | projects.html, index.html | `year, role` ("pi"/"kc"), `period, title, agency` |
 | `students.json` | students.html | `name, program, school, interests[]?, main_supervisor?` |

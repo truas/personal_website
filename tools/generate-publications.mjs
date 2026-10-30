@@ -22,6 +22,7 @@ const BIBBASE_URL =
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const OUT = resolve(__dirname, "..", "data", "publications.json");
 const NOTES = resolve(__dirname, "..", "data", "pub-notes.json");
+const OVERRIDES = resolve(__dirname, "..", "data", "pub-overrides.bib");
 
 async function fetchSource() {
   // Append a timestamp so any HTTP / CDN cache in front of BibBase has to
@@ -136,9 +137,28 @@ function parseFields(s) {
 
 // --- value cleanup ---------------------------------------------------------
 
+// Inline math as ACL Anthology abstracts write it ($\kappa = 0.71$,
+// $26.1 \to 52.2$): map the commands that show up to Unicode and drop the
+// dollars. Only spans with a command or an operator count as math, so a
+// plain "$5" is left alone.
+const MATH = {
+  "\\alpha": "α", "\\beta": "β", "\\gamma": "γ", "\\delta": "δ", "\\epsilon": "ε",
+  "\\theta": "θ", "\\kappa": "κ", "\\lambda": "λ", "\\mu": "μ", "\\rho": "ρ",
+  "\\sigma": "σ", "\\tau": "τ", "\\to": "→", "\\rightarrow": "→", "\\times": "×",
+  "\\pm": "±", "\\leq": "≤", "\\geq": "≥", "\\approx": "≈", "\\sim": "~",
+};
+function mathToText(m) {
+  if (!/\\[A-Za-z]|[=<>^_]/.test(m)) return `$${m}$`;
+  return m
+    .replace(/\\[A-Za-z]+/g, (cmd) => MATH[cmd] ?? cmd)
+    .replace(/[{}]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function cleanText(t) {
   if (!t) return "";
-  let s = t;
+  let s = t.replace(/(^|[^\\])\$([^$]+?)\$/g, (_, pre, m) => pre + mathToText(m));
   // strip the LaTeX brace-protection used by Zotero's exporter ({Foo}). Do
   // it twice to handle one level of nesting.
   for (let i = 0; i < 2; i++) {
@@ -162,7 +182,12 @@ function cleanText(t) {
     .replace(/~/g, " ")
     // unicode escape like \"a → ä
     .replace(/\\"([aeiouAEIOU])/g, (_, c) => ({a:"ä",e:"ë",i:"ï",o:"ö",u:"ü",A:"Ä",E:"Ë",I:"Ï",O:"Ö",U:"Ü"}[c] || c))
-    .replace(/\\'([aeiouAEIOU])/g, (_, c) => ({a:"á",e:"é",i:"í",o:"ó",u:"ú",A:"Á",E:"É",I:"Í",O:"Ó",U:"Ú"}[c] || c));
+    .replace(/\\'([aeiouAEIOU])/g, (_, c) => ({a:"á",e:"é",i:"í",o:"ó",u:"ú",A:"Á",E:"É",I:"Í",O:"Ó",U:"Ú"}[c] || c))
+    // TeX quotes: ``like this''
+    .replace(/``/g, "“")
+    .replace(/''/g, "”");
+  // braces left around escapes, e.g. {\%} -> {%}
+  s = s.replace(/\{([^{}\\]*)\}/g, "$1");
   // collapse whitespace
   s = s.replace(/\s+/g, " ").trim();
   return s;
@@ -241,6 +266,25 @@ function venueFor(fields) {
   );
 }
 
+// One parsed BibTeX record -> the site's entry schema.
+function normalize(e) {
+  const f = e.fields;
+  return {
+    id: e.key,
+    type: typeFor(e.bibtype, f),
+    bibtype: e.bibtype,
+    year: parseInt(cleanText(f.year || ""), 10) || null,
+    title: cleanText(f.title),
+    authors: parseAuthors(f.author),
+    venue: venueFor(f),
+    publisher: cleanText(f.publisher),
+    doi: cleanText(f.doi),
+    url: cleanText(f.url),
+    abstract: cleanText(f.abstract),
+    bibtex: e.raw,
+  };
+}
+
 // --- main ------------------------------------------------------------------
 
 async function main() {
@@ -249,27 +293,8 @@ async function main() {
 
   const entries = [];
   for (const e of parseBibtex(src)) {
-    const f = e.fields;
-    const title = cleanText(f.title);
-    if (!title) continue;
-    const year = parseInt(cleanText(f.year || ""), 10) || null;
-    const authors = parseAuthors(f.author);
-    const venue = venueFor(f);
-    const type = typeFor(e.bibtype, f);
-    entries.push({
-      id: e.key,
-      type,
-      bibtype: e.bibtype,
-      year,
-      title,
-      authors,
-      venue,
-      publisher: cleanText(f.publisher),
-      doi: cleanText(f.doi),
-      url: cleanText(f.url),
-      abstract: cleanText(f.abstract),
-      bibtex: e.raw,
-    });
+    const entry = normalize(e);
+    if (entry.title) entries.push(entry);
   }
 
   // The Zotero group is shared, so it can pick up papers Terry didn't write
@@ -321,6 +346,35 @@ async function main() {
     });
     console.log(`Shared key "${id}" -> ${group.map((e) => `${e.id} (${e.title.slice(0, 40)}...)`).join(", ")}`);
   }
+
+  // Official BibTeX overrides, from data/pub-overrides.bib. When Zotero's
+  // export is incomplete (ACL Anthology imports arrive without abstracts),
+  // paste the publisher's record there. Each record is matched to a feed
+  // entry by DOI, or by title; its non-empty fields win, its text becomes the
+  // copyable BibTeX, and the entry keeps its Zotero id (so pub-notes.json
+  // still applies). Missing file = no overrides.
+  let overrideSrc = "";
+  try {
+    overrideSrc = await readFile(OVERRIDES, "utf8");
+  } catch (err) {
+    if (err.code !== "ENOENT") throw err;
+  }
+  let overridden = 0;
+  for (const rec of parseBibtex(overrideSrc)) {
+    const o = normalize(rec);
+    const doi = o.doi.toLowerCase();
+    const target = deduped.find((e) =>
+      (doi && e.doi.toLowerCase() === doi) || titleKey(e.title) === titleKey(o.title));
+    if (!target) {
+      console.warn(`pub-overrides.bib: no feed entry matches ${rec.key} (${o.title}); skipped.`);
+      continue;
+    }
+    for (const [k, v] of Object.entries(o)) {
+      if (k !== "id" && (Array.isArray(v) ? v.length : v)) target[k] = v;
+    }
+    overridden++;
+  }
+  if (overridden) console.log(`Applied ${overridden} BibTeX override(s) from pub-overrides.bib.`);
 
   // Newest first, then title.
   deduped.sort((a, b) =>
