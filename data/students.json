@@ -73,6 +73,12 @@
     "school": "University of Göttingen, Göttingen, Germany"
   },
   {
+    "name": "Marco Kaiser",
+    "program": "Doctorate",
+    "school": "University of Göttingen, Göttingen, Germany",
+    "interests": ["interpretability", "reasoning"]
+  },
+  {
     "name": "Emma Victoria Stein",
     "program": "Masters",
     "school": "University of Göttingen, Göttingen, Germany"
